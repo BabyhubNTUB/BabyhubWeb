@@ -12,12 +12,12 @@ router.post('/', function(req, res, next) {
     user.login(id, password).then(d => {
         if (d==null){
             req.session.id = null;
-            req.session.displayname = null;           
+            req.session.username = null;           
             res.render('signInFail');  //傳至登入失敗
         }else{
             req.session.id = d.id;
-            req.session.displayname = d.displayname;
-            res.render('signInSuccess', {name:d.displayname});   //導向使用者
+            req.session.username = d.username;
+            res.render('signInSuccess', {name:d.username});   //導向使用者
         }  
     })
 });
