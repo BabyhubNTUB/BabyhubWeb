@@ -22,7 +22,7 @@ var login = async function(id, password){
         });
     
     //回傳物件
-    return result;
+    return result;  
 }
 //---------------------------------------------
 // 使用者註冊

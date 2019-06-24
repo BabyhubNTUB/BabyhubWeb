@@ -10,10 +10,10 @@
     <title>Babyhub</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="images/logo.png" type="image/ico" />
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body class="is-preload">
@@ -23,7 +23,7 @@
 
         <!-- Header -->
         <header id="header">
-            <a href="/">
+            <a href="index.html">
                 <img class="textlogopic" src="images/textlogo.png">
             </a>
             <nav class="main">
@@ -43,19 +43,19 @@
         </header>
         <div class="profile" id="profileList">
             <div class="profileList">
-                <a href="/profile">
+                <a href="profile.html">
                     <img src="images/profile.jpg">
                     <span>許佑綺</span>
                 </a>
             </div>
             <div class="profileList">
-                <a href="/baby">
+                <a href="baby.html">
                     <img src="images/baby1.jpg">
                     <span>佑佑</span>
                 </a>
             </div>
             <div class="profileList">
-                <a hraf="/baby">
+                <a hraf="baby.html">
                     <img src="images/baby2.jpg">
                     <span>綺綺</span>
                 </a>
@@ -64,36 +64,29 @@
         <!-- Menu -->
         <section id="menu">
 
-            <!-- Search -->
-            <section>
-                <form class="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search" />
-                </form>
-            </section>
-
             <!-- Links -->
 			<section>
 				<ul class="links">
 					<li>
-						<a href="/childEducation">
+						<a href="childEducation.html">
 							<h3>小孩教育</h3>
 							<p>提供小孩教育的知識。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/pregnancyKnowledge">
+						<a href="pregnancyKnowledge.html">
 							<h3>孕期知識</h3>
 							<p>孕期知識、胎教等。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/forum">
+						<a href="forum.html">
 							<h3>討論區</h3>
 							<p>跟媽媽們討論各種知識。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/vaccine">
+						<a href="vaccine.html">
 							<h3>疫苗施打</h3>
 							<p>告訴你什麼時候該打什麼疫苗！</p>
 						</a>
@@ -105,13 +98,13 @@
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="growrecord.html">
 							<h3>成長紀錄</h3>
 							<p>填寫寶寶的身體變化吧！</p>
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="diary.html">
 							<h3>日記</h3>
 							<p>填寫寶寶每日的生活小點滴吧！</p>
 						</a>
@@ -167,26 +160,42 @@
                                     <h4>我的文章</h4>
                                 </a>
                             </li>
+                            <li>
+                                <a href="profile.html">
+                                    <h4>回會員</h4>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-7">
-                        <div class="profile_box">
-                            <p class="head"><img src="images/membership.png">　會員</p>
-                            <p class="title">名稱：　<%= item.displayname %></p><br />
-                            <p class="title">稱謂：　<%= item.appellation %></p><br />
-                            <p class="title">帳號：　<%= item.id %></p><br />
+                        <div class="form-group">
+							<label for="exampleInputUsername1">
+								姓名 
+							</label>
+							<input type="text" class="form-control" id="exampleInputUsername1" value="許佑綺"/>
+							<label for="exampleInputUsername1">
+                                稱謂 
+							</label>
+							<input type="text" class="form-control" id="exampleInputUsername1" value="媽媽"/>
+							<label for="exampleInputUsername1">
+                                帳號
+							</label>
+							<input type="text" class="form-control" id="exampleInputUsername1" value="10456052@ntub.edu.tw"/>
+							<label for="exampleInputPassword1">
+                                密碼
+                            </label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" value="you78787"/>
                         </div>
-                        <div class="card">
-                            <div class="card-block">
-                                <p class="head"><img src="images/edit.png">　寫日記</p>
-                                <textarea id="full-featured"><p style=" font-size: 15px;">
-
-                                </textarea>
-                                <button type="button">
-                                    撰寫
-                                </button>
-                            </div>
-                        </div>
+                        <button type="button" onclick="location.href='linebot.html'">
+							綁定LINE BOT
+						</button>
+						<button type="button">
+							更改
+						</button>
+						<button type="button">
+							刪除
+                        </button>
+                        
                     </div>
                     <div class="col-md-2">
                     </div>
@@ -194,29 +203,17 @@
             </div>
         </div>
     </div>
-    
-    <div class="footer">
-        <ul class="icons">
-            <li><a href="https://www.instagram.com/vivian_0124/" class="fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="mailto:jashtinshen0729@gmail.com" class="fa-envelope"><span class="label">Email</span></a></li>
-                <li><a href="https://github.com/tomlinNTUB" class="fa-github-square"><span class="label">github</span></a></li>
-                <li><a href="tel:0983960930" class="fa-phone"><span class="label">github</span></a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100008400780348" class="fa-facebook"><span class="label">Facebook</span></a></li>
-            </ul>
-            <p class="copyright">2018 Copyright&copy;NTUB tomlin.</p>
-    </div>
-
 
     <!-- Scripts -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector: 'textarea' });</script>
-    <script src="/assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 

@@ -23,18 +23,44 @@
 
 		<!-- Header -->
 		<header id="header">
-			<a href="/">
+			<a href="/indexIn">
 				<img class="textlogopic" src="images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
+					<li class="bell">
+						<a class="fa-bell" href="#menu">Bell</a>
+					</li>
+					<li class="profile" id="profile">
+						<img src="images/profile.jpg">
+						<span>許佑綺</span>
+					</li>
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
-
+		<div class="profile" id="profileList">
+			<div class="profileList">
+				<a href="/profile">
+					<img src="images/profile.jpg">
+					<span>許佑綺</span>
+				</a>
+			</div>
+			<div class="profileList">
+				<a href="/baby">
+					<img src="images/baby1.jpg">
+					<span>佑佑</span>
+				</a>
+			</div>
+			<div class="profileList">
+				<a hraf="/baby">
+					<img src="images/baby2.jpg">
+					<span>綺綺</span>
+				</a>
+			</div>
+		</div>
 		<!-- Menu -->
 		<section id="menu">
 
@@ -42,21 +68,45 @@
 			<section>
 				<ul class="links">
 					<li>
-						<a href="/childEducation2">
+						<a href="/childEducation">
 							<h3>小孩教育</h3>
 							<p>提供小孩教育的知識。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/pregnancyKnowledge2">
+						<a href="/pregnancyKnowledge">
 							<h3>孕期知識</h3>
 							<p>孕期知識、胎教等。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/forum2">
+						<a href="/forum">
 							<h3>討論區</h3>
 							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/vaccine">
+							<h3>疫苗施打</h3>
+							<p>告訴你什麼時候該打什麼疫苗！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/achievement">
+							<h3>里程碑成就</h3>
+							<p>幫你的寶寶紀錄非凡的成就吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/growrecord">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/diary">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
 						</a>
 					</li>
 				</ul>
@@ -65,10 +115,7 @@
 			<section>
 				<ul class="actions stacked">
 					<li>
-						<a href="/signIn" class="button large fit">登入 Sign In</a>
-					</li>
-					<li>
-						<a href="/register" class="button large fit">註冊 Register</a>
+						<a href="/logout" class="button large fit">登出 Logout</a>
 					</li>
 				</ul>
 			</section>
@@ -85,7 +132,6 @@
 			</section>
 
 		</section>
-
 		<!-- Main -->
 		<div class="row">
 			<div class="pagetagtop">
@@ -111,43 +157,35 @@
 				</div>
 			</div>
 			<div class="col-md-12">
-				<div class="pregnancyBox">
-					<a href="apregnancyKnowledge2.html">
-						<strong>大唱喜歡的歌</strong>
+				<div class="childEducationBox">
+					<a href="achildEducation.html">
+						<strong>想教育出成功的孩子？那就千萬別對他們做這 9 件事</strong>
 						<span class="detail"><br>
-							唱歌會使整個人放鬆。哼歌或是到卡拉OK唱歌都能改善心情，消除緊張。媽媽放鬆，寶寶自然會樂得自在了。
+							1.不鼓勵小孩獨立根據美國範德堡大學在 1997 年做的一項研究顯示，父母若在小孩的成長過程中不斷的透過心理層面的方式掌控小孩，將有可能導...
 						</span>
 					</a>
 				</div>
-				<div class="pregnancyBox">
+				<div class="childEducationBox">
 					<a href="#">
-						<strong>能放鬆的運動</strong>
+						<strong>3歲、7歲、10歲決定孩子一生的競爭力</strong>
 						<span class="detail"><br>
-							散步是最能讓人放鬆的運動。在天氣好，空氣清新的時候散步不只是一種享受，還能讓肚裡的寶寶享受太陽浴和輕微震盪帶來的按摩效果，他會和你一樣心情愉快的！
+							人類在出生之後，大腦有一段腦神經細胞增加的時期，之後則會減少不必要的腦神經細胞，發展腦神經迴路。也就是說，兒童的腦部處於正在發育中的過程。從0歲開始大概三年之內...
 						</span>
 					</a>
 				</div>
-				<div class="pregnancyBox">
+				<div class="childEducationBox">
 					<a href="#">
-						<strong>自己喜歡的事</strong>
+						<strong>孩子的事交給他自己來！德式全方位優質小孩養成之道</strong>
 						<span class="detail"><br>
-							懷孕期間要經常投自己所好，做自己喜歡做的事也是最好的放鬆方式，媽媽心情愉悅，通過胎盤和臍帶輸送給胎兒的血液和氧氣就會格外地充足，寶寶也會感應得到。
+							1. 養成一個快樂小孩是最重要的事什麼樣的能力對於學齡前幼兒最為重要？是孩子的外語能力（如：從小開始學習英文）養成？還是各項才藝的培養？（如：鋼琴、繪畫、舞蹈……等）答案以上皆非，對於學齡前幼兒來說...
 						</span>
 					</a>
 				</div>
-				<div class="pregnancyBox">
+				<div class="childEducationBox">
 					<a href="#">
-						<strong>讀書給寶寶廳</strong>
+						<strong>教育子女，怎樣才是最好的方法？</strong>
 						<span class="detail"><br>
-							和胎兒的交流非常有趣，唱唱歌、說說話、讀讀圖畫書等。按照發音順序一個字一個字地讀給他聽，把又有文字又有圖畫的頁面指給他看，跟肚裡的寶寶進行交流。媽媽的聲音給肚裡寶寶帶來的聲音刺激能使胎兒心情舒暢。
-						</span>
-					</a>
-				</div>
-				<div class="pregnancyBox">
-					<a href="#">
-						<strong>保護自己牙齒</strong>
-						<span class="detail"><br>
-							懷孕期間受激素分泌的影響，牙齦充血腫脹，容易引發牙周炎等。這些口腔疾患會引發牙齦出血、牙痛和發熱等症狀，影響孕婦進食及營養攝入，從而影響胎兒生長發育。
+							在教育兒子的時候，我不會去管那些概念的東西。兒子七歲時，學校老師給他佈置了很多作業，他就對我說，爸爸，我不想寫這些家庭作業。我問他為什麼，他說，這些字我都會寫，但老師還要我...
 						</span>
 					</a>
 				</div>

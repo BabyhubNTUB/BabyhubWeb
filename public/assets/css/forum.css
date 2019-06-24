@@ -8,9 +8,66 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+/* pagetagtop */
+.pagetagtop{
+	font-size:22px;
+	color:#ffb1e5a1;
+	margin:auto;
+	height: 10%;
+	position: relative;
+	/* top: -5%; */
+	left: -20%;
+	padding-top: 3%;
+	/* background-color: blue; */
+}
+.pagetagtop a{
+	text-align: center;
+	width:30px;
+	text-decoration: none;
+	border:0 solid;
+	color:#ffff !important;
+	margin:0 10px;
+	background:#f1848496;
+	border-radius:30%;
+	box-shadow:1px 1px #a8a8a8;
+	
+}
+.pagetagtop a:hover{
+	color:#f1848496 !important;
+	background:#ffffff;
+	text-decoration: none;
+}
+@media screen and (max-width: 414px){
+	.pagetagtop{
+		font-size:22px;
+		color:#ffb1e5;
+		margin:auto;
+	}
+}
 .pagination{
 	float: left;
+	position: relative;
+	top: 10px;
 }
+
+/*單篇文章底下的喜歡留言編輯刪除按鈕*/
+    ul.stats {
+		list-style: disc;
+	}
+	ul.stats a:nth-child(2){
+		margin-left: 5%;
+	}
+	ul.stats a:nth-child(3){
+		font-size: 20px;
+		float:right;
+	}
+	ul.stats a:nth-child(4){
+		font-size: 20px;
+		float: right;
+		margin-right: 2%;
+	}
+
 #gotop {
     position:fixed;
     z-index:90;
@@ -81,10 +138,10 @@ li.a.icon fa-comment{
 	padding-left: 20px;
 }
 /*----------------------------------------------*/
-div.list-group-item{
+/* div.list-group-item{
 	margin-left:-1em;		
 	width: 103%;
-}
+} */
 /*----------------------------------------------*/
 
 div.footer{
@@ -446,7 +503,7 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+		/* border-bottom: dotted 1px rgba(160, 160, 160, 0.65); */
 		color: inherit;
 		text-decoration: none;
 	}
@@ -2482,16 +2539,16 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #3c3b3b;
-			border-color: #3c3b3b;
+			background: rgba(113, 180, 200, 0.753);;
+			border-color: rgba(113, 180, 200, 0.753);;
 			color: #ffffff;
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #e29292;
-			box-shadow: 0 0 0 1px #e29292;
+			border-color: #a8a8a8;
+			box-shadow: 0 0 0 1px #a8a8a8;
 		}
 
 	input[type="radio"] + label:before {
@@ -3851,42 +3908,7 @@ input, select, textarea {
 		font-weight: 600;
 		padding:30px;	
 	}
-	/* pagetagtop */
-	.pagetagtop{
-		font-size:22px;
-		color:#ffb1e5a1;
-		margin:auto;
-		height: 10%;
-		position: relative;
-		top: -5%;
-		left: -20%;
-		padding-top: 3%;
-		/* background-color: blue; */
-	}
-	.pagetagtop a{
-		text-align: center;
-		width:30px;
-		text-decoration: none;
-		border:0 solid;
-		color:#ffff !important;
-		margin:0 10px;
-		background:#f1848496;
-		border-radius:30%;
-		box-shadow:1px 1px #a8a8a8;
-		
-	}
-	.pagetagtop a:hover{
-		color:#f1848496 !important;
-		background:#ffffff;
-		text-decoration: none;
-	}
-	@media screen and (max-width: 414px){
-		.pagetagtop{
-			font-size:22px;
-			color:#ffb1e5;
-			margin:auto;
-		}
-	}
+	
 	/* pagetag */
 	.pagetag{
 		font-size:22px;
@@ -3913,11 +3935,10 @@ input, select, textarea {
 	@media screen and (max-width: 414px){
 		.pagetag{
 			font-size:22px;
-			color:#ffb1e5;
+			color:#f1848496;
 			margin:10px auto;
 		}
 	}
-
 /* boardtag */
 	.boardtag{
 		list-style-type:none;
@@ -3937,7 +3958,7 @@ input, select, textarea {
 		padding:5px;
 		margin:0 8px;
 		float:left;
-		background:#ffdff4;
+		background:rgba(184, 209, 218, 0.753);
 		box-shadow:1px 1px 4px #dadada;
 		color:#3c3b3b;
 	}
@@ -3950,6 +3971,8 @@ input, select, textarea {
 			margin:0.5em;
 		}
 	}
+
+	
 /* content */
 	.content tr td a:hover{
 		color:#919191 !important;

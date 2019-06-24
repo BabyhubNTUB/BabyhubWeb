@@ -14,6 +14,16 @@
 	<link rel="icon" href="images/logo.png" type="image/ico" />
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
+
+	<!-- gotop按鈕 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	// 當頁面打開後就顯示
+		$(function() {
+			$('#gotop').show();
+		});
+	</script>
+
 </head>
 
 <body class="is-preload">
@@ -22,18 +32,44 @@
 
 		<!-- Header -->
 		<header id="header">
-			<a href="/">
+			<a href="/indexIn">
 				<img class="textlogopic" src="images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
+					<li class="bell">
+						<a class="fa-bell" href="#menu">Bell</a>
+					</li>
+					<li class="profile" id="profile">
+						<img src="images/profile.jpg">
+						<span>許佑綺</span>
+					</li>
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
-
+		<div class="profile" id="profileList">
+			<div class="profileList">
+				<a href="/profile">
+					<img src="images/profile.jpg">
+					<span>許佑綺</span>
+				</a>
+			</div>
+			<div class="profileList">
+				<a href="/baby">
+					<img src="images/baby1.jpg">
+					<span>佑佑</span>
+				</a>
+			</div>
+			<div class="profileList">
+				<a hraf="/baby">
+					<img src="images/baby2.jpg">
+					<span>綺綺</span>
+				</a>
+			</div>
+		</div>
 		<!-- Menu -->
 		<section id="menu">
 
@@ -41,21 +77,45 @@
 			<section>
 				<ul class="links">
 					<li>
-						<a href="/childEducation2">
+						<a href="/childEducation">
 							<h3>小孩教育</h3>
 							<p>提供小孩教育的知識。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/pregnancyKnowledge2">
+						<a href="/pregnancyKnowledge">
 							<h3>孕期知識</h3>
 							<p>孕期知識、胎教等。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/forum2">
+						<a href="/forum">
 							<h3>討論區</h3>
 							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/vaccine">
+							<h3>疫苗施打</h3>
+							<p>告訴你什麼時候該打什麼疫苗！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/achievement">
+							<h3>里程碑成就</h3>
+							<p>幫你的寶寶紀錄非凡的成就吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/growrecord">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/diary">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
 						</a>
 					</li>
 				</ul>
@@ -64,10 +124,7 @@
 			<section>
 				<ul class="actions stacked">
 					<li>
-						<a href="/signIn" class="button large fit">登入 Sign In</a>
-					</li>
-					<li>
-						<a href="/register" class="button large fit">註冊 Register</a>
+						<a href="/logout" class="button large fit">登出 Logout</a>
 					</li>
 				</ul>
 			</section>
@@ -131,7 +188,7 @@
 						</tr>
 						<tr>
 							<td>綜合討論</td>
-							<td><a href="aforum2.html">請問寶寶一直打嗝怎麼辦?</a></td>
+							<td><a href="aforum.html">請問寶寶一直打嗝怎麼辦?</a></td>
 							<td>1</td>
 							<td>1</td>
 							<td>justinshen880903</td>
@@ -226,7 +283,10 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- gotop按鈕 -->
+	<a href="/addforum" id="gotop">
+		<i class="fa fa-pencil"></i>
+	</a>
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>

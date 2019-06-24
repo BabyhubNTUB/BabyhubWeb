@@ -8,6 +8,44 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* pagetagtop */
+.pagetagtop{
+	font-size:22px;
+	color:#ffb1e5a1;
+	margin:auto;
+	height: 100px;
+	/* background-color: blue; */
+}
+.pagetagtop a{
+	text-align: center;
+	width:30px;
+	text-decoration: none;
+	border:0 solid;
+	color:#ffff !important;
+	margin:0 10px;
+	background:#f1848496;
+	border-radius:30%;
+	box-shadow:1px 1px #a8a8a8;
+	
+}
+.pagetagtop a:hover{
+	color:#f1848496 !important;
+	background:#ffffff;
+	text-decoration: none;
+}
+@media screen and (max-width: 414px){
+	.pagetagtop{
+		font-size:22px;
+		color:#ffb1e5;
+		margin:auto;
+	}
+}
+.pagination{
+	float: left;
+	position: relative;
+	top: 20px;
+}
+/*----------------------------------------------*/
 
 div.list-group-itemforum{
 	margin-left:-1em;		
@@ -197,9 +235,8 @@ margin-top: 10%;
 	margin-left:  40%;
 	border: none;
 }
-
 .card{
-	
+	margin-bottom: 1%;
 }
 .piclogo{
 	width: 50% ;
@@ -213,6 +250,7 @@ html, body {
     background: -webkit-linear-gradient(to top, rgb(255, 227, 231), rgb(255, 252, 219));
     background: linear-gradient(to top,rgb(255, 227, 231), rgb(255, 252, 219));
     background-attachment: fixed;
+	overflow-x:hidden;
 }
 
 a{
@@ -248,7 +286,7 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
     font-family: 'Noto Sans TC', sans-serif;
-    font-weight: 310;
+	font-weight: 310;
 }
 
 article, aside, details, figcaption, figure,
@@ -391,7 +429,7 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+		/* border-bottom: dotted 1px rgba(160, 160, 160, 0.65); */
 		color: inherit;
 		text-decoration: none;
 	}
@@ -2419,16 +2457,16 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #3c3b3b;
-			border-color: #3c3b3b;
+			background: rgba(113, 180, 200, 0.753);;
+			border-color: rgba(113, 180, 200, 0.753);;
 			color: #ffffff;
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #e29292;
-			box-shadow: 0 0 0 1px #e29292;
+			border-color: #a8a8a8;
+			box-shadow: 0 0 0 1px #a8a8a8;
 		}
 
 	input[type="radio"] + label:before {
@@ -3821,7 +3859,7 @@ input, select, textarea {
 	@media screen and (max-width: 414px){
 		.pagetag{
 			font-size:22px;
-			color:#ffb1e5;
+			color:#f1848496;
 			margin:10px auto;
 		}
 	}
@@ -3844,7 +3882,7 @@ input, select, textarea {
 		padding:5px;
 		margin:0 8px;
 		float:left;
-		background:#ffdff4;
+		background:rgba(184, 209, 218, 0.753);
 		box-shadow:1px 1px 4px #dadada;
 		color:#3c3b3b;
 	}
@@ -3918,49 +3956,6 @@ input, select, textarea {
 			display:none;
 		}
 	}
-
-/* vaccine */
-	div.vaccineBox{
-		margin:0 0 30px 0;
-		padding:10px;
-		background:#c55a5a0c;
-		border-radius:10px;
-	}
-	div.vaccineBox span.num{
-		background: #f1848496;
-		border-radius:10px;
-		padding:8px;
-		font-size:20px;
-		font-weight: 600;
-	}
-	div.vaccineBox strong{
-		font-size:32px;
-	}
-	div.vaccineBox span.date{
-		font-size:24px;
-	}
-	div.vaccineBox span.detail{
-		font-size:20px;
-	}
-	div.vaccineBox a.reach{
-		position: relative;
-		top:-60px;
-		padding:10px;
-		font-weight: 600;
-		font-size:30px;
-		background:#ff000025;
-		border:4px #ff00005e solid;
-		border-radius: 16px;
-		margin:90%;
-	}
-	div.vaccineBox img{
-		position:relative;
-		top:-150px;
-		left:1055px;
-		width:150px;
-		margin:0;
-		padding:0;
-	}
 /* pregnancyBox */
 	div.pregnancyBox{
 		margin:0 0 30px 0;
@@ -4006,6 +4001,52 @@ input, select, textarea {
 	}
 	div.childEducationBox span.detail{
 		font-size:20px;
+	}
+
+	
+/* vaccine */
+	div.vaccineBox{
+		margin:0 0 30px 0;
+		padding:30px 30px 0px ;
+		background:#c55a5a0c;
+		border-radius:10px;
+		/* height:150px; */
+	}
+	div.vaccineBox span.num{
+		background: #f1848496;
+		border-radius:10px;
+		padding:8px;
+		font-size:20px;
+		font-weight: 600;
+	}
+	div.vaccineBox strong{
+		font-size:32px;
+		text-decoration: none;
+	}
+	div.vaccineBox span.date{
+		font-size:24px;
+	}
+	div.vaccineBox span.detail{
+		font-size:20px;
+	}
+	div.vaccineBox a.reach{
+		position: relative;
+		top:-60px;
+		padding:10px;
+		font-weight: 600;
+		font-size:30px;
+		background:#ff000025;
+		border:4px #ff00005e solid;
+		border-radius: 16px;
+		margin:90%;
+	}
+	div.vaccineBox img{
+		position:relative;
+		top:-150px;
+		left:1055px;
+		width:150px;
+		margin:0;
+		padding:0;
 	}
 /* achievementBox */
 	div.achievementBox{

@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <!--
 	Future Imperfect by HTML5 UP
@@ -10,7 +11,7 @@
 	<title>Babyhub</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/forum.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="icon" href="images/logo.png" type="image/ico" />
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
@@ -23,18 +24,44 @@
 
 		<!-- Header -->
 		<header id="header">
-			<a href="/">
+			<a href="index.html">
 				<img class="textlogopic" src="images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
+					<li class="bell">
+						<a class="fa-bell" href="#menu">Bell</a>
+					</li>
+					<li class="profile" id="profile">
+						<img src="images/profile.jpg">
+						<span>許佑綺</span>
+					</li>
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
-
+		<div class="profile" id="profileList">
+			<div class="profileList">
+				<a href="profile.html">
+					<img src="images/profile.jpg">
+					<span>許佑綺</span>
+				</a>
+			</div>
+			<div class="profileList">
+				<a href="baby.html">
+					<img src="images/baby1.jpg">
+					<span>佑佑</span>
+				</a>
+			</div>
+			<div class="profileList">
+				<a hraf="baby.html">
+					<img src="images/baby2.jpg">
+					<span>綺綺</span>
+				</a>
+			</div>
+		</div>
 		<!-- Menu -->
 		<section id="menu">
 
@@ -42,21 +69,45 @@
 			<section>
 				<ul class="links">
 					<li>
-						<a href="/childEducation2">
+						<a href="childEducation.html">
 							<h3>小孩教育</h3>
 							<p>提供小孩教育的知識。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/pregnancyKnowledge2">
+						<a href="pregnancyKnowledge.html">
 							<h3>孕期知識</h3>
 							<p>孕期知識、胎教等。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/forum2">
+						<a href="forum.html">
 							<h3>討論區</h3>
 							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="vaccine.html">
+							<h3>疫苗施打</h3>
+							<p>告訴你什麼時候該打什麼疫苗！</p>
+						</a>
+					</li>
+					<li>
+						<a href="achievement.html">
+							<h3>里程碑成就</h3>
+							<p>幫你的寶寶紀錄非凡的成就吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="growrecord.html">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="diary.html">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
 						</a>
 					</li>
 				</ul>
@@ -65,10 +116,7 @@
 			<section>
 				<ul class="actions stacked">
 					<li>
-						<a href="/signIn" class="button large fit">登入 Sign In</a>
-					</li>
-					<li>
-						<a href="/register" class="button large fit">註冊 Register</a>
+						<a href="logout.html" class="button large fit">登出 Logout</a>
 					</li>
 				</ul>
 			</section>
@@ -111,44 +159,88 @@
 				</div>
 			</div>
 			<div class="col-md-12">
-				<div class="pregnancyBox">
-					<a href="apregnancyKnowledge2.html">
-						<strong>大唱喜歡的歌</strong>
+				<div class="vaccineBox">
+					<a href="#">
+						<strong>B 型肝炎疫苗(第一劑)</strong>
+						<span class="date"><br>
+							出生24小時內
+						</span>
 						<span class="detail"><br>
-							唱歌會使整個人放鬆。哼歌或是到卡拉OK唱歌都能改善心情，消除緊張。媽媽放鬆，寶寶自然會樂得自在了。
+							一般少有特別反應
 						</span>
 					</a>
-				</div>
-				<div class="pregnancyBox">
-					<a href="#">
-						<strong>能放鬆的運動</strong>
-						<span class="detail"><br>
-							散步是最能讓人放鬆的運動。在天氣好，空氣清新的時候散步不只是一種享受，還能讓肚裡的寶寶享受太陽浴和輕微震盪帶來的按摩效果，他會和你一樣心情愉快的！
-						</span>
+					<a href="#" class="reach"><br>
+						達成
 					</a>
 				</div>
-				<div class="pregnancyBox">
+				<div class="vaccineBox">
 					<a href="#">
-						<strong>自己喜歡的事</strong>
+						<strong>B 型肝炎疫苗(第二劑)</strong>
+						<span class="date"><br>
+							1個月
+						</span>
 						<span class="detail"><br>
-							懷孕期間要經常投自己所好，做自己喜歡做的事也是最好的放鬆方式，媽媽心情愉悅，通過胎盤和臍帶輸送給胎兒的血液和氧氣就會格外地充足，寶寶也會感應得到。
+							一般少有特別反應
 						</span>
 					</a>
-				</div>
-				<div class="pregnancyBox">
-					<a href="#">
-						<strong>讀書給寶寶廳</strong>
-						<span class="detail"><br>
-							和胎兒的交流非常有趣，唱唱歌、說說話、讀讀圖畫書等。按照發音順序一個字一個字地讀給他聽，把又有文字又有圖畫的頁面指給他看，跟肚裡的寶寶進行交流。媽媽的聲音給肚裡寶寶帶來的聲音刺激能使胎兒心情舒暢。
-						</span>
+					<a href="#" class="reach"><br>
+						達成
 					</a>
 				</div>
-				<div class="pregnancyBox">
+				<div class="vaccineBox">
 					<a href="#">
-						<strong>保護自己牙齒</strong>
-						<span class="detail"><br>
-							懷孕期間受激素分泌的影響，牙齦充血腫脹，容易引發牙周炎等。這些口腔疾患會引發牙齦出血、牙痛和發熱等症狀，影響孕婦進食及營養攝入，從而影響胎兒生長發育。
+						<strong>白喉破傷風非細胞性百日咳、b 型嗜血桿菌及不活化小兒麻痺五合一疫苗(第一劑)</strong>
+						<span class="date"><br>
+							2個月
 						</span>
+						<span class="detail"><br>
+							＊注射部位紅腫、酸痛，偶爾有哭鬧不安、疲倦、食慾不振或嘔吐等症狀...
+						</span>
+					</a>
+					<a href="#" class="reach"><br>
+						達成
+					</a>
+				</div>
+				<div class="vaccineBox">
+					<a href="#">
+						<strong>結合型肺炎鏈球菌疫苗(第一劑)</strong>
+						<span class="date"><br>
+							2個月
+						</span>
+						<span class="detail"><br>
+							可能發生注射部位疼痛、紅腫的反應，一般於接種2天內恢復。發燒、倦怠等嚴重副作用則極少發生
+						</span>
+					</a>
+					<a href="#" class="reach"><br>
+						達成
+					</a>
+				</div>
+				<div class="vaccineBox">
+					<a href="#">
+						<strong>白喉破傷風非細胞性百日咳、b 型嗜血桿菌及不活化小兒麻痺五合一疫苗(第二劑)</strong>
+						<span class="date"><br>
+							4個月
+						</span>
+						<span class="detail"><br>
+							＊注射部位紅腫、酸痛，偶爾有哭鬧不安、疲倦、食慾不振或嘔吐等症狀...
+						</span>
+					</a>
+					<a href="#" class="reach"><br>
+						達成
+					</a>
+				</div>
+				<div class="vaccineBox">
+					<a href="#">
+						<strong>結合型肺炎鏈球菌疫苗(第二劑)</strong>
+						<span class="date"><br>
+							4個月
+						</span>
+						<span class="detail"><br>
+							可能發生注射部位疼痛、紅腫的反應，一般於接種2天內恢復。發燒、倦怠等嚴重副作用則極少發生
+						</span>
+					</a>
+					<a href="#" class="reach"><br>
+						達成
 					</a>
 				</div>
 			</div>
@@ -168,7 +260,6 @@
 
 	</div>
 
-
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
@@ -181,3 +272,4 @@
 </body>
 
 </html>
+
