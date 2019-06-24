@@ -10,10 +10,10 @@
     <title>Babyhub</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="images/logo.png" type="image/ico" />
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body class="is-preload">
@@ -63,13 +63,6 @@
         </div>
         <!-- Menu -->
         <section id="menu">
-
-            <!-- Search -->
-            <section>
-                <form class="search" method="get" action="#">
-                    <input type="text" name="query" placeholder="Search" />
-                </form>
-            </section>
 
             <!-- Links -->
 			<section>
@@ -175,21 +168,28 @@
                         </ul>
                     </div>
                     <div class="col-md-7">
-                        <div class="profile_box">
-                            <p class="head"><img src="images/membership.png">　會員</p>
-                            <p class="title">名稱：　<%= item.displayname %></p><br />
-                            <p class="title">稱謂：　<%= item.appellation %></p><br />
-                            <p class="title">帳號：　<%= item.id %></p><br />
-                        </div>
-                        <div class="card">
-                            <div class="card-block">
-                                <p class="head"><img src="images/edit.png">　寫日記</p>
-                                <textarea id="full-featured"><p style=" font-size: 15px;">
-
-                                </textarea>
-                                <button type="button">
-                                    撰寫
-                                </button>
+                        <div class="list-group">
+                            <a class="list-group-item list-group-item-info">我的文章</a>
+                            <div class="list-group-item">
+                                List header
+                            </div>
+                            <div class="list-group-item">
+                                List header
+                            </div>
+                            <div class="list-group-item">
+                                List header
+                            </div>
+                            <div class="list-group-item">
+                                List header
+                            </div>
+                            <div class="list-group-item">
+                                List header
+                            </div>
+                            <div class="list-group-item">
+                                List header
+                            </div>
+                            <div class="list-group-item">
+                                List header
                             </div>
                         </div>
                     </div>
@@ -200,28 +200,17 @@
         </div>
     </div>
     
-    <div class="footer">
-        <ul class="icons">
-            <li><a href="https://www.instagram.com/vivian_0124/" class="fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="mailto:jashtinshen0729@gmail.com" class="fa-envelope"><span class="label">Email</span></a></li>
-                <li><a href="https://github.com/tomlinNTUB" class="fa-github-square"><span class="label">github</span></a></li>
-                <li><a href="tel:0983960930" class="fa-phone"><span class="label">github</span></a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100008400780348" class="fa-facebook"><span class="label">Facebook</span></a></li>
-            </ul>
-            <p class="copyright">2018 Copyright&copy;NTUB tomlin.</p>
-    </div>
-
 
     <!-- Scripts -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({ selector: 'textarea' });</script>
-    <script src="/assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 

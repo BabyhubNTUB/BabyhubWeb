@@ -16,6 +16,7 @@ var userSignIn = require('./routes/userSignIn');
 var signInSuccess = require('./routes/signInSuccess');
 var signInFail = require('./routes/signInFail');
 var logout = require('./routes/logout');
+var indexIn = require('./routes/indexIn');
 
 
 var childEducation2 = require('./routes/childEducation2');
@@ -77,6 +78,7 @@ app.use('/userSignIn', userSignIn);
 app.use('/signInSuccess', signInSuccess);
 app.use('/signInFail', signInFail);
 app.use('/logout', logout);
+app.use('/indexIn', indexIn );
 
 app.use('/childEducation2', childEducation2);
 app.use('/pregnancyKnowledge2', pregnancyKnowledge2);
@@ -105,7 +107,7 @@ app.use('/apregnancyKnowledge', apregnancyKnowledge );
 app.use('/linebot', linebot );
 app.use('/updatediary', updatediary );
 app.use('/updateforum', updateforum );
-app.use('/updategrowrecord', addupdategrowrecordforum );
+app.use('/updategrowrecord', updategrowrecord );
 // ----------------------------------------------
 
 // catch 404 and forward to error handler
