@@ -10,10 +10,10 @@
 	<title>Babyhub</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="images/logo.png" type="image/ico" />
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body class="is-preload">
@@ -23,7 +23,7 @@
 		<!-- Header -->
 		<header id="header">
 			<a href="/">
-				<img class="textlogopic" src="images/textlogo.png">
+				<img class="textlogopic" src="/images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
@@ -92,14 +92,14 @@
                         <article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">大唱喜歡的歌</a></h2>										
+										<h2><a href="#"><%= item.title %></a></h2>										
 									</div>
 									<!--<div class="meta">
 										<time class="published" datetime="2015-11-01">November 1, 2015</time>
 										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>-->
 								</header>								
-								<p>唱歌會使整個人放鬆。哼歌或是到卡拉OK唱歌都能改善心情，消除緊張。媽媽放鬆，寶寶自然會樂得自在了。</p>                                
+								<p><%= item.content %></p>                                
                         </article>
 
 
@@ -111,13 +111,13 @@
 	</div>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/scripts.js"></script>
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/browser.min.js"></script>
+		<script src="/assets/js/breakpoints.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/scripts.js"></script>
 
 </body>
 

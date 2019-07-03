@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         }else if(data.length > 0){
             res.render('index', {items:data});  //將資料傳給顯示頁面
         }else{
-            console.log("notFound");
+            // console.log("notFound");
             res.render('notFound');  //導向找不到頁面
         }
     })

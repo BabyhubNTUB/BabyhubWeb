@@ -111,46 +111,13 @@
 				</div>
 			</div>
 			<div class="col-md-12">
-				<div class="pregnancyBox">
-					<a href="/apregnancyKnowledge2">
-						<strong>大唱喜歡的歌</strong>
-						<span class="detail"><br>
-							唱歌會使整個人放鬆。哼歌或是到卡拉OK唱歌都能改善心情，消除緊張。媽媽放鬆，寶寶自然會樂得自在了。
-						</span>
-					</a>
-				</div>
-				<div class="pregnancyBox">
-					<a href="#">
-						<strong>能放鬆的運動</strong>
-						<span class="detail"><br>
-							散步是最能讓人放鬆的運動。在天氣好，空氣清新的時候散步不只是一種享受，還能讓肚裡的寶寶享受太陽浴和輕微震盪帶來的按摩效果，他會和你一樣心情愉快的！
-						</span>
-					</a>
-				</div>
-				<div class="pregnancyBox">
-					<a href="#">
-						<strong>自己喜歡的事</strong>
-						<span class="detail"><br>
-							懷孕期間要經常投自己所好，做自己喜歡做的事也是最好的放鬆方式，媽媽心情愉悅，通過胎盤和臍帶輸送給胎兒的血液和氧氣就會格外地充足，寶寶也會感應得到。
-						</span>
-					</a>
-				</div>
-				<div class="pregnancyBox">
-					<a href="#">
-						<strong>讀書給寶寶廳</strong>
-						<span class="detail"><br>
-							和胎兒的交流非常有趣，唱唱歌、說說話、讀讀圖畫書等。按照發音順序一個字一個字地讀給他聽，把又有文字又有圖畫的頁面指給他看，跟肚裡的寶寶進行交流。媽媽的聲音給肚裡寶寶帶來的聲音刺激能使胎兒心情舒暢。
-						</span>
-					</a>
-				</div>
-				<div class="pregnancyBox">
-					<a href="#">
-						<strong>保護自己牙齒</strong>
-						<span class="detail"><br>
-							懷孕期間受激素分泌的影響，牙齦充血腫脹，容易引發牙周炎等。這些口腔疾患會引發牙齦出血、牙痛和發熱等症狀，影響孕婦進食及營養攝入，從而影響胎兒生長發育。
-						</span>
-					</a>
-				</div>
+				<% for(var i=0; i<items.length; i++) {%>
+					<div class="pregnancyBox">
+						<a href="/apregnancyKnowledge2/<%= items[i].serno %>">
+							<strong><%= items[i].title %></strong>
+						</a>
+					</div>
+				<% } %>
 			</div>
 			<div class="pagetag">
 				<div class="col-md-12">
