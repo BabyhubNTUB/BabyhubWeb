@@ -6,10 +6,10 @@ var moment = require('moment');
 const pregnancyKnowledge = require('./utility/pregnancyKnowledge');
 
 //接收GET請求
-router.get('/:prono', function(req, res, next) {
-    var prono = req.params.prono;   //取出參數
+router.get('/:serno', function(req, res, next) {
+    var serno = req.params.serno;   //取出參數
 
-    pregnancyKnowledge.one(prono).then(data => {
+    pregnancyKnowledge.one(serno).then(data => {
         if (data==null){
             res.render('error');  //導向錯誤頁面
         }else if(data==-1){
