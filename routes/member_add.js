@@ -6,13 +6,13 @@ const register = require('./utility/user');
 
 //接收POST請求
 router.post('/', function (req, res, next) {
-    var email = req.body.email;
+    var id = req.body.id;
     var username = req.body.username;
     var password = req.body.password;
 
     // 建立一個新資料物件
     var newData = {
-        email: email,
+        id: id,
         username: username,
         password: password
     }

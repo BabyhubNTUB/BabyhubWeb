@@ -30,7 +30,7 @@ var login = async function(id, password){
 var register = async function(newData){
     var result;
 
-    await sql('INSERT INTO "t01member" (id, displayname, password) VALUES ($1, $2, $3)', [newData.email, newData.username, newData.password])
+    await sql('INSERT INTO "t01member" (id, displayname, password) VALUES ($1, $2, $3)', [newData.id, newData.username, newData.password])
         .then((data) => {
             result = 0;  
         }, (error) => {

@@ -23,7 +23,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<a href="/indexIn">
+			<a href="/homepage">
 				<img class="textlogopic" src="images/textlogo.png">
 			</a>
 			<nav class="main">
@@ -157,38 +157,13 @@
 				</div>
 			</div>
 			<div class="col-md-12">
-				<div class="childEducationBox">
-					<a href="/achildEducation">
-						<strong>想教育出成功的孩子？那就千萬別對他們做這 9 件事</strong>
-						<span class="detail"><br>
-							1.不鼓勵小孩獨立根據美國範德堡大學在 1997 年做的一項研究顯示，父母若在小孩的成長過程中不斷的透過心理層面的方式掌控小孩，將有可能導...
-						</span>
-					</a>
-				</div>
-				<div class="childEducationBox">
-					<a href="#">
-						<strong>3歲、7歲、10歲決定孩子一生的競爭力</strong>
-						<span class="detail"><br>
-							人類在出生之後，大腦有一段腦神經細胞增加的時期，之後則會減少不必要的腦神經細胞，發展腦神經迴路。也就是說，兒童的腦部處於正在發育中的過程。從0歲開始大概三年之內...
-						</span>
-					</a>
-				</div>
-				<div class="childEducationBox">
-					<a href="#">
-						<strong>孩子的事交給他自己來！德式全方位優質小孩養成之道</strong>
-						<span class="detail"><br>
-							1. 養成一個快樂小孩是最重要的事什麼樣的能力對於學齡前幼兒最為重要？是孩子的外語能力（如：從小開始學習英文）養成？還是各項才藝的培養？（如：鋼琴、繪畫、舞蹈……等）答案以上皆非，對於學齡前幼兒來說...
-						</span>
-					</a>
-				</div>
-				<div class="childEducationBox">
-					<a href="#">
-						<strong>教育子女，怎樣才是最好的方法？</strong>
-						<span class="detail"><br>
-							在教育兒子的時候，我不會去管那些概念的東西。兒子七歲時，學校老師給他佈置了很多作業，他就對我說，爸爸，我不想寫這些家庭作業。我問他為什麼，他說，這些字我都會寫，但老師還要我...
-						</span>
-					</a>
-				</div>
+				<% for(var i=0; i<items.length; i++) {%>
+					<div class="childEducationBox">
+						<a href="/achildEducation2">
+							<strong><%= items[i].title %></strong>
+						</a>
+					</div>
+				<% } %>
 			</div>
 			<div class="pagetag">
 				<div class="col-md-12">

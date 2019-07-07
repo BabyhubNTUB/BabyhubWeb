@@ -24,7 +24,7 @@
 
 		<!-- Header -->
 		<header id="header">
-			<a href="/indexIn">
+			<a href="/homepage">
 				<img class="textlogopic" src="images/textlogo.png">
 			</a>
 			<nav class="main">
@@ -141,20 +141,13 @@
 				</div>
 				<div class="col-md-8">
 				<div class="list-group">
-					<a href="/forum" class="list-group-item list-group-item-info">討論版 熱門文章</a>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<a href="#" class="list-group-item list-group-item-warning">... 更多文章</a>
+						<a href="/forum" class="list-group-item list-group-item-info">討論版 熱門文章</a>
+						<% for(var i=0; i<items.length; i++) {%>
+							<div class="list-group-item">
+									<a href="/aforum/one/<%= items[i].forumno %>"><%= items[i].forumname %></a>
+							</div>
+						<% } %>
+						<a href="#" class="list-group-item list-group-item-warning">... 更多文章</a>
 				</div>
 				<div class="list-group">
 					<a href="/childEducation" class="list-group-item list-group-item-info">小孩教育 熱門文章</a>
