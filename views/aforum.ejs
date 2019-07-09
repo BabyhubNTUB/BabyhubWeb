@@ -10,10 +10,10 @@
 	<title>Babyhub</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/forum.css" />
-	<link rel="icon" href="images/logo.png" type="image/ico" />
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/forum.css" />
+	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body class="is-preload">
@@ -24,7 +24,7 @@
 		<!-- Header -->
 		<header id="header">
 			<a href="/homepage">
-				<img class="textlogopic" src="images/textlogo.png">
+				<img class="textlogopic" src="/images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
@@ -32,7 +32,7 @@
 						<a class="fa-bell" href="#menu">Bell</a>
 					</li>
 					<li class="profile" id="profile">
-						<img src="images/profile.jpg">
+						<img src="/images/profile.jpg">
 						<span>許佑綺</span>
 					</li>
 					<li class="menu">
@@ -44,19 +44,19 @@
 		<div class="profile" id="profileList">
 			<div class="profileList">
 				<a href="/profile">
-					<img src="images/profile.jpg">
+					<img src="/images/profile.jpg">
 					<span>許佑綺</span>
 				</a>
 			</div>
 			<div class="profileList">
 				<a href="/baby">
-					<img src="images/baby1.jpg">
+					<img src="/images/baby1.jpg">
 					<span>佑佑</span>
 				</a>
 			</div>
 			<div class="profileList">
 				<a hraf="/baby">
-					<img src="images/baby2.jpg">
+					<img src="/images/baby2.jpg">
 					<span>綺綺</span>
 				</a>
 			</div>
@@ -140,22 +140,18 @@
                         <article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">請問寶寶一直打嗝怎麼辦?</a></h2>										
+										<h2><a href="#"><%= item.forumname %></a></h2>										
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+										<time class="published" datetime="2015-11-01"><%= item.forumdatetime %></time>
+										<a href="#" class="author"><span class="name">Jane Doe</span><img src="/images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>								
-								<p>如果​​寶寶因吃奶後腹部脹氣，放下平躺時會打嗝。 </p>
-								<p>這是因為奶瓶開口小，嬰兒在吸奶的時候，因用力吸而吞入太多的空氣，造成了脹氣現象，因此家長可以在寶寶喝完奶之後，多抱一會兒，輕輕拍寶寶背部，或是輕柔按摩腹部來幫助排氣，可以預防寶寶打嗝及溢奶。 </p>
-								<p>試著少量多餐的餵食法，或餵食後抱起寶寶拍背以加強排氣。</p>
+								<p><%= item.content %></p>
 								<footer>
 									<ul class="stats">                                      
-											<a href="#" class="icon fa-heart-o"> 28</a>
-											<a href="#" class="icon fa-comments-o"> 128</a>
-											<a href="#" class="icon fa-trash"></a>
-											<a href="updateforum.html" class="icon fa-pencil-square-o"></a>					
+										<a href="#" class="icon fa-heart-o"> 28</a>
+										<a href="#" class="icon fa-comments-o"> 128</a>						
                                     </ul>
                                 </footer>                                
                         </article>
@@ -206,15 +202,15 @@
 </div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
 	<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 	<script>tinymce.init({ selector:'textarea' });</script> -->
-	<script src="assets/js/scripts.js"></script>
+	<script src="/assets/js/scripts.js"></script>
 
 </body>
 

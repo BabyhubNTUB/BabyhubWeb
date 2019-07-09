@@ -140,95 +140,35 @@
 				<div class="col-md-2">
 				</div>
 				<div class="col-md-8">
-				<div class="list-group">
+					<div class="list-group">
 						<a href="/forum" class="list-group-item list-group-item-info">討論版 熱門文章</a>
-						<% for(var i=0; i<items.length; i++) {%>
+						<% for(var i=0; i<result.forum.length; i++) {%>
 							<div class="list-group-item">
-									<a href="/aforum/one/<%= items[i].forumno %>"><%= items[i].forumname %></a>
+									<a href="/aforum/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
 							</div>
 						<% } %>
 						<a href="#" class="list-group-item list-group-item-warning">... 更多文章</a>
-				</div>
-				<div class="list-group">
-					<a href="/childEducation" class="list-group-item list-group-item-info">小孩教育 熱門文章</a>
-					<div class="list-group-item">
-						List header
 					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<a href="#" class="list-group-item list-group-item-warning">... 更多文章</a>
-				</div>
-				<div class="list-group">
-					<a href="/pregnancyKnowledge" class="list-group-item list-group-item-info">孕期知識 熱門文章</a>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<a href="#" class="list-group-item list-group-item-warning">... 更多文章</a>
-				</div>
-				</div>
-				<div class="col-md-2">
-				</div>
-				<!--<div class="col-md-3">
-				<ul class="links">
-						<li>
-							<a href="pregnancyKnowledge.html">
-								<h4>孕期知識</h4>
-							</a>
-						</li>
-						<li>
-							<a href="vaccine.html">
-								<h4>小孩教育</h4>
-							</a>
-						</li>
-						<li class="nav-item dropdown ml-md-auto">
-								<h4 class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">討論區</h4>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">Action</a> 
-								<a class="dropdown-item" href="#">Another action</a> 
-								<a class="dropdown-item" href="#">Something else here</a>
-								<div class="dropdown-divider">
-								</div>
-								<a class="dropdown-item" href="#">Separated link</a>
+					<div class="list-group">
+						<a href="/childEducation" class="list-group-item list-group-item-info">小孩教育 熱門文章</a>
+						<% for(var i=0; i<result.education.length; i++) {%>
+							<div class="list-group-item">
+									<a href="/achildEducation/<%= result.education[i].serno %>"><%= result.education[i].title %></a>
 							</div>
-						</li>
-				</ul>
-			</div>
-			<div class="col-md-7">
-				<div class="list-group">
-					<a href="#" class="list-group-item list-group-item-info">熱門文章</a>
-					<div class="list-group-item">
-						List header
+						<% } %>
+						<a href="#" class="list-group-item list-group-item-warning">... 更多文章</a>
 					</div>
-					<div class="list-group-item">
-						List header
+					<div class="list-group">
+						<a href="/pregnancyKnowledge" class="list-group-item list-group-item-info">孕期知識 熱門文章</a>
+						<% for(var i=0; i<result.pregnancyknowledge.length; i++) {%>
+							<div class="list-group-item">
+									<a href="/apregnancyKnowledge/<%= result.pregnancyknowledge[i].serno %>"><%= result.pregnancyknowledge[i].title %></a>
+							</div>
+						<% } %>
+						<a href="#" class="list-group-item list-group-item-warning">... 更多文章</a>
 					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<div class="list-group-item">
-						List header
-					</div>
-					<a href="#" class="list-group-item">Home <span class="badge badge-light badge-pill">... 更多</span></a>
+					
 				</div>
-			</div>
-			<div class="col-md-2">
-			</div>-->
 			</div>
 
 	</div>
