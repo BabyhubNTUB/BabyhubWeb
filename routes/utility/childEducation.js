@@ -19,5 +19,24 @@ var list = async function(){
     return result;
 }
 
+//------------------------------------------
+//小孩教育單篇文章
+//------------------------------------------
+var two = async function(serno){
+    var result={};
+    
+    await sql('SELECT * FROM t10education WHERE serno = $1', [serno])
+        .then((data) => {
+            if(data.rows.length > 0){
+                result = data.rows[0];   
+            }else{
+                result = -1;
+            }    
+        }, (error) => {
+            result = null;
+        });
+		
+    return result;
+}
 //匯出
-module.exports = {list};
+module.exports = {list,two};

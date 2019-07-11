@@ -10,10 +10,10 @@
 	<title>Babyhub</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/forum.css" />
-	<link rel="icon" href="images/logo.png" type="image/ico" />
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/forum.css" />
+	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
 
 	<!-- gotop按鈕 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -33,7 +33,7 @@
 		<!-- Header -->
 		<header id="header">
 			<a href="/homepage">
-				<img class="textlogopic" src="images/textlogo.png">
+				<img class="textlogopic" src="/images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
@@ -41,7 +41,7 @@
 						<a class="fa-bell" href="#menu">Bell</a>
 					</li>
 					<li class="profile" id="profile">
-						<img src="images/profile.jpg">
+						<img src="/images/profile.jpg">
 						<span>許佑綺</span>
 					</li>
 					<li class="menu">
@@ -53,19 +53,19 @@
 		<div class="profile" id="profileList">
 			<div class="profileList">
 				<a href="/profile">
-					<img src="images/profile.jpg">
+					<img src="/images/profile.jpg">
 					<span>許佑綺</span>
 				</a>
 			</div>
 			<div class="profileList">
 				<a href="/baby">
-					<img src="images/baby1.jpg">
+					<img src="/images/baby1.jpg">
 					<span>佑佑</span>
 				</a>
 			</div>
 			<div class="profileList">
 				<a hraf="/baby">
-					<img src="images/baby2.jpg">
+					<img src="/images/baby2.jpg">
 					<span>綺綺</span>
 				</a>
 			</div>
@@ -168,11 +168,9 @@
 			</div>
 			<div class="col-md-12">
 				<ul class="boardtag">
-					<li><a href="#">綜合討論</a></li>
-					<li><a href="#">二手買賣</a></li>
-					<li><a href="#">寶寶故事</a></li>
-					<li><a href="#">醫療相關</a></li>
-					<li><a href="#">閒言閒語</a></li>
+					<% for(var i=0; i<result.type.length; i++) {%>
+						<li><a href="#"><%= result.type[i].name %></a></li>
+					<% } %>
 				</ul>
 			</div>
 			<div class="col-md-12">
@@ -186,30 +184,17 @@
 							<td>發表人</td>
 							<td>發文日期</td>
 						</tr>
-						<tr>
-							<td>綜合討論</td>
-							<td><a href="/aforum">請問寶寶一直打嗝怎麼辦?</a></td>
-							<td>1</td>
-							<td>1</td>
-							<td>justinshen880903</td>
-							<td>18/09/03</td>
-						</tr>
-						<tr>
-							<td>二手買賣</td>
-							<td><a href="#">寶寶界LV頂級代步車便宜賣</a></td>
-							<td>3</td>
-							<td>3</td>
-							<td>how_1022_</td>
-							<td>18/10/22</td>
-						</tr>
-						<tr>
-							<td>寶寶故事</td>
-							<td><a href="#">從前從前，有一個小孩</a></td>
-							<td>15</td>
-							<td>15</td>
-							<td>vivian_0124</td>
-							<td>18/01/24</td>
-						</tr>
+						<% for(var i=0; i<result.forum.length; i++) {%>
+							<tr>
+								<td><%= result.forum[i].name %></td>
+								<td><a href="/aforum/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a></td>
+								<td><%= result.forum[i].cntlike %></td>
+								<td><%= result.forum[i].cntcomment %></td>
+								<td><%= result.forum[i].username %></td>
+								<td><%= result.forum[i].forumdatetime %></td>
+							</tr>
+						<% } %>
+						
 						<tr>
 							<td>廣告</td>
 							<td><a href="#">頂級澳洲奶粉，給寶寶非凡的享受！</a></td>
@@ -218,54 +203,7 @@
 							<td></td>
 							<td></td>
 						</tr>
-						<tr>
-							<td>閒言閒語</td>
-							<td><a href="#">今天去便利商店看到一個胖胖的寶寶</a></td>
-							<td>52</td>
-							<td>52</td>
-							<td>you_chi_890816</td>
-							<td>18/08/16</td>
-						</tr>
-						<tr>
-							<td>綜合討論</td>
-							<td><a href="#">請問寶寶一直哭代表什麼?</a></td>
-							<td>1</td>
-							<td>1</td>
-							<td>justinshen880903</td>
-							<td>18/09/03</td>
-						</tr>
-						<tr>
-							<td>二手買賣</td>
-							<td><a href="#">寶寶界LV頂級代步車便宜賣</a></td>
-							<td>3</td>
-							<td>3</td>
-							<td>how_1022_</td>
-							<td>18/10/22</td>
-						</tr>
-						<tr>
-							<td>寶寶故事</td>
-							<td><a href="#">從前從前，有一個小孩</a></td>
-							<td>15</td>
-							<td>15</td>
-							<td>vivian_0124</td>
-							<td>18/01/24</td>
-						</tr>
-						<tr>
-							<td>廣告</td>
-							<td><a href="#">頂級澳洲奶粉，給寶寶非凡的享受！</a></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>閒言閒語</td>
-							<td><a href="#">今天去便利商店看到一個胖胖的寶寶</a></td>
-							<td>52</td>
-							<td>52</td>
-							<td>you_chi_890816</td>
-							<td>18/08/16</td>
-						</tr>
+						
 					</table>
 				</div>
 			</div>

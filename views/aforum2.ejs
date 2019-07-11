@@ -93,39 +93,34 @@
                         <article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#"><%= item.forumname %></a></h2>										
+										<h2><a href="#"><%= result.aforum.forumname %></a></h2>										
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-11-01"><%= item.forumdatetime %></time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="/images/avatar.jpg" alt="" /></a>
+										<time class="published" datetime="2015-11-01"><%= result.aforum.forumdatetime %></time>
+										<a href="#" class="author"><span class="name"><%= result.cnt.username %></span><img src="/images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>								
-								<p><%= item.content %></p>
+								<p><%= result.aforum.content %></p>
 								<footer>
 									<ul class="stats">                                      
-										<a href="#" class="icon fa-heart-o"> 28</a>
-										<a href="#" class="icon fa-comments-o"> 128</a>						
+										<a href="#" class="icon fa-heart-o"> <%= result.cnt.cntlike %></a>
+										<a href="#" class="icon fa-comments-o"> <%= result.cnt.cntcomment %></a>						
                                     </ul>
                                 </footer>                                
                         </article>
 				</div>
                 <div class="col-md-12">                            
                     <article class="message">
-                            <h3>留言回應</h3> 
-                                <div class="list-group-item">                                    
-                                    <p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
-                                        <span class="mesname">Jane Doe</span></a></p>                                                             
-                                    	<div class="col-md-12">
-											<p>留言留言留言</p>
-                                		</div>
-                                </div>  
-                                <div class="list-group-item">                                    
-                                    <p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
-                                        <span class="mesname">Jane Doe</span></a></p>                                                             
-                                        <div class="col-md-12">
-                                            <p>留言留言留言</p>
-                                        </div>
-                                </div>  
+							<h3>留言回應</h3> 
+								<% for(var i=0; i<result.com.length; i++) {%>
+									<div class="list-group-item">                                    
+										<p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
+											<span class="mesname"><%= result.com[i].username %></span></a></p>                                                             
+											<div class="col-md-12">
+												<p><%= result.com[i].content %></p>
+											</div>
+									</div> 
+								<% } %>
                     </article>                           
             	</div>
 

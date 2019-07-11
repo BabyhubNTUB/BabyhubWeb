@@ -13,9 +13,11 @@ var registerSuccess = require('./routes/registerSuccess');
 var registerFail = require('./routes/registerFail');
 var signIn = require('./routes/signIn');
 var userSignIn = require('./routes/userSignIn');
+var managerSignIn = require('./routes/managerSignIn');
 var signInSuccess = require('./routes/signInSuccess');
 var signInFail = require('./routes/signInFail');
 var logout = require('./routes/logout');
+var manager = require('./routes/manager');
 var homepage = require('./routes/homepage');
 
 
@@ -75,10 +77,11 @@ app.use('/registerSuccess', registerSuccess);
 app.use('/registerFail', registerFail);
 app.use('/signIn', signIn);
 app.use('/userSignIn', userSignIn);
+app.use('/managerSignIn', managerSignIn);
 app.use('/signInSuccess', signInSuccess);
 app.use('/signInFail', signInFail);
 app.use('/logout', logout);
-
+app.use('/manager', manager);
 app.use('/homepage', homepage);
 
 app.use('/childEducation2', childEducation2);

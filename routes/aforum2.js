@@ -3,7 +3,7 @@ var router = express.Router();
 
 //增加引用函式
 // var moment = require('moment');
-const product = require('./utility/indexShow');
+const product = require('./utility/forum');
 
 //接收GET請求
 router.get('/:forumno', function(req, res, next) {
@@ -16,7 +16,7 @@ router.get('/:forumno', function(req, res, next) {
             res.render('notFound');  //導向找不到頁面                
         }else{
             // data.inventorydate=moment(data.inventorydate).format("YYYY-MM-DD")
-            res.render('aforum2', {item:data});  //將資料傳給顯示頁面
+            res.render('aforum2', {result:data});  //將資料傳給顯示頁面
         }  
     })
 });

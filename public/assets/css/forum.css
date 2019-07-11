@@ -3357,6 +3357,7 @@ input, select, textarea {
 
 			table.alt tbody tr:first-child td {
 				border-top-width: 1px;
+
 			}
 
 			table.alt thead {
@@ -3991,7 +3992,6 @@ input, select, textarea {
 			padding:0 5%;
 		}
 		.content td:nth-child(1){
-			width:100px;
 			text-align: center;
 		}
 		.content td:nth-child(2){

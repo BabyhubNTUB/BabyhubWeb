@@ -3,7 +3,7 @@ var router = express.Router();
 
 //增加引用函式
 // var moment = require('moment');
-const product = require('./utility/indexShow');
+const product = require('./utility/childEducation');
 
 //接收GET請求
 router.get('/:serno', function(req, res, next) {

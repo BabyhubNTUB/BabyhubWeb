@@ -7,7 +7,15 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
+a.title{
+	margin: auto;
+}
+a.manager{
+	float: right;
+	height: 100%;
+	line-height: 100%;
+    margin-top: 8%;
+}
 /* pagetagtop */
 .pagetagtop{
 	font-size:22px;
@@ -230,9 +238,11 @@ margin-top: 10%;
 .right{
 	background: #ffffff !important;
 }
+.title{
+	text-align: center;
+}
 .right a{
 	font-size: 300%;
-	margin-left:  40%;
 	border: none;
 }
 .card{

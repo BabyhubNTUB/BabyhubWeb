@@ -20,9 +20,9 @@ var list = async function(){
 }
 
 //------------------------------------------
-//執行資料庫動作的函式-取出單一商品
+//孕期知識
 //------------------------------------------
-var one = async function(serno){
+var three = async function(serno){
     var result={};
     
     await sql('SELECT * FROM t06pregnancyknowledge WHERE serno = $1', [serno])
@@ -41,4 +41,4 @@ var one = async function(serno){
 
 
 //匯出
-module.exports = {list,one};
+module.exports = {list,three};
