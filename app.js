@@ -50,6 +50,8 @@ var linebot = require('./routes/linebot');
 var updatediary = require('./routes/updatediary');
 var updateforum = require('./routes/updateforum');
 var updategrowrecord = require('./routes/updategrowrecord');
+
+var childEducationpage = require('./routes/childEducationpage');
 // ----------------------------------------------
 
 var session = require('express-session');
@@ -60,7 +62,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(session({secret: '123456789', cookie: { maxAge: 60000 }}));
+app.use(session({secret: '3456789765432', cookie: { maxAge: 60000 }}));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -112,6 +114,8 @@ app.use('/linebot', linebot );
 app.use('/updatediary', updatediary );
 app.use('/updateforum', updateforum );
 app.use('/updategrowrecord', updategrowrecord );
+
+app.use('/childEducationpage', childEducationpage );
 // ----------------------------------------------
 
 // catch 404 and forward to error handler

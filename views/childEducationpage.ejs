@@ -23,44 +23,18 @@
 
 		<!-- Header -->
 		<header id="header">
-			<a href="/homepage">
+			<a href="/">
 				<img class="textlogopic" src="images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
-					<li class="bell">
-						<a class="fa-bell" href="#menu">Bell</a>
-					</li>
-					<li class="profile" id="profile">
-						<img src="images/profile.jpg">
-						<span>許佑綺</span>
-					</li>
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
-		<div class="profile" id="profileList">
-			<div class="profileList">
-				<a href="/profile">
-					<img src="images/profile.jpg">
-					<span>許佑綺</span>
-				</a>
-			</div>
-			<div class="profileList">
-				<a href="/baby">
-					<img src="images/baby1.jpg">
-					<span>佑佑</span>
-				</a>
-			</div>
-			<div class="profileList">
-				<a hraf="/baby">
-					<img src="images/baby2.jpg">
-					<span>綺綺</span>
-				</a>
-			</div>
-		</div>
+
 		<!-- Menu -->
 		<section id="menu">
 
@@ -68,45 +42,21 @@
 			<section>
 				<ul class="links">
 					<li>
-						<a href="/childEducation">
+						<a href="/childEducation2">
 							<h3>小孩教育</h3>
 							<p>提供小孩教育的知識。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/pregnancyKnowledge">
+						<a href="/pregnancyKnowledge2">
 							<h3>孕期知識</h3>
 							<p>孕期知識、胎教等。</p>
 						</a>
 					</li>
 					<li>
-						<a href="/forum">
+						<a href="/forum2">
 							<h3>討論區</h3>
 							<p>跟媽媽們討論各種知識。</p>
-						</a>
-					</li>
-					<li>
-						<a href="/vaccine">
-							<h3>疫苗施打</h3>
-							<p>告訴你什麼時候該打什麼疫苗！</p>
-						</a>
-					</li>
-					<li>
-						<a href="/achievement">
-							<h3>里程碑成就</h3>
-							<p>幫你的寶寶紀錄非凡的成就吧！</p>
-						</a>
-					</li>
-					<li>
-						<a href="/growrecord">
-							<h3>成長紀錄</h3>
-							<p>填寫寶寶的身體變化吧！</p>
-						</a>
-					</li>
-					<li>
-						<a href="/diary">
-							<h3>日記</h3>
-							<p>填寫寶寶每日的生活小點滴吧！</p>
 						</a>
 					</li>
 				</ul>
@@ -115,7 +65,10 @@
 			<section>
 				<ul class="actions stacked">
 					<li>
-						<a href="/logout" class="button large fit">登出 Logout</a>
+						<a href="/signIn" class="button large fit">登入 Sign In</a>
+					</li>
+					<li>
+						<a href="/register" class="button large fit">註冊 Register</a>
 					</li>
 				</ul>
 			</section>
@@ -137,14 +90,23 @@
 			<div class="pagetagtop">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="pagination">
-							<a href="#">1</a>
-							<a href="#">2</a>
-							<a href="#">3</a>
-							<a href="#">4</a>
-							...
-							<a href="#">10</a>
-						</div>
+						<ul class="pagination">
+							<li>第 <%=items.pageNo%> 頁</li>
+													
+							<% if(items.startPage>1){ %>
+								<li><a href="/childEducationpage/<%=(items.startPage-items.navSegments)%>">...</a></li>
+							<% } %> 
+													
+							<% for(var i=items.startPage; i<items.startPage+items.navSegments; i++) {%>
+								<% if(i<=items.totalPage){ %>
+									<li><a href="/childEducationpage/<%=i%>"><%=i%></a></li>
+								<% } %> 
+							<% } %>
+													
+							<% if(items.startPage+items.navSegments<=items.totalPage){ %>
+								<li><a href="/childEducationpage/<%=(items.startPage+items.navSegments)%>">...</a></li>
+							<% } %>                         
+						</ul>
 					</div>
 					<div class="col-md-6">
 						<!-- Search -->
@@ -157,10 +119,10 @@
 				</div>
 			</div>
 			<div class="col-md-12">
-				<% for(var i=0; i<items.length; i++) {%>
+				<% for(var i=0; i<items.data.length; i++) {%>
 					<div class="childEducationBox">
-						<a href="/achildEducation2/<%= items[i].serno %>">
-							<strong><%= items[i].title %></strong>
+						<a href="/achildEducation2/<%= items.data[i].serno %>">
+							<strong><%= items.data[i].title %></strong>
 						</a>
 					</div>
 				<% } %>
@@ -180,7 +142,6 @@
 		</div>
 
 	</div>
-
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
