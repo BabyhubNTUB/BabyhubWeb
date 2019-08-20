@@ -8,7 +8,7 @@ const user = require('./utility/user');
 router.get('/', function(req, res, next) {
     req.session.id = null;
     req.session.username = null;           
-    res.render('user_show', {name:'已登出'});  //傳至登出    
+    res.render('logout', {name:'已登出'});  //傳至登出    
 });
 
 module.exports = router;

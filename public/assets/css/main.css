@@ -236,7 +236,8 @@ span a{
 margin-top: 10%;
 }
 .right{
-	background: #ffffff !important;
+	/* background: #ffffff !important; */
+	margin: auto;
 }
 .title2{
 	text-align: center;

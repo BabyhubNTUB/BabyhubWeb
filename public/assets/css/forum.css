@@ -8,47 +8,17 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+div.row1{
+	position: absolute;
+	left: 10%;
+	float: right;
+	width: 80%;
+}
 
-/* pagetagtop */
-.pagetagtop{
-	font-size:22px;
-	color:#ffb1e5a1;
-	margin:auto;
-	height: 10%;
-	position: relative;
-	/* top: -5%; */
-	left: -20%;
-	padding-top: 3%;
-	/* background-color: blue; */
-}
-.pagetagtop a{
-	text-align: center;
-	width:30px;
-	text-decoration: none;
-	border:0 solid;
-	color:#ffff !important;
-	margin:0 10px;
-	background:#f1848496;
-	border-radius:30%;
-	box-shadow:1px 1px #a8a8a8;
-	
-}
-.pagetagtop a:hover{
-	color:#f1848496 !important;
-	background:#ffffff;
-	text-decoration: none;
-}
-@media screen and (max-width: 414px){
-	.pagetagtop{
-		font-size:22px;
-		color:#ffb1e5;
-		margin:auto;
-	}
-}
-.pagination{
-	float: left;
-	position: relative;
-	top: 10px;
+div.searchbox{
+	margin: 0;
+	padding: 0;
+	width: 50%;
 }
 
 /*單篇文章底下的喜歡留言編輯刪除按鈕*/
@@ -67,6 +37,22 @@
 		float: right;
 		margin-right: 2%;
 	}
+#addforum {
+    position:fixed;
+    z-index:90;
+    right:30px;
+    bottom:100px;
+    display:none;
+    width:50px;
+    height:50px;
+    color:#ee9ca7;
+    background:#fff;
+    line-height:50px;
+    border-radius:50%;
+    transition:all 0.5s;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
 
 #gotop {
     position:fixed;
@@ -2334,8 +2320,6 @@ input, select, textarea {
 			text-decoration: none;
 			position: relative;
 			/* background-color: yellow; */
-			position: relative;
-			left: 163%;
 		}
 		.pagination{
 			/* position: relative;
@@ -3677,6 +3661,61 @@ input, select, textarea {
 			display: block;
 		}
 
+/* Wrapper2 */
+
+#wrapper2 {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-direction: row-reverse;
+	-webkit-flex-direction: row-reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+	-moz-transition: opacity 0.5s ease;
+	-webkit-transition: opacity 0.5s ease;
+	-ms-transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
+	/* margin: 0 auto; */
+	max-width: 100%;
+	opacity: 1;
+	padding: 4.5em;
+	width: 90em;
+}
+
+	body.is-menu-visible #wrapper2 {
+		opacity: 0.15;
+	}
+
+	@media screen and (max-width: 1680px) {
+
+		#wrapper2 {
+			padding: 3em;
+		}
+
+	}
+
+	@media screen and (max-width: 1280px) {
+
+		#wrapper2 {
+			display: block;
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		#wrapper2 {
+			padding: 1.5em;
+		}
+
+	}
+
+	body.single #wrapper2 {
+		display: block;
+	}
+
+
 /* Main */
 
 	#main {
@@ -4077,50 +4116,29 @@ input, select, textarea {
 		margin:0;
 		padding:0;
 	}
-/* pregnancyBox */
-	div.pregnancyBox{
+
+/* Box */
+	div.Box{
 		margin:0 0 30px 0;
 		padding:10px;
 		background:#c55a5a0c;
 		border-radius:10px;
+		width: 100%;
 	}
-	div.pregnancyBox span.num{
+	div.Box span.num{
 		background: #f1848496;
 		border-radius:10px;
 		padding:8px;
 		font-size:20px;
 		font-weight: 600;
 	}
-	div.pregnancyBox strong{
-		font-size: 32px;
-	}
-	div.pregnancyBox span.date{
-		font-size:24px;
-	}
-	div.pregnancyBox span.detail{
-		font-size:20px;
-	}
-/* childEducationBox */
-	div.childEducationBox{
-		margin:0 0 30px 0;
-		padding:10px;
-		background:#c55a5a0c;
-		border-radius:10px;
-	}
-	div.childEducationBox span.num{
-		background: #f1848496;
-		border-radius:10px;
-		padding:8px;
-		font-size:20px;
-		font-weight: 600;
-	}
-	div.childEducationBox strong{
+	div.Box strong{
 		font-size:32px;
 	}
-	div.childEducationBox span.date{
+	div.Box span.date{
 		font-size:24px;
 	}
-	div.childEducationBox span.detail{
+	div.Box span.detail{
 		font-size:20px;
 	}
 /* achievementBox */

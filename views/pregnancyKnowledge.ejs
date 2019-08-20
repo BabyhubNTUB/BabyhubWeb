@@ -14,12 +14,26 @@
 	<link rel="icon" href="images/logo.png" type="image/ico" />
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
+
+	<!-- gotop按鈕 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	// 當頁面打開後就顯示
+		$(function() {
+			$('#gotop').show();
+			/* 按下GoTop按鈕時的事件 */
+			$('#gotop').click(function(){
+				$('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
+				return false;
+    		});
+		});
+	</script>
 </head>
 
 <body class="is-preload">
 
 	<!-- Wrapper -->
-	<div id="wrapper">
+	<div id="wrapper2">
 
 		<!-- Header -->
 		<header id="header">
@@ -134,18 +148,11 @@
 		</section>
 
 		<!-- Main -->
-		<div class="row">
+		<div class="row1">
             <div class="pagetagtop">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="pagination">
-							<a href="#">1</a>
-							<a href="#">2</a>
-							<a href="#">3</a>
-							<a href="#">4</a>
-							...
-							<a href="#">10</a>
-						</div>
+							<h1 style="padding-top:2%;">孕期知識</h1>
 					</div>
 					<div class="col-md-6">
 						<!-- Search -->
@@ -159,28 +166,20 @@
 			</div>
 			<div class="col-md-12">
 				<% for(var i=0; i<items.length; i++) {%>
-					<div class="pregnancyBox">
-						<a href="/apregnancyKnowledge2/<%= items[i].serno %>">
+					<div class="Box">
+						<a href="/apregnancyKnowledge/<%= items[i].serno %>">
 							<strong><%= items[i].title %></strong>
 						</a>
 					</div>
 				<% } %>
 			</div>
-			<div class="pagetag">
-				<div class="col-md-12">
-					<div class="pagination">
-						<a href="#">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#">4</a>
-						...
-						<a href="#">10</a>
-					</div>
-				</div>
-			</div>
 		</div>
 
 	</div>
+	<!-- gotop按鈕 -->
+	<a id="gotop">
+		<i class="fa fa-angle-up"></i>
+	</a>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>

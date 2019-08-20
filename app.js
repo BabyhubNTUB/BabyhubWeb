@@ -50,8 +50,28 @@ var linebot = require('./routes/linebot');
 var updatediary = require('./routes/updatediary');
 var updateforum = require('./routes/updateforum');
 var updategrowrecord = require('./routes/updategrowrecord');
+var myforum = require('./routes/myforum');
 
-var childEducationpage = require('./routes/childEducationpage');
+var mlogout= require('./routes/mlogout');
+var msignInSuccess = require('./routes/msignInSuccess');
+var childEducation3 = require('./routes/childEducation3');
+var pregnancyKnowledge3 = require('./routes/pregnancyKnowledge3');
+var forum3 = require('./routes/forum3');
+var achildEducation3 = require('./routes/achildEducation3');
+var apregnancyKnowledge3 = require('./routes/apregnancyKnowledge3');
+var aforum3 = require('./routes/aforum3');
+var addEducation = require('./routes/addEducation');
+var addKnowledge = require('./routes/addKnowledge');
+var updateEducation = require('./routes/updateEducation');
+var updateKnowledge = require('./routes/updateKnowledge');
+var edu_add = require('./routes/edu_add');
+var edu_del = require('./routes/edu_del');
+var edu_update = require('./routes/edu_update');
+var pre_add = require('./routes/pre_add');
+var pre_del = require('./routes/pre_del');
+var pre_update = require('./routes/pre_update');
+var for_del = require('./routes/for_del');
+
 // ----------------------------------------------
 
 var session = require('express-session');
@@ -62,7 +82,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(session({secret: '3456789765432', cookie: { maxAge: 60000 }}));
+app.use(session({secret: '3456789765432', cookie: { maxAge: 6000000 },resave:true,saveUninitialized: true}));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -114,8 +134,27 @@ app.use('/linebot', linebot );
 app.use('/updatediary', updatediary );
 app.use('/updateforum', updateforum );
 app.use('/updategrowrecord', updategrowrecord );
+app.use('/myforum', myforum );
 
-app.use('/childEducationpage', childEducationpage );
+app.use('/mlogout', mlogout);
+app.use('/msignInSuccess', msignInSuccess);
+app.use('/childEducation3', childEducation3);
+app.use('/pregnancyKnowledge3', pregnancyKnowledge3);
+app.use('/forum3', forum3);
+app.use('/achildEducation3', achildEducation3);
+app.use('/apregnancyKnowledge3', apregnancyKnowledge3);
+app.use('/aforum3', aforum3);
+app.use('/addEducation', addEducation);
+app.use('/addKnowledge', addKnowledge);
+app.use('/updateEducation', updateEducation);
+app.use('/updateKnowledge', updateKnowledge);
+app.use('/edu_add', edu_add);
+app.use('/edu_del', edu_del);
+app.use('/edu_update', edu_update);
+app.use('/pre_add', pre_add);
+app.use('/pre_del', pre_del);
+app.use('/pre_update', pre_update);
+app.use('/for_del', for_del);
 // ----------------------------------------------
 
 // catch 404 and forward to error handler
@@ -134,4 +173,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+process.on('unhandledRejection', error =>{
+  console.error('unhandledRejection', error);
+  process.exit(1)
+});
 module.exports = app;

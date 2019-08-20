@@ -66,5 +66,17 @@ var one = async function(forumno){
         });
     return result;
 }
+var del = async function(serno){
+    var result;
+
+    await sql('DELETE FROM t04forum WHERE serno = $1', [serno])
+        .then((data) => {
+            result = data.rowCount;  
+        }, (error) => {
+            result = -1;
+        });
+		
+    return result;
+}
 //匯出
-module.exports = {list,one};
+module.exports = {list,one,del};

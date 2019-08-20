@@ -27,10 +27,10 @@ var login = async function(id, password){
 //---------------------------------------------
 // 使用者註冊
 //---------------------------------------------
-var register = async function(newData){
+var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO "t01member" (id, displayname, password) VALUES ($1, $2, $3)', [newData.id, newData.username, newData.password])
+    await sql('INSERT INTO t01member (id, username, password,appellation) VALUES ($1, $2, $3, $4)', [newData.id, newData.username, newData.password, newData.appellation])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -40,4 +40,4 @@ var register = async function(newData){
     return result;
 }
 //匯出
-module.exports = {login, register};
+module.exports = {login, add};

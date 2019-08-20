@@ -15,12 +15,22 @@
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
 
-	<!-- gotop按鈕 -->
+	<!-- addforum按鈕 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript">
 	// 當頁面打開後就顯示
 		$(function() {
+			$('#addforum').show();
+		});
+	// gotop按鈕
+	// 當頁面打開後就顯示
+	$(function() {
 			$('#gotop').show();
+			/* 按下GoTop按鈕時的事件 */
+			$('#gotop').click(function(){
+				$('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
+				return false;
+    		});
 		});
 	</script>
 
@@ -147,14 +157,6 @@
 			<div class="pagetagtop">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="pagination">
-							<a href="#">1</a>
-							<a href="#">2</a>
-							<a href="#">3</a>
-							<a href="#">4</a>
-							...
-							<a href="#">10</a>
-						</div>
 					</div>
 					<div class="col-md-6">
 						<!-- Search -->
@@ -207,23 +209,15 @@
 					</table>
 				</div>
 			</div>
-			<div class="pagetag">
-				<div class="col-md-12">
-					<div class="pagination">
-						<a href="#">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#">4</a>
-						...
-						<a href="#">10</a>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
-	<!-- gotop按鈕 -->
-	<a href="/addforum" id="gotop">
+	<!-- addforum按鈕 -->
+	<a href="/addforum" id="addforum">
 		<i class="fa fa-pencil"></i>
+	</a>
+	<!-- gotop按鈕 -->
+	<a id="gotop">
+		<i class="fa fa-angle-up"></i>
 	</a>
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>

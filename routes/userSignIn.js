@@ -11,11 +11,11 @@ router.post('/', function(req, res, next) {
 
     user.login(id, password).then(d => {
         if (d==null){
-            req.session.id = null;
+            req.session.userid = null;
             req.session.username = null;           
             res.render('signInFail');  //傳至登入失敗
         }else{
-            req.session.id = d.id;
+            req.session.userid = d.id;
             req.session.username = d.username;
             res.render('signInSuccess', {name:d.username});   //導向使用者
         }  

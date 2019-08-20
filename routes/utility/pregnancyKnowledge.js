@@ -39,6 +39,46 @@ var three = async function(serno){
     return result;
 }
 
+var add = async function(newData){
+    var result;
 
+    await sql('INSERT INTO t06pregnancyknowledge (managerno, title, source,content) VALUES ($1, $2, $3, $4)', [newData.managerno, newData.title, newData.source, newData.content])
+        .then((data) => {
+            result = 0;  
+        }, (error) => {
+            result = -1;
+            console.log("------------------------");
+        });
+		
+    return result;
+}
+var del = async function(serno){
+    var result;
+
+    await sql('DELETE FROM t06pregnancyknowledge WHERE serno = $1', [serno])
+        .then((data) => {
+            result = data.rowCount;  
+        }, (error) => {
+            result = -1;
+        });
+		
+    return result;
+}
+//----------------------------------
+// 更新商品
+//----------------------------------
+var update = async function(newData){
+    var results;
+
+    await sql('UPDATE t06pregnancyknowledge SET title=$1, source=$2, content=$3 WHERE serno = $4', [newData.title, newData.source, newData.content, newData.serno])
+        .then((data) => {
+            results = data.rowCount;  
+        }, (error) => {
+            results = -1;
+            console.log('error');
+        });
+		
+    return results;
+}
 //匯出
-module.exports = {list,three};
+module.exports ={list,three,add,del,update};

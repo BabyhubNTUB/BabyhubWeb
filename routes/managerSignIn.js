@@ -17,7 +17,7 @@ router.post('/', function(req, res, next) {
         }else{
             req.session.managerno = d.managerno;
             req.session.name = d.name;
-            res.render('signInSuccess', {name:d.managerno});   //導向使用者
+            res.render('msignInSuccess', {name:d.managerno});   //導向使用者
         }  
     })
 });

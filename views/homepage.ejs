@@ -34,7 +34,7 @@
 					</li>
 					<li class="profile" id="profile">
 						<img src="images/profile.jpg">
-						<span>許佑綺</span>
+						<span><%= result.username %></span>
 					</li>
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
@@ -46,21 +46,18 @@
 			<div class="profileList">
 				<a href="/profile">
 					<img src="images/profile.jpg">
-					<span>許佑綺</span>
+					<span><%= result.username %></span>
 				</a>
 			</div>
-			<div class="profileList">
-				<a href="/baby">
-					<img src="images/baby1.jpg">
-					<span>佑佑</span>
-				</a>
-			</div>
-			<div class="profileList">
-				<a hraf="/baby">
-					<img src="images/baby2.jpg">
-					<span>綺綺</span>
-				</a>
-			</div>
+			<% for(var i=0; i<result.baby.length; i++) {%>
+				<div class="profileList">
+					<a href="/baby/<%= result.baby[i].babyno %>">
+						<img src="images/baby1.jpg">
+						<span><%= result.baby[i].name %></span>
+					</a>
+				</div>
+			<% } %>
+
 		</div>
 		<!-- Menu -->
 		<section id="menu">

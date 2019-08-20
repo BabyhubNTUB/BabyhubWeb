@@ -6,10 +6,10 @@ const sql = require('./asyncDB');
 //------------------------------------------
 //執行資料庫動作的函式-取出單一商品
 //------------------------------------------
-var query = async function(prono){
+var query = async function(id){
     var result={};
     console.log("*********");
-    await sql('SELECT * FROM "t01member"')
+    await sql('SELECT * FROM "t01member" WHERE id like $1', [id])
         .then((data) => {
             console.log("*********");
             console.log(data.rows);

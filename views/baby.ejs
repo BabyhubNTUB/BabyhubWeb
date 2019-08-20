@@ -10,10 +10,10 @@
 	<title>Babyhub</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="images/logo.png" type="image/ico" />
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body class="is-preload">
@@ -24,16 +24,16 @@
 		<!-- Header -->
 		<header id="header">
 			<a href="/homepage">
-				<img class="textlogopic" src="images/textlogo.png">
+				<img class="textlogopic" src="/images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
 					<li class="bell">
 						<a class="fa-bell" href="#menu">Bell</a>
 					</li>
-					<li class="profile">
-						<img src="images/profile.jpg">
-						<span>許佑綺</span>
+					<li class="profile" id="profile">
+						<img src="/images/profile.jpg">
+						<span><%= result.username %></span>
 					</li>
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
@@ -44,22 +44,19 @@
 		<div class="profile" id="profileList">
 			<div class="profileList">
 				<a href="/profile">
-					<img src="images/profile.jpg">
-					<span>許佑綺</span>
+					<img src="/images/profile.jpg">
+					<span><%= result.username %></span>
 				</a>
 			</div>
-			<div class="profileList">
-				<a href="/baby">
-					<img src="images/baby1.jpg">
-					<span>佑佑</span>
-				</a>
-			</div>
-			<div class="profileList">
-				<a hraf="/baby">
-					<img src="images/baby2.jpg">
-					<span>綺綺</span>
-				</a>
-			</div>
+			<% for(var i=0; i<result.baby.length; i++) {%>
+				<div class="profileList">
+					<a href="/baby/<%= result.baby[i].babyno %>">
+						<img src="/images/baby1.jpg">
+						<span><%= result.baby[i].name %></span>
+					</a>
+				</div>
+			<% } %>
+
 		</div>
 		<!-- Menu -->
 		<section id="menu">
@@ -170,7 +167,7 @@
                     </div>
                     <div class="col-md-7">
 						<div class="profile_box">
-                            <p class="head"><img src="images/membership.png">　佑佑</p>
+                            <p class="head"><img src="/images/membership.png">　佑佑</p>
                             <p class="title">生日：　2018/08/16</p><br />
 							<p class="title">身高：　40　公分 cm</p><br />
 							<p class="title">體重：　3000　公克 g</p><br />
@@ -207,13 +204,13 @@
 	</div>	
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/scripts.js"></script>
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/browser.min.js"></script>
+		<script src="/assets/js/breakpoints.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/scripts.js"></script>
 
 </body>
 
