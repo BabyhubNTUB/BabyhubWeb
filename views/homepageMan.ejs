@@ -87,33 +87,39 @@
 
 		<!-- Main -->
 		<div id="main">
-            <div class="row">                
-                <div class="col-md-12">
-                        <article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#"><%= item.title %></a></h2>			
-										<form action="/pre_del" method="post">
-											<input type="text" name="serno" value="<%= item.serno %>" hidden>
-											<button type="submit" style="box-shadow:none; float:right; height: 5%;">刪除</button>
-										</form>
-										<form action="/updateKnowledge" method="post">
-											<input type="text" name="serno" value="<%= item.serno %>" hidden>
-											<button type="submit" style="box-shadow:none; float:right; height: 5%;">編輯</button>
-										</form>							
-									</div>
-									<!--<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>-->
-								</header>								
-								<p><%= item.content %></p>                         
-                        </article>
-
-
-                </div>
-            </div>
-            
+				<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<div class="list-group">
+						<a href="/forum" class="list-group-item list-group-item-info">討論版 熱門文章</a>
+						<% for(var i=0; i<result.forum.length; i++) {%>
+							<div class="list-group-item">
+									<a href="/aforum/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
+							</div>
+						<% } %>
+						<a href="/forum" class="list-group-item list-group-item-warning">... 更多文章</a>
+					</div>
+					<div class="list-group">
+						<a href="/childEducation" class="list-group-item list-group-item-info">小孩教育 熱門文章</a>
+						<% for(var i=0; i<result.education.length; i++) {%>
+							<div class="list-group-item">
+									<a href="/achildEducation/<%= result.education[i].serno %>"><%= result.education[i].title %></a>
+							</div>
+						<% } %>
+						<a href="/childEducation" class="list-group-item list-group-item-warning">... 更多文章</a>
+					</div>
+					<div class="list-group">
+						<a href="/pregnancyKnowledge" class="list-group-item list-group-item-info">孕期知識 熱門文章</a>
+						<% for(var i=0; i<result.pregnancyknowledge.length; i++) {%>
+							<div class="list-group-item">
+									<a href="/apregnancyKnowledge/<%= result.pregnancyknowledge[i].serno %>"><%= result.pregnancyknowledge[i].title %></a>
+							</div>
+						<% } %>
+						<a href="/pregnancyKnowledge" class="list-group-item list-group-item-warning">... 更多文章</a>
+					</div>
+					
+				</div>
 		</div>
 
 	</div>
@@ -126,9 +132,11 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script src="/assets/js/bootstrap.min.js"></script>
-	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-	<script>tinymce.init({ selector:'textarea' });</script>
+	<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+	<script>tinymce.init({ selector:'textarea' });</script> -->
 	<script src="/assets/js/scripts.js"></script>
+	<script src="/assets/js/sweetalert.min.js"></script> 
+	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
 
 </body>
 

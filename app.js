@@ -53,7 +53,10 @@ var updategrowrecord = require('./routes/updategrowrecord');
 var myforum = require('./routes/myforum');
 
 var mlogout= require('./routes/mlogout');
+var homepageMan= require('./routes/homepageMan');
 var msignInSuccess = require('./routes/msignInSuccess');
+var managerSuccess = require('./routes/managerSuccess');
+var managerFail = require('./routes/managerFail');
 var childEducation3 = require('./routes/childEducation3');
 var pregnancyKnowledge3 = require('./routes/pregnancyKnowledge3');
 var forum3 = require('./routes/forum3');
@@ -137,7 +140,10 @@ app.use('/updategrowrecord', updategrowrecord );
 app.use('/myforum', myforum );
 
 app.use('/mlogout', mlogout);
+app.use('/homepageMan', homepageMan);
 app.use('/msignInSuccess', msignInSuccess);
+app.use('/managerSuccess', managerSuccess);
+app.use('/managerFail', managerFail);
 app.use('/childEducation3', childEducation3);
 app.use('/pregnancyKnowledge3', pregnancyKnowledge3);
 app.use('/forum3', forum3);

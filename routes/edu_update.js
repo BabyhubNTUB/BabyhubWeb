@@ -18,9 +18,9 @@ router.post('/', function(req, res, next) {
     console.log(newData);
     edu.update(newData).then(d => {
         if (d>=0){
-            res.render('registerSuccess', {results:d});  //傳至成功頁面
+            res.render('managerSuccess', {results:d});  //傳至成功頁面
         }else{
-            res.render('registerFail');     //導向錯誤頁面
+            res.render('managerFail');     //導向錯誤頁面
             console.log('fail');
         }  
     })

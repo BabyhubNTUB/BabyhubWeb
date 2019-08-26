@@ -87,33 +87,14 @@
 
 		<!-- Main -->
 		<div id="main">
-            <div class="row">                
-                <div class="col-md-12">
-                        <article class="post">
-								<header>
-									<div class="title">
-										<h2><a href="#"><%= item.title %></a></h2>			
-										<form action="/pre_del" method="post">
-											<input type="text" name="serno" value="<%= item.serno %>" hidden>
-											<button type="submit" style="box-shadow:none; float:right; height: 5%;">刪除</button>
-										</form>
-										<form action="/updateKnowledge" method="post">
-											<input type="text" name="serno" value="<%= item.serno %>" hidden>
-											<button type="submit" style="box-shadow:none; float:right; height: 5%;">編輯</button>
-										</form>							
-									</div>
-									<!--<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>-->
-								</header>								
-								<p><%= item.content %></p>                         
-                        </article>
-
-
-                </div>
-            </div>
-            
+			<div class="row">
+				<div class="col-md-6 left">
+					<img class="piclogo" src="images\logo.png">
+				</div>
+				<div class="col-md-6 right" style="background: none">
+					<h1>成功</h1>
+				</div>
+			</div>
 		</div>
 
 	</div>
@@ -126,9 +107,11 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script src="/assets/js/bootstrap.min.js"></script>
-	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-	<script>tinymce.init({ selector:'textarea' });</script>
+	<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+	<script>tinymce.init({ selector:'textarea' });</script> -->
 	<script src="/assets/js/scripts.js"></script>
+	<script src="/assets/js/sweetalert.min.js"></script> 
+	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
 
 </body>
 
