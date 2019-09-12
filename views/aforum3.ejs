@@ -17,26 +17,23 @@
 </head>
 
 <body class="is-preload">
-
 	<!-- Wrapper -->
 	<div id="wrapper">
 
 		<!-- Header -->
 		<header id="header">
-			<a href="/homepageMan">
+			<a href="/">
 				<img class="textlogopic" src="/images/textlogo.png">
 			</a>
 			<nav class="main">
 				<ul>
-					<li class="profile" id="profile">
-						<span>管理者模式</span>
-					</li>
 					<li class="menu">
 						<a class="fa-bars" href="#menu">Menu</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
+
 		<!-- Menu -->
 		<section id="menu">
 
@@ -103,53 +100,44 @@
 								<footer>
 									<ul class="stats">                                      
 										<a href="#" class="icon fa-heart-o"> <%= result.cnt.cntlike %></a>
-										<a class="icon fa-comments-o"> <%= result.cnt.cntcomment %></a>		
-
-										<!-- <form action="/for_del" method="post">
-											<input type="text" name="serno" value="<%= item.serno %>" hidden>
-											<button type="submit" style="box-shadow:none; float:right; height: 5%;">刪除</button>
-										</form> -->
+										<a href="#" class="icon fa-comments-o"> <%= result.cnt.cntcomment %></a>	
 										<a href="#" class="icon fa-trash" id="deleteForum"></a>	
-										<a href="#" class="icon fa-edit"></a>		
+										<a href="#" class="icon fa-edit"></a>					
                                     </ul>
                                 </footer>                                
                         </article>
 				</div>
-                	<div class="col-md-12">                            
-                        <article class="message">
-                                <h3>留言回應</h3>                                                             
-                                    <% for(var i=0; i<result.com.length; i++) {%>
-										<div class="list-group-item">                                    
-											<p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
-												<span class="mesname"><%= result.com[i].username %></span></a></p>                                                             
-												<div class="col-md-12">
-													<p><%= result.com[i].content %></p>
-												</div>
-										</div> 
-									<% } %> 
-                        </article>                            
-                	</div>
+                <div class="col-md-12">                            
+                    <article class="message">
+							<h3>留言回應</h3> 
+								<% for(var i=0; i<result.com.length; i++) {%>
+									<div class="list-group-item">                                    
+										<p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
+											<span class="mesname"><%= result.com[i].username %></span></a></p>                                                             
+											<div class="col-md-12">
+												<p><%= result.com[i].content %></p>
+											</div>
+									</div> 
+								<% } %>
+                    </article>                           
+            	</div>
 
                 
             </div>
             
 		</div>
 
-	</div>
-</div>
 
-	<!-- Scripts -->
-	<script src="/assets/js/jquery.min.js"></script>
-	<script src="/assets/js/browser.min.js"></script>
-	<script src="/assets/js/breakpoints.min.js"></script>
-	<script src="/assets/js/util.js"></script>
-	<script src="/assets/js/main.js"></script>
-	<script src="/assets/js/bootstrap.min.js"></script>
-	<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-	<script>tinymce.init({ selector:'textarea' });</script> -->
-	<script src="/assets/js/scripts.js"></script>
-	<script src="/assets/js/sweetalert.min.js"></script> 
-	<link rel="stylesheet" type="text/css" href="/assets/css/sweetalert.css">
+	</div>
+
+		<!-- Scripts -->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/browser.min.js"></script>
+		<script src="/assets/js/breakpoints.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/scripts.js"></script>
 
 </body>
 
