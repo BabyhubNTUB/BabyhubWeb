@@ -78,5 +78,30 @@ var del = async function(serno){
 		
     return result;
 }
+
+//---------------------------------------------
+// search
+//---------------------------------------------
+var search = async function(keyword){   
+    console.log("keyword: "+keyword)
+      
+        var result={};
+	
+        await sql('SELECT * FROM t15forumtype')
+            .then((data) => {            
+                result.type = data.rows;  
+            }, (error) => {
+                result.type = [];
+            });
+        await sql('SELECT * FROM t04forum WHERE forumname like $1',['%'+keyword+'%'])
+            .then((data) => {            
+                result.forum = data.rows;  
+            }, (error) => {
+                result.forum = [];
+                console.log(keyword);
+            });
+    //回傳物件
+    return result;  
+}
 //匯出
-module.exports = {list,one,del};
+module.exports = {list,one,del,search};

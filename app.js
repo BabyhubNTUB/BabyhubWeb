@@ -74,6 +74,7 @@ var pre_del = require('./routes/pre_del');
 var pre_update = require('./routes/pre_update');
 var for_del = require('./routes/for_del');
 
+var search = require('./routes/search');
 // ----------------------------------------------
 
 var session = require('express-session');
@@ -159,6 +160,8 @@ app.use('/pre_add', pre_add);
 app.use('/pre_del', pre_del);
 app.use('/pre_update', pre_update);
 app.use('/for_del', for_del);
+
+app.use('/search', search);
 // ----------------------------------------------
 
 // catch 404 and forward to error handler
