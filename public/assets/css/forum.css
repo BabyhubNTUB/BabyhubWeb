@@ -2319,6 +2319,7 @@ input, select, textarea {
 		form.search {
 			text-decoration: none;
 			position: relative;
+			text-align: right;
 			/* background-color: yellow; */
 		}
 		.pagination{
@@ -2350,6 +2351,37 @@ input, select, textarea {
 			}
 
 			form.search > input:first-child {
+				padding-left: 2.5em;
+			}
+		
+			form.searchforum {
+				text-decoration: none;
+				position: relative;
+				/* background-color: yellow; */
+			}
+			form.searchforum:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				font-family: FontAwesome;
+				font-style: normal;
+				font-weight: normal;
+				text-transform: none !important;
+			}
+
+			form.searchforum:before {
+				color: #aaaaaa;
+				content: '\f002';
+				display: block;
+				height: 2.75em;
+				left: 0;
+				line-height: 2.75em;
+				position: absolute;
+				text-align: center;
+				top: 0;
+				width: 2.5em;
+			}
+
+			form.searchforum > input:first-child {
 				padding-left: 2.5em;
 			}
 

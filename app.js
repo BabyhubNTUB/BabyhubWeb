@@ -75,6 +75,9 @@ var pre_update = require('./routes/pre_update');
 var for_del = require('./routes/for_del');
 
 var search = require('./routes/search');
+var searchchild = require('./routes/searchchild');
+var searchpre = require('./routes/searchpre');
+var forumtype = require('./routes/forumtype');
 // ----------------------------------------------
 
 var session = require('express-session');
@@ -162,6 +165,9 @@ app.use('/pre_update', pre_update);
 app.use('/for_del', for_del);
 
 app.use('/search', search);
+app.use('/searchchild', searchchild);
+app.use('/searchpre', searchpre);
+app.use('/forumtype', forumtype);
 // ----------------------------------------------
 
 // catch 404 and forward to error handler

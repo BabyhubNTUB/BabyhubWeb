@@ -80,5 +80,23 @@ var update = async function(newData){
 		
     return results;
 }
+//---------------------------------------------
+// search
+//---------------------------------------------
+var search = async function(keyword){   
+    console.log("keyword: "+keyword)
+      
+        var result={};
+        
+        await sql('SELECT * FROM t06pregnancyknowledge WHERE title like $1',['%'+keyword+'%'])
+            .then((data) => {            
+                result.forum = data.rows;  
+            }, (error) => {
+                result.forum = [];
+                console.log(keyword);
+            });
+    //回傳物件
+    return result;  
+}
 //匯出
-module.exports ={list,three,add,del,update};
+module.exports ={list,three,add,del,update,search};

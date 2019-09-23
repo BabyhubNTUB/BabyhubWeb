@@ -6,10 +6,10 @@ const articlelist = require('./utility/forum');
 
 //接收GET請求
 router.get('/', function(req, res, next) {
-    var keyword = req.query.keyword;   //取出參數
+    var type = req.query.type;   //取出參數
     var check = req.query.check;
-    
-    articlelist.search(keyword).then(data => {
+
+    articlelist.type(type).then(data => {
             if(data==null){
                 res.render('error');  //導向錯誤頁面
                 console.log('error');
@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
                     res.render('forum2', {result:data});  //將資料傳給顯示頁面
                 }else{
                     res.render('forum3', {result:data});  //將資料傳給顯示頁面
-                    console.log(data);  
+                console.log(data);  
                 }
             }else{
                 res.render('notFound');  //導向找不到頁面

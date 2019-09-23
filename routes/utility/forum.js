@@ -93,7 +93,7 @@ var search = async function(keyword){
             }, (error) => {
                 result.type = [];
             });
-        await sql('SELECT * FROM t04forum WHERE forumname like $1',['%'+keyword+'%'])
+        await sql('SELECT * FROM forum WHERE forumname like $1',['%'+keyword+'%'])
             .then((data) => {            
                 result.forum = data.rows;  
             }, (error) => {
@@ -103,5 +103,31 @@ var search = async function(keyword){
     //回傳物件
     return result;  
 }
+
+
+//---------------------------------------------
+// type
+//---------------------------------------------
+var type = async function(type){   
+    console.log("type: "+type)
+      
+        var result={};
+	
+        await sql('SELECT * FROM t15forumtype')
+            .then((data) => {            
+                result.type = data.rows;  
+            }, (error) => {
+                result.type = [];
+            });
+        await sql('SELECT * FROM forum where typeno=$1', [type])
+            .then((data) => {            
+                result.forum = data.rows;  
+            }, (error) => {
+                result.forum = [];
+                console.log(type);
+            });
+    //回傳物件
+    return result;  
+}
 //匯出
-module.exports = {list,one,del,search};
+module.exports = {list,one,del,search,type};

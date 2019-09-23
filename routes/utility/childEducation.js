@@ -82,9 +82,27 @@ var update = async function(newData){
 		
     return results;
 }
+//---------------------------------------------
+// search
+//---------------------------------------------
+var search = async function(keyword){   
+    console.log("keyword: "+keyword)
+      
+        var result={};
+
+        await sql('SELECT * FROM t10education WHERE title like $1',['%'+keyword+'%'])
+            .then((data) => {            
+                result.forum = data.rows;  
+            }, (error) => {
+                result.forum = [];
+                console.log(keyword);
+            });
+    //回傳物件
+    return result;  
+}
 
 //匯出
-module.exports = {list,two,add,del,update};
+module.exports = {list,two,add,del,update,search};
 // //---------------------------------------------
 // //執行資料庫動作的函式-傳回分頁及指定頁面的產品
 // //---------------------------------------------
