@@ -73,6 +73,7 @@ var pre_add = require('./routes/pre_add');
 var pre_del = require('./routes/pre_del');
 var pre_update = require('./routes/pre_update');
 var for_del = require('./routes/for_del');
+var comment_del = require('./routes/comment_del');
 
 var search = require('./routes/search');
 var searchchild = require('./routes/searchchild');
@@ -163,6 +164,7 @@ app.use('/pre_add', pre_add);
 app.use('/pre_del', pre_del);
 app.use('/pre_update', pre_update);
 app.use('/for_del', for_del);
+app.use('/comment_del', comment_del);
 
 app.use('/search', search);
 app.use('/searchchild', searchchild);

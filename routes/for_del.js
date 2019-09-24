@@ -6,9 +6,9 @@ const forum = require('./utility/forum');
 
 //接收POST請求
 router.post('/', function(req, res, next) {
-    var serno = req.body.serno;   //取得產品編號
-    console.log(serno);
-    forum.del(serno).then(d => {
+    var forumno = req.body.forumno;   //取得產品編號
+    console.log(forumno);
+    forum.del(forumno).then(d => {
         if(d>=0){
             res.render('managerSuccess', {results:d});  //傳至成功頁面     
         }else{

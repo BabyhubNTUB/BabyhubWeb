@@ -66,10 +66,14 @@ var one = async function(forumno){
         });
     return result;
 }
-var del = async function(serno){
+
+//---------------------------------------------
+// del
+//---------------------------------------------
+var del = async function(forumno){
     var result;
 
-    await sql('DELETE FROM t04forum WHERE serno = $1', [serno])
+    await sql('DELETE FROM t04forum WHERE forumno = $1', [forumno])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {

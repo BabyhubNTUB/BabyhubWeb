@@ -239,6 +239,11 @@ margin-top: 10%;
 	/* background: #ffffff !important; */
 	margin: auto;
 }
+.right2{
+	background-color:transparent;
+	margin: auto;
+	text-align: center;
+}
 .title2{
 	text-align: center;
 }

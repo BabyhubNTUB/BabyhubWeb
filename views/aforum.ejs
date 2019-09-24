@@ -152,19 +152,7 @@
 				</div>
                 	<div class="col-md-12">                            
                         <article class="message">
-                                <h3>留言回應</h3>                                
-                                    <div class="list-group-item">                                    
-                                        <p><a href="#" class="author"><img src="/images/avatar.jpg">
-                                            <span class="mesname">Jane Doe</span></a></p>                                                             
-                                        <div class="col-md-12">
-											<form class="form-group" >
-												<div class="form-group">
-												<input type="text" class="form-control comment" id="comment" placeholder="Enter">
-												</div>
-											<label class="control-label btnright" for="comment"><h4>新增</h4></label>
-											</form>
-										</div>
-                                    </div>                                
+                                <h3>留言回應</h3>                                                              
                                     <% for(var i=0; i<result.com.length; i++) {%>
 										<div class="list-group-item">                                    
 											<p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
@@ -174,6 +162,16 @@
 												</div>
 										</div> 
 									<% } %> 
+									<div class="list-group-item">                                                                                               
+                                        <div class="col-md-12">
+											<form class="form-group" style="text-align:right;">
+												<div class="form-group">
+												<input type="text" class="form-control comment" name="comment" placeholder="Enter">
+												</div>
+											<button style="background-color: transparent; padding: 0; height: auto; box-shadow:none; text-align:right;" type="submit">新增</button>
+											</form>
+										</div>
+                                    </div>  
                         </article>                            
                 	</div>
 
