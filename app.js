@@ -21,6 +21,8 @@ var manager = require('./routes/manager');
 var homepage = require('./routes/homepage');
 var userSuccess = require('./routes/userSuccess');
 var userFail = require('./routes/userFail');
+var user_update = require('./routes/user_update');
+var user_del = require('./routes/user_del');
 
 
 var childEducation2 = require('./routes/childEducation2');
@@ -115,6 +117,8 @@ app.use('/manager', manager);
 app.use('/homepage', homepage);
 app.use('/userSuccess', userSuccess);
 app.use('/userFail', userFail);
+app.use('/user_update', user_update);
+app.use('/user_del', user_del);
 
 app.use('/childEducation2', childEducation2);
 app.use('/pregnancyKnowledge2', pregnancyKnowledge2);

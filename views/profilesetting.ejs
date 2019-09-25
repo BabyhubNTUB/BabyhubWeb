@@ -138,31 +138,31 @@
                         </ul>
                     </div>
                     <div class="col-md-7">
-                        <div class="form-group">
-							<label for="exampleInputUsername1">
-								姓名 
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value="許佑綺"/>
-							<label for="exampleInputUsername1">
-                                稱謂 
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value="媽媽"/>
-							<label for="exampleInputUsername1">
-                                帳號
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value="10456052@ntub.edu.tw"/>
-							<!-- <label for="exampleInputPassword1">
-                                密碼
-                            </label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" value="you78787"/> -->
-                        </div>
-						<button type="button">
-							更改
-						</button>
-						<button type="button">
-							刪除
-                        </button>
-                        
+                        <form action="/user_update" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">
+                                    姓名 
+                                </label>
+                                <input type="text" class="form-control" name="username" value="<%= item.username %>"/>
+                                <label for="exampleInputUsername1">
+                                    帳號
+                                </label>
+                                <input type="text" class="form-control" name="id" value="<%= item.id %>" readonly />
+                                <label for="exampleInputPassword1">
+                                    新密碼
+                                </label>
+                                <input type="password" class="form-control" name="password" value="<%= item.password %>"/>
+                            </div>
+                            <button type="submit">
+                                更改
+                            </button>
+                        </form>
+                        <form action="/user_del" method="post">
+                            <input type="text" class="form-control" name="id" value="<%= item.id %>" hidden />
+                            <button type="submit">
+                                刪除
+                            </button>
+                        </form>
                     </div>
                     <div class="col-md-2">
                     </div>
