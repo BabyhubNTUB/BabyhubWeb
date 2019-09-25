@@ -19,6 +19,8 @@ var signInFail = require('./routes/signInFail');
 var logout = require('./routes/logout');
 var manager = require('./routes/manager');
 var homepage = require('./routes/homepage');
+var userSuccess = require('./routes/userSuccess');
+var userFail = require('./routes/userFail');
 
 
 var childEducation2 = require('./routes/childEducation2');
@@ -45,7 +47,6 @@ var addforum = require('./routes/addforum');
 var achildEducation = require('./routes/achildEducation');
 var aforum = require('./routes/aforum');
 var apregnancyKnowledge = require('./routes/apregnancyKnowledge');
-var linebot = require('./routes/linebot');
 var updatediary = require('./routes/updatediary');
 var updateforum = require('./routes/updateforum');
 var updategrowrecord = require('./routes/updategrowrecord');
@@ -112,6 +113,8 @@ app.use('/signInFail', signInFail);
 app.use('/logout', logout);
 app.use('/manager', manager);
 app.use('/homepage', homepage);
+app.use('/userSuccess', userSuccess);
+app.use('/userFail', userFail);
 
 app.use('/childEducation2', childEducation2);
 app.use('/pregnancyKnowledge2', pregnancyKnowledge2);
@@ -136,7 +139,6 @@ app.use('/addforum', addforum );
 app.use('/achildEducation', achildEducation );
 app.use('/aforum', aforum );
 app.use('/apregnancyKnowledge', apregnancyKnowledge );
-app.use('/linebot', linebot );
 app.use('/updatediary', updatediary );
 app.use('/updateforum', updateforum );
 app.use('/updategrowrecord', updategrowrecord );

@@ -39,5 +39,17 @@ var add = async function(newData){
 		
     return result;
 }
+var del = async function(id){
+    var result;
+    id
+    await sql('DELETE FROM t01member WHERE id = $1', [id])
+        .then((data) => {
+            result = data.rowCount;  
+        }, (error) => {
+            result = -1;
+        });
+		
+    return result;
+}
 //匯出
-module.exports = {login, add};
+module.exports = {login, add, del};
