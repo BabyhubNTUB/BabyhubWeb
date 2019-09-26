@@ -117,7 +117,9 @@
         <div id="main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-2">
                         <div class="profilePage">
                             <img alt="Bootstrap Image Preview" src="images/profile.jpg" />
                         </div>
@@ -126,6 +128,15 @@
                                 <a href="/addbaby">
                                     <h4>新增寶寶</h4>
                                 </a>
+                                <ul class="links">
+                                    <% for(var i=0; i<result.baby.length; i++) {%>
+                                        <li>
+                                            <a href="/baby/<%= result.baby[i].babyno %>">
+                                                <strong><%= result.baby[i].name %></strong>
+                                            </a>
+                                        </li>
+                                    <% } %>
+                                </ul>
                             </li>
                             <li>
                                 <a href="/profilesetting">
@@ -145,12 +156,14 @@
                         </ul>
                     </div>
                     <div class="col-md-7">
-                        <div class="profile_box">
-                            <p class="head"><img src="images/membership.png">　會員</p>
-                            <p class="title">名稱：　<%= item.username %></p><br />
-                            <p class="title">稱謂：　<%= item.appellation %></p><br />
-                            <p class="title">帳號：　<%= item.id %></p><br />
-                        </div>
+                        <% for(var i=0; i<result.user.length; i++) {%>
+                            <div class="profile_box">
+                                <p class="head"><img src="images/membership.png">　會員</p>
+                                <p class="title">名稱：　<%= result.user[i].username %></p><br />
+                                <p class="title">稱謂：　<%= result.user[i].appellation %></p><br />
+                                <p class="title">帳號：　<%= result.user[i].id %></p><br />
+                            </div>
+                        <% } %>
                         <div class="card">
                             <div class="card-block">
                                 <p class="head"><img src="images/edit.png">　寫日記</p>

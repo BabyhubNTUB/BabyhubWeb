@@ -143,22 +143,22 @@
                                 <label for="exampleInputUsername1">
                                     姓名 
                                 </label>
-                                <input type="text" class="form-control" name="username" value="<%= item.username %>"/>
+                                <input type="text" class="form-control" name="username" value="<%= result.username %>"/>
                                 <label for="exampleInputUsername1">
                                     帳號
                                 </label>
-                                <input type="text" class="form-control" name="id" value="<%= item.id %>" readonly />
+                                <input type="text" class="form-control" name="id" value="<%= result.id %>" readonly />
                                 <label for="exampleInputPassword1">
                                     新密碼
                                 </label>
-                                <input type="password" class="form-control" name="password" value="<%= item.password %>"/>
+                                <input type="password" class="form-control" name="password" value="<%= result.password %>"/>
                             </div>
                             <button type="submit">
                                 更改
                             </button>
                         </form>
                         <form action="/user_del" method="post">
-                            <input type="text" class="form-control" name="id" value="<%= item.id %>" hidden />
+                            <input type="text" class="form-control" name="id" value="<%= result.id %>" hidden />
                             <button type="submit">
                                 刪除
                             </button>

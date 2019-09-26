@@ -112,12 +112,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="profilePage">
+                        <!-- <div class="profilePage">
 							<img src="">
 						</div>
 						<button type="button">
 							上傳照片
-						</button>	
+						</button>	 -->
 						<!-- <div class="form-group">
 							<input type="file" class="form-control-file" id="exampleInputFile" />
 							<p class="help-block">
@@ -127,37 +127,31 @@
                         
                     </div>
                     <div class="col-md-7">
-						<div class="form-group">
-							<label for="exampleInputUsername1">
-								姓名 name
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value=""/>
+						<form action="/baby_add" method="post">
 							<div class="form-group">
-								<label for="exampleInputAppellation1">
-									性別 gender
+								<label for="exampleInputUsername1">
+									姓名 name
 								</label>
-								<br>
-								<input id="radio1" type="radio" name="youname" checked="checked"/>
-								<label for="radio1">女孩</label>
-								<input id="radio2" type="radio" name="youname"/>
-								<label for="radio2">男孩</label>
+								<input type="text" name="name" value=""/>
+								<div class="form-group">
+									<label for="exampleInputAppellation1">
+										性別 gender
+									</label>
+									<br>
+									<input id="radio1" type="radio" name="gender" value="女孩" checked="checked"/>
+									<label for="radio1">女孩</label>
+									<input id="radio2" type="radio" name="gender" value="男孩"/>
+									<label for="radio2">男孩</label>
+								</div>
+								<label for="exampleInputUsername1">
+									生日 birthday
+								</label>
+								<input type="date" name="birthday" value=""/>
 							</div>
-							<label for="exampleInputUsername1">
-								生日 birthday
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value=""/>
-							<label for="exampleInputUsername1">
-								身高 height(公分 cm)
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value=""/>
-							<label for="exampleInputUsername1">
-								體重 width(公克 g)
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value=""/>
-						</div>
-						<button type="button">
-							新增
-						</button>
+							<button type="submit">
+								新增
+							</button>
+						</form>
 					</div>	
                     <div class="col-md-2">
                     </div>

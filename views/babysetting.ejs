@@ -10,10 +10,10 @@
 	<title>Babyhub</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="images/logo.png" type="image/ico" />
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body class="is-preload">
@@ -110,66 +110,78 @@
 		<div id="main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-1">
+					</div>
+                    <div class="col-md-2">
                         <div class="profilePage">
-							<img src="images/baby1.jpg">
+							<img src="/images/baby1.jpg">
 						</div>
 							<ul class="links">
-								<li class="nav-item dropdown ml-md-auto">
-									<h4 class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">Baby</h4>
-									<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-										<a class="dropdown-item" href="/baby">佑佑</a>
-										<a class="dropdown-item" href="#">綺綺</a>
-										<a class="dropdown-item" href="/addbaby">新增寶寶</a>
-									</div>
-								</li>
 								<li>
-									<a href="/babysetting">
+									<a href="/addbaby">
+										<h4>新增寶寶</h4>
+									</a>
+									<ul class="links">
+										<% for(var i=0; i<result.list.length; i++) {%>
+											<li>
+												<a href="/baby/<%= result.list[i].babyno %>">
+													<strong><%= result.list[i].name %></strong>
+												</a>
+											</li>
+										<% } %>
+									</ul>
+								</li>
+								<% for(var i=0; i<result.baby.length; i++) {%>
+								<li>
+									<a href="/babysetting/<%= result.baby[i].babyno %>">
 										<h4>寶寶設定</h4>
 									</a>
 								</li>
 								<li>
-									<a href="/recordcart">
+									<a href="/recordcart/<%= result.baby[i].babyno %>">
 										<h4>成長紀錄圖表</h4>
 									</a>
 								</li>
+								<% } %>
 								<li>
-									<a href="/baby">
-										<h4>回寶寶</h4>
+									<a href="/profile">
+										<h4>回會員</h4>
 									</a>
 								</li>
 							</ul>
                         
                     </div>
                     <div class="col-md-7">
-						<div class="form-group">
-							<label for="exampleInputUsername1">
-								姓名 
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value="佑佑"/>
-							<label for="exampleInputUsername1">
-								性別 
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value="女孩"/>
-							<label for="exampleInputUsername1">
-								生日 
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value="2018/08/16"/>
-							<label for="exampleInputUsername1">
-								身高 (公分 cm)
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value="40"/>
-							<label for="exampleInputUsername1">
-								體重 (公克 g)
-							</label>
-							<input type="text" class="form-control" id="exampleInputUsername1" value="3000"/>
-						</div>
-						<button type="button">
-							更改
-						</button>
-						<button type="button">
-							刪除
-						</button>
+						<% for(var i=0; i<result.baby.length; i++) {%>
+						<form action="/baby_update" method="post">
+							<div class="form-group">
+								<input type="text" class="form-control" name="babyno" value="<%= result.baby[i].babyno %>" hidden/>
+								<label for="exampleInputUsername1">
+									姓名 
+								</label>
+								<input type="text" class="form-control" name="name" value="<%= result.baby[i].name %>"/>
+								<label for="exampleInputUsername1">
+									性別 
+								</label>
+								<input type="text" class="form-control" name="gender" value="<%= result.baby[i].gender %>" readonly/>
+								<label for="exampleInputUsername1"> 
+									生日 
+								</label>
+								<input type="text" class="form-control" name="birthday" value="<%= result.baby[i].birthday %>"/>
+							</div>
+							<button type="submit">
+								更改
+							</button>
+						</form>
+						<% } %>
+						<% for(var i=0; i<result.baby.length; i++) {%>
+						<form action="/baby_del" method="post">
+							<input type="text" class="form-control" name="babyno" value="<%= result.baby[i].babyno %>" hidden/>
+							<button type="submit">
+								刪除
+							</button>
+						</form>
+						<% } %>
 					</div>	
                     <div class="col-md-2">
                     </div>
@@ -179,15 +191,15 @@
 	</div>	
 
 		<!-- Scripts -->
-		<script src="js/Chart.bundle.js"></script>  
-		<script src="js/my.Chart.bundle.js"></script>  
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/scripts.js"></script>
+		<script src="/js/Chart.bundle.js"></script>  
+		<script src="/js/my.Chart.bundle.js"></script>  
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/browser.min.js"></script>
+		<script src="/assets/js/breakpoints.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/bootstrap.min.js"></script>
+		<script src="/assets/js/scripts.js"></script>
 
 </body>
 

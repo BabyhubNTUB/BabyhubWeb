@@ -2,17 +2,17 @@ var express = require('express');
 var router = express.Router();
 
 //增加引用函式
-const user = require('./utility/user');
+const user = require('./utility/baby');
 
 //接收POST請求
 router.post('/', function(req, res, next) {
-    var id = req.body.id;
-    console.log(id);
+    var babyno = req.body.babyno;
+    console.log(babyno);
 
     var newData={
-        id:id,
-        password: req.body.password,
-        username: req.body.username
+        babyno:babyno,
+        name: req.body.name,
+        birthday: req.body.birthday
     } 
     console.log(newData);
     user.update(newData).then(d => {
