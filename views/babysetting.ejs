@@ -164,11 +164,11 @@
 									性別 
 								</label>
 								<input type="text" class="form-control" name="gender" value="<%= result.baby[i].gender %>" readonly/>
-						<% } %>
 								<label for="exampleInputUsername1"> 
 									生日 
 								</label>
-								<input type="text" class="form-control" name="birthday" value="<%= result.birthday %>"/>
+								<input type="text" class="form-control" name="birthday" value="<%= result.baby[i].birthday %>"/>
+						<% } %>
 							</div>
 							<button type="submit">
 								更改

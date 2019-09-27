@@ -8,6 +8,7 @@ const member = require('./utility/member');
 router.get('/', function(req, res, next) {
     //var id = req.query.id;   //取出參數
     var userid = req.session.userid;
+    console.log(userid);
     member.query(userid).then(data => {
         if (data==null){
             console.log('1-------------------------------');
