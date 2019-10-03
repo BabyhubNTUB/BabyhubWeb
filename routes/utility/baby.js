@@ -20,6 +20,7 @@ var one = async function(babyno){
     
     await sql('SELECT * FROM t02baby where babyno=$1', [babyno])
     .then((data) => {            
+        console.log("DB"+result);
         result.baby = data.rows;  
     }, (error) => {
         result.baby = [];

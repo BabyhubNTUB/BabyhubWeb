@@ -18,6 +18,15 @@ var like = async function (newData) {
                 sql('INSERT INTO t11forumlike (id, forumno) VALUES ($1, $2)', [newData.id, newData.forumno])
                     .then((data) => {
                         result = 0;
+                        sql('INSERT INTO t09notification (id, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2)', [newData.forumno, "newData.userid+按了你的貼文讚"])
+                            .then((data) => {
+                                result = 0;
+                                console.log("------------------------1");
+                            }, (error) => {
+                                result = -1;
+                                console.log(data);
+                                console.log("------------------------");
+                            });
                         console.log("------------------------1");
                     }, (error) => {
                         result = -1;

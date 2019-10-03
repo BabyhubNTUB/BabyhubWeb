@@ -17,6 +17,7 @@ router.post('/', function(req, res, next) {
     console.log(newData);
     user.update(newData).then(d => {
         if (d>=0){
+            data.baby[0].birthday=moment(data.baby[0].birthday).format("YYYY-MM-DD");
             res.render('userSuccess', {results:d});  //傳至成功頁面
             console.log('Success');
         }else{

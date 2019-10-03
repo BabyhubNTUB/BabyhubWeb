@@ -56,13 +56,14 @@ var update = async function(newData){
     console.log(newData);
     await sql('UPDATE t01member SET username=$1, password=$2 WHERE id = $3', [newData.username, newData.password,newData.id])
         .then((data) => {
-            results = data.rowCount;  
+            results = data.rowCount;
         }, (error) => {
             results = -1;
             console.log('error');
         });
-		
-    return results;
+
+    return results;      
+
 }
 //匯出
 module.exports = {login, add, del, update};

@@ -58,6 +58,8 @@ var updateforum = require('./routes/updateforum');
 var updategrowrecord = require('./routes/updategrowrecord');
 var myforum = require('./routes/myforum');
 var like = require('./routes/like');
+var com_add = require('./routes/com_add');
+
 
 var mlogout= require('./routes/mlogout');
 var homepageMan= require('./routes/homepageMan');
@@ -159,6 +161,7 @@ app.use('/updateforum', updateforum );
 app.use('/updategrowrecord', updategrowrecord );
 app.use('/myforum', myforum );
 app.use('/like', like );
+app.use('/com_add', com_add);
 
 app.use('/mlogout', mlogout);
 app.use('/homepageMan', homepageMan);

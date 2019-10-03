@@ -9,9 +9,18 @@ const sql = require('./asyncDB');
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO t05forumcomment (content) VALUES ($1)', [newData.content])
+    await sql('INSERT INTO t05forumcomment (forumno,id,content) VALUES ($1,$2,$3)', [newData.forumno,newData.userid,newData.content])
         .then((data) => {
             result = 0;  
+            sql('INSERT INTO t09notification (id, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2)', [newData.forumno, "newData.userid+在你的貼文下留言"])
+                .then((data) => {
+                    result = 0;
+                    console.log("------------------------1");
+                }, (error) => {
+                    result = -1;
+                    console.log(data);
+                    console.log("------------------------");
+                });
         }, (error) => {
             result = -1;
         });

@@ -16,12 +16,14 @@ router.post('/', function(req, res, next) {
     } 
     console.log(newData);
     user.update(newData).then(d => {
+        console.log("d");
+        console.log(d);
         if (d>=0){
-            res.render('userSuccess', {results:d});  //傳至成功頁面
             console.log('Success');
+            res.render('userSuccess');  //傳至成功頁面
         }else{
-            res.render('userFail');     //導向錯誤頁面
             console.log('fail');
+            res.render('userFail');     //導向錯誤頁面
         }  
     })
 });

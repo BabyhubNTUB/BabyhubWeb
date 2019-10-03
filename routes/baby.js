@@ -3,6 +3,8 @@ var router = express.Router();
 
 //增加引用函式
 const baby = require('./utility/baby');
+var moment = require('moment');
+
 
 //接收GET請求
 router.get('/:babyno', function(req, res, next) {
@@ -14,8 +16,9 @@ router.get('/:babyno', function(req, res, next) {
         }else if(data==-1){
             res.render('notFound');  //導向找不到頁面                
         }else{
-            res.render('baby', {result:data});  //將資料傳給顯示頁面
+            data.baby[0].birthday=moment(data.baby[0].birthday).format("YYYY-MM-DD");
             console.log(data);
+            res.render('baby', {result:data});  //將資料傳給顯示頁面
         }  
     })
 });
