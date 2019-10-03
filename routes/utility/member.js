@@ -49,6 +49,13 @@ var query = async function(id){
             result.baby = [];
         });   
 
+    await sql('SELECT * FROM "t04forum" WHERE id like $1', [id])
+        .then((data) => {            
+            result.forum = data.rows;  
+        }, (error) => {
+            result.user = [];
+        });
+        
         console.log(result);
     return result;
 }

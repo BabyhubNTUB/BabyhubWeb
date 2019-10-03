@@ -41,7 +41,6 @@ var add = async function(newData){
 }
 var del = async function(id){
     var result;
-    id
     await sql('DELETE FROM t01member WHERE id = $1', [id])
         .then((data) => {
             result = data.rowCount;  

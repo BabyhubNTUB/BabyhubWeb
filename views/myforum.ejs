@@ -110,15 +110,26 @@
         <div id="main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-2">
                         <div class="profilePage">
                             <img alt="Bootstrap Image Preview" src="images/profile.jpg" />
                         </div>
-                        <ul class="links">
+                       <ul class="links">
                             <li>
                                 <a href="/addbaby">
                                     <h4>新增寶寶</h4>
                                 </a>
+                                <ul class="links">
+                                    <% for(var i=0; i<result.baby.length; i++) {%>
+                                        <li>
+                                            <a href="/baby/<%= result.baby[i].babyno %>">
+                                                <strong><%= result.baby[i].name %></strong>
+                                            </a>
+                                        </li>
+                                    <% } %>
+                                </ul>
                             </li>
                             <li>
                                 <a href="/profilesetting">
@@ -139,28 +150,35 @@
                     </div>
                     <div class="col-md-7">
                         <div class="list-group">
+                                <!-- <div class="list-group">
+                                        <a href="/forum2" class="list-group-item list-group-item-info">討論版 熱門文章</a>
+                                        <% for(var i=0; i<result.forum.length; i++) {%>
+                                            <div class="list-group-item">
+                                                    <a href="/aforum2/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
+                                            </div>
+                                        <% } %>
+                                        <a href="/forum2" class="list-group-item list-group-item-warning">... 更多文章</a>
+                                    </div> -->
                             <a class="list-group-item list-group-item-info">我的文章</a>
-                            <div class="list-group-item">
-                                List header
-                            </div>
-                            <div class="list-group-item">
-                                List header
-                            </div>
-                            <div class="list-group-item">
-                                List header
-                            </div>
-                            <div class="list-group-item">
-                                List header
-                            </div>
-                            <div class="list-group-item">
-                                List header
-                            </div>
-                            <div class="list-group-item">
-                                List header
-                            </div>
-                            <div class="list-group-item">
-                                List header
-                            </div>
+                            <% for(var i=0; i<result.forum.length; i++) {%>
+                                <div class="list-group-item">
+                                    <div class="col-md-6">
+                                        <a href="/aforum/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="forumno" value="<%= result.forum[i].forumno %>" hidden />
+                                        <button type="submit">
+                                                <a href="/editmyforum/<%= result.forum[i].forumno %>">編輯</a>
+                                        </button>
+                                        <form action="/for_del" method="post">
+                                            <input type="text" class="form-control" name="forumno" value="<%= result.forum[i].forumno %>" hidden />
+                                            <button type="submit" style="float: right">
+                                                刪除
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            <% } %>
                         </div>
                     </div>
                     <div class="col-md-2">

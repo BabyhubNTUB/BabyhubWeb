@@ -110,7 +110,9 @@
         <div id="main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-2">
                         <div class="profilePage">
                             <img alt="Bootstrap Image Preview" src="images/profile.jpg" />
                         </div>
@@ -119,6 +121,15 @@
                                 <a href="/addbaby">
                                     <h4>新增寶寶</h4>
                                 </a>
+                                <ul class="links">
+                                    <% for(var i=0; i<result.baby.length; i++) {%>
+                                        <li>
+                                            <a href="/baby/<%= result.baby[i].babyno %>">
+                                                <strong><%= result.baby[i].name %></strong>
+                                            </a>
+                                        </li>
+                                    <% } %>
+                                </ul>
                             </li>
                             <li>
                                 <a href="/profilesetting">
@@ -137,32 +148,36 @@
                             </li>
                         </ul>
                     </div>
+                    <% for(var i=0; i<result.user.length; i++) {%>
                     <div class="col-md-7">
                         <form action="/user_update" method="post">
                             <div class="form-group">
                                 <label for="exampleInputUsername1">
                                     姓名 
                                 </label>
-                                <input type="text" class="form-control" name="username" value="<%= result.username %>"/>
+                                <input type="text" class="form-control" name="username" value="<%= result.user[i].username %>"/>
                                 <label for="exampleInputUsername1">
                                     帳號
                                 </label>
-                                <input type="text" class="form-control" name="id" value="<%= result.id %>" readonly />
+                                <input type="text" class="form-control" name="id" value="<%= result.user[i].id %>" readonly />
                                 <label for="exampleInputPassword1">
                                     新密碼
                                 </label>
-                                <input type="password" class="form-control" name="password" value="<%= result.password %>"/>
+                                <input type="password" class="form-control" name="password" value="<%= result.user[i].password %>"/>
                             </div>
                             <button type="submit">
                                 更改
                             </button>
                         </form>
+                    <% } %>    
+                    <% for(var i=0; i<result.user.length; i++) {%>
                         <form action="/user_del" method="post">
-                            <input type="text" class="form-control" name="id" value="<%= result.id %>" hidden />
+                            <input type="text" class="form-control" name="id" value="<%= result.user[i].id %>" hidden />
                             <button type="submit">
                                 刪除
                             </button>
                         </form>
+                    <% } %>
                     </div>
                     <div class="col-md-2">
                     </div>
