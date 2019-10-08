@@ -2271,7 +2271,10 @@ input, select, textarea {
 	form {
 		margin: 0 0 2em 0;
 	}
-
+		form.search2 {
+			text-decoration: none;
+			position: relative;
+		}
 		form.search {
 			text-decoration: none;
 			position: relative;

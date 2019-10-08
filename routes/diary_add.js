@@ -2,26 +2,21 @@ var express = require('express');
 var router = express.Router();
 
 //增加引用函式
-const comment = require('./utility/comment');
+const edu = require('./utility/diary');
 
 //接收POST請求
 router.post('/', function (req, res, next) {
-    var userid = req.session.userid;
-    var username = req.session.username;
-    var forumno = req.body.forumno;
-    // var now = new Date();
-    var content = req.body.content;
-
+    var id = req.body.id;
+    var diary = req.body.diary;
+    var diarydate = new Date();
     // 建立一個新資料物件
     var newData = {
-        username: username,
-        userid: userid,
-        forumno: forumno,
-        // forumdatetime:  now,
-        content: content
+        id: id,
+        diary: diary,
+        diarydate: diarydate
     }
     console.log(newData);
-    comment.add(newData).then(d => {
+    edu.add(newData).then(d => {
         if (d==0) {
             res.render('userSuccess');  //傳至成功頁面
         } else {

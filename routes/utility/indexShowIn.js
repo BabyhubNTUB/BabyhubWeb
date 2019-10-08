@@ -44,7 +44,14 @@ var list = async function(id){
     }, (error) => {
         result.baby = [];
     });	
-    // console.log(result);    
+
+    await sql('SELECT * FROM t09notification where id like $1', [id])
+    .then((data) => {            
+        result.notification = data.rows;  
+    }, (error) => {
+        result.notification = [];
+    });
+    console.log(result);    
     return result;
 }
 

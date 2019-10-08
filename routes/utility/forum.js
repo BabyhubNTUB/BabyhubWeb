@@ -78,30 +78,6 @@ var one = async function (forumno) {
     return result;
 }
 
-//------------------------------------------
-// 取出型態資料
-//------------------------------------------
-var getDropdownData = async function () {
-    //儲存下拉式選單資料
-    var type;
-
-    //取回protype資料
-    await sql('SELECT * FROM t15forumtype ORDER BY typeno')
-        .then((data) => {
-            console.log(data);
-            type = data.rows;
-        }, (error) => {
-            result = [];
-        });
-
-    //設定回傳資料    
-    var result = {};
-    result.type = type;
-    console.log(result.type);
-    //回傳
-    return result;
-}
-
 var add = async function (newData) {
     var result;
 
@@ -217,4 +193,4 @@ var type = async function (type) {
 //     return result;
 // }
 //匯出
-module.exports = { getDropdownData, list, one, add, del, update, search, type };
+module.exports = { list, one, add, del, update, search, type };

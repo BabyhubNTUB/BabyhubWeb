@@ -59,6 +59,10 @@ var updategrowrecord = require('./routes/updategrowrecord');
 var myforum = require('./routes/myforum');
 var like = require('./routes/like');
 var com_add = require('./routes/com_add');
+var diary_add = require('./routes/diary_add');
+var diary_del = require('./routes/diary_del');
+var diary_update = require('./routes/diary_update');
+var searchdiary = require('./routes/searchdiary');
 
 
 var mlogout= require('./routes/mlogout');
@@ -162,6 +166,10 @@ app.use('/updategrowrecord', updategrowrecord );
 app.use('/myforum', myforum );
 app.use('/like', like );
 app.use('/com_add', com_add);
+app.use('/diary_add', diary_add);
+app.use('/diary_del', diary_del);
+app.use('/diary_update', diary_update);
+app.use('/searchdiary', searchdiary);
 
 app.use('/mlogout', mlogout);
 app.use('/homepageMan', homepageMan);

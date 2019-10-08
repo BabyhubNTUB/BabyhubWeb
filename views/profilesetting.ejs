@@ -168,8 +168,7 @@
                             <button type="submit">
                                 更改
                             </button>
-                        </form>
-                    <% } %>    
+                        </form>    
                     <% for(var i=0; i<result.user.length; i++) {%>
                         <form action="/user_del" method="post">
                             <input type="text" class="form-control" name="id" value="<%= result.user[i].id %>" hidden />

@@ -3,22 +3,21 @@ var router = express.Router();
 
 //增加引用函式
 var moment = require('moment');
-const baby = require('./utility/baby');
+const diary = require('./utility/diary');
 
 //接收POST請求
 router.post('/', function(req, res, next) {
-    var babyno = req.body.babyno;
-    console.log(babyno);
+    var serno = req.body.serno;
+    console.log(serno);
 
     var newData={
-        babyno: babyno,
-        name: req.body.name,
-        birthday: req.body.birthday
+        serno: serno,
+        diary: req.body.diary,
+        diarydate: req.body.diarydate
     } 
     console.log(newData);
-    baby.update(newData).then(d => {
+    diary.update(newData).then(d => {
         if (d>=0){
-            d.birthday=moment(d.birthday).format("YYYY-MM-DD");
             console.log('Success');
             res.render('userSuccess', {results:d});  //傳至成功頁面
         }else{

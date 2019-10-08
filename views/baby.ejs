@@ -161,15 +161,16 @@
 						<% } %>
 							</div>
 						
-                        <div class="card">
+                        <div class="card" style="background: none;">
 							<div class="card-block">
 								<h5 class="card-title">
 									成長記錄
 								</h5>
 								<p class="card-text">
 									(今天)
+									<input type="text" class="form-control" name="babyno" value="<%= result.baby[i].babyno %>" hidden/>
 									<br> 寶　寶：
-									<input name="baby" type="text-inline" value="佑佑">
+									<input name="baby" type="text-inline" value="<%= result.baby[i].name %>">
 									<br> 身　長：
 									<input name="length" type="number">　cm
 									<br> 體　重：

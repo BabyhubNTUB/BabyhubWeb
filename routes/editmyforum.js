@@ -20,19 +20,6 @@ router.get('/:forumno', function(req, res, next) {
             res.render('editmyforum', {result:data});  //將資料傳給顯示頁面
         }  
     })
-    // forum.one(forumno).then(d => {
-    //     if (d!=null && d!=-1){
-    //         var data = {
-    //             forumno: d.forumno,
-    //             forumname: d.forumname,
-    //             typeno: d.typeno,
-    //             content: d.content
-    //         }
-    //         res.render('editmyforum', {result:data});  //將資料傳給更新頁面
-    //     }else{
-    //         res.render('notFound');  //導向找不到頁面
-    //     }  
-    // })
 });
 
 //匯出

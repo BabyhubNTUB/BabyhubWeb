@@ -17,7 +17,9 @@ router.get('/', function(req, res, next) {
             res.render('error');  //導向錯誤頁面
         }else if(data.forum.length > 0){
             console.log(data);
+            // data.notification = req.session.notification;
             data.username = req.session.username;
+            // console.log(req.session.notification);
             res.render('homepage', {result:data});  //將資料傳給顯示頁面
         }else{
             res.render('notFound');  //導向找不到頁面
