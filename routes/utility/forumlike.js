@@ -11,14 +11,15 @@ var like = async function (newData) {
     var result = {};
     console.log(newData);
 
-    await sql('SELECT * FROM t11forumlike where id=$1 and forumno=$2', [newData.id, newData.forumno])
+    await sql('SELECT * FROM t11forumlike where id=$1 and forumno=$2', [newData.userid, newData.forumno])
         .then((data) => {
             console.log(data.rowCount);
             if (data.rowCount == 0) {
-                sql('INSERT INTO t11forumlike (id, forumno) VALUES ($1, $2)', [newData.id, newData.forumno])
+                sql('INSERT INTO t11forumlike (id, forumno) VALUES ($1, $2)', [newData.userid, newData.forumno])
                     .then((data) => {
                         result = 0;
-                        sql('INSERT INTO t09notification (id, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2)', [newData.forumno, "newData.userid+按了你的貼文讚"])
+                        var content=newData.username+"按了你的貼文讚";
+                        sql('INSERT INTO t09notification (id, content) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2)', [newData.forumno, content])
                             .then((data) => {
                                 result = 0;
                                 console.log("------------------------1");

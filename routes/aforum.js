@@ -8,6 +8,7 @@ const forum = require('./utility/forum');
 //接收GET請求
 router.get('/:forumno', function(req, res, next) {
     var forumno = req.params.forumno;   //取出參數
+    console.log(forumno);
 
     forum.one(forumno).then(data => {
         if (data==null){
