@@ -35,22 +35,23 @@ var like = async function (newData) {
                         console.log("------------------------");
                     });
             } else if (data.rowCount > 0) {
-                sql('DELETE FROM t11forumlike WHERE id = $1 and forumno=$2', [newData.id, newData.forumno])
+                sql('DELETE FROM t11forumlike WHERE id = $1 and forumno = $2', [newData.userid, newData.forumno])
                     .then((data) => {
                         result = data.rowCount;
                         console.log("------------------------2");
                     }, (error) => {
                         result = -1;
-                        console.log("------------------------3");
+                        console.log("------------------------");
                     });
+                    console.log("------------------------2");
             } else {
                 result = -1;
                 console.log(data);
-                console.log("------------------------4");
+                console.log("------------------------");
             }
         }, (error) => {
             result = -1;
-            console.log("------------------------5");
+            console.log("------------------------");
         });
     console.log(result);
     return result;

@@ -66,12 +66,6 @@
 						</a>
 					</li>
 					<li>
-						<a href="/vaccine">
-							<h3>疫苗施打</h3>
-							<p>告訴你什麼時候該打什麼疫苗！</p>
-						</a>
-					</li>
-					<li>
 						<a href="/growrecord">
 							<h3>成長紀錄</h3>
 							<p>填寫寶寶的身體變化吧！</p>
@@ -161,30 +155,36 @@
 						<% } %>
 							</div>
 						
+						<% for(var i=0; i<result.baby.length; i++) {%>
                         <div class="card" style="background: none;">
 							<div class="card-block">
 								<h5 class="card-title">
 									成長記錄
 								</h5>
-								<p class="card-text">
-									(今天)
-									<input type="text" class="form-control" name="babyno" value="<%= result.baby[i].babyno %>" hidden/>
-									<br> 寶　寶：
-									<input name="baby" type="text-inline" value="<%= result.baby[i].name %>">
-									<br> 身　長：
-									<input name="length" type="number">　cm
-									<br> 體　重：
-									<input name="weight" type="number">　kg
-									<br> 喝奶量：
-									<input name="drinkmilk" type="number">　cc
-								</p>
-								<p>
-									<button class="btn" href="#">新增</button>
-									<button class="btn" href="#">清除</button>
-								</p>
+								<form action="/grecord_add" method="post">
+									<div class="form-group">
+										<p class="card-text">
+												(今天)
+												<input type="text" class="form-control" name="babyno" value="<%= result.baby[i].babyno %>" hidden/>
+												<br> 寶　寶：
+												<input name="baby" type="text-inline" value="<%= result.baby[i].name %>" style="background: none;" readonly>
+												<br> 身　長：
+												<input name="height" type="number" style="background: none;">　cm
+												<br> 體　重：
+												<input name="weight" type="number" style="background: none;">　kg
+												<br> 喝奶量：
+												<input name="drinkmilk" type="number" style="background: none;">　cc
+											</p>
+									</div>
+									<button type="submit">
+										撰寫
+									</button>
+								</form>
+								
 								</div>
 							</div>
 						</div>
+						<% } %>
 					</div>	
                     <div class="col-md-2">
                     </div>

@@ -65,12 +65,6 @@
 					</a>
 				</li>
 				<li>
-					<a href="/vaccine">
-						<h3>疫苗施打</h3>
-						<p>告訴你什麼時候該打什麼疫苗！</p>
-					</a>
-				</li>
-				<li>
 					<a href="/growrecord">
 						<h3>成長紀錄</h3>
 						<p>填寫寶寶的身體變化吧！</p>
@@ -136,7 +130,6 @@
 								<button type="submit" style="width: 5%; height: 50%; box-shadow: none; padding: 0;">
 									<a class="icon fa-heart-o"><%= result.cnt.cntlike %></a>
 								</button>
-								<!-- <a class="icon fa-comments-o"> <%= result.cnt.cntcomment %></a> -->
 							</form>
 						</ul>
 					</footer>
@@ -158,6 +151,7 @@
 						</div>
 					</div>
 					<% } %>
+					<% for(var i=0; i<result.com.length; i++) {%>
 					<div class="list-group-item">
 						<div class="col-md-12">
 							<form class="form-group" style="text-align:right;" action="/com_add" method="POST">
@@ -171,6 +165,7 @@
 							</form>
 						</div>
 					</div>
+					<% } %>
 				</article>
 			</div>
 		</div>

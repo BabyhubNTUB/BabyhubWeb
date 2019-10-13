@@ -63,6 +63,10 @@ var diary_add = require('./routes/diary_add');
 var diary_del = require('./routes/diary_del');
 var diary_update = require('./routes/diary_update');
 var searchdiary = require('./routes/searchdiary');
+var grecord_add = require('./routes/grecord_add');
+var grecord_del = require('./routes/grecord_del');
+var grecord_update = require('./routes/grecord_update');
+var searchgrecord = require('./routes/searchgrecord');
 
 
 var mlogout= require('./routes/mlogout');
@@ -170,6 +174,12 @@ app.use('/diary_add', diary_add);
 app.use('/diary_del', diary_del);
 app.use('/diary_update', diary_update);
 app.use('/searchdiary', searchdiary);
+app.use('/grecord_add', grecord_add);
+app.use('/grecord_del', grecord_del);
+app.use('/grecord_update', grecord_update);
+app.use('/searchgrecord', searchgrecord);
+
+
 
 app.use('/mlogout', mlogout);
 app.use('/homepageMan', homepageMan);

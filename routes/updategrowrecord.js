@@ -1,9 +1,26 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('updategrowrecord', { title: 'Express' });
+//增加引用函式
+const growingrecord = require('./utility/growingrecord');
+var moment = require('moment');
+
+//接收GET請求
+router.get('/:serno', function (req, res, next) {
+  //var id = req.query.id;   //取出參數
+  var serno = req.params.serno;
+  console.log(serno);
+  growingrecord.one(serno).then(data => {
+    if (data == null) {
+      res.render('error');  //導向錯誤頁面
+    } else if (data == -1) {
+      res.render('notFound');  //導向找不到頁面                
+    } else {
+      data.recorddate=moment(data.recorddate).format("YYYY-MM-DD");
+      console.log(data);
+      res.render('updategrowrecord', { item: data });  //將資料傳給顯示頁面
+    }
+  })
 });
 
 module.exports = router;
