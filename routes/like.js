@@ -17,6 +17,8 @@ router.post('/', function (req, res, next) {
     }
     console.log(newData);
     like.like(newData).then(d => {
+        console.log('d');
+        console.log(d);
         if (d==0) {
             res.render('userSuccess');  //傳至成功頁面
         } else {
