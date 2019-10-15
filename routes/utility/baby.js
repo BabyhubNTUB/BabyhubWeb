@@ -25,28 +25,14 @@ var one = async function(babyno){
     }, (error) => {
         result.baby = [];
     });  
-    console.log(result);
-        // await sql('SELECT * FROM t05forumcomment a, t01member b WHERE a.id=b.id and forumno = $1', [forumno])
-        // .then((data) => {
-        //     if(data.rows.length > 0){
-        //         result.com = data.rows;   
-        //     }else{
-        //         result.com = -1;
-        //     }    
-        // }, (error) => {
-        //     result.com = null;
-        // });    
 
-        // await sql('SELECT * FROM forum WHERE forumno = $1', [forumno])
-        // .then((data) => {
-        //     if(data.rows.length > 0){
-        //         result.cnt = data.rows[0];   
-        //     }else{
-        //         result.cnt = -1;
-        //     }    
-        // }, (error) => {
-        //     result.cnt = null;
-        // });
+    await sql('SELECT * FROM t03growingrecord where babyno=$1 order by recorddate limit 10', [babyno])
+    .then((data) => {            
+        result.record = data.rows;  
+    }, (error) => {
+        result.record = [];
+    }); 
+    console.log(result);
     return result;
 }
 

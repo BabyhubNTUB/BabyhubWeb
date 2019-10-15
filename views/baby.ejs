@@ -185,11 +185,11 @@
 
 						</div>
 					</div>
-				<% } %>
-				<!-- 圖表位置 my.Chart.bundle.js~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-				<canvas id="myChart" width="100" height="50">
-				</canvas>
-				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<% } %>
+					<!-- 圖表位置 my.Chart.bundle.js~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					<canvas id="myChart" width="100" height="50">
+					</canvas>
+					<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 				</div>
 				<div class="col-md-2">
 				</div>
@@ -199,7 +199,27 @@
 
 	<!-- Scripts -->
 	<script src="/assets/js/Chart.bundle.js"></script>
-	<script src="/assets/js/my.Chart.bundle.js"></script>
+	<script>
+		var ctx = document.getElementById("myChart").getContext('2d');
+
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: JSON.parse('<%-  JSON.stringify(result.labels) %>'),
+				datasets: JSON.parse('<%-  JSON.stringify(result.datasets) %>')
+
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+	</script>
 	<script src="/assets/js/jquery.min.js"></script>
 	<script src="/assets/js/browser.min.js"></script>
 	<script src="/assets/js/breakpoints.min.js"></script>
