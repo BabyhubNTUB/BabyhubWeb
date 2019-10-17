@@ -45,7 +45,7 @@ var list = async function(id){
         result.baby = [];
     });	
 
-    await sql('SELECT * FROM t09notification where id like $1', [id])
+    await sql('SELECT * FROM t09notification where id like $1 order by serno desc limit 3', [id])
     .then((data) => {            
         result.notification = data.rows;  
     }, (error) => {
