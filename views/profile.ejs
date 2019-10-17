@@ -112,7 +112,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="profilePage">
-                        <img alt="Bootstrap Image Preview" src="images/profile.jpg" />
+                        <img alt="Bootstrap Image Preview" src="/images/<%= result.user.photo %>" />
                     </div>
                     <ul class="links">
                         <li>
@@ -147,19 +147,18 @@
                     </ul>
                 </div>
                 <div class="col-md-7">
-                    <% for(var i=0; i<result.user.length; i++) {%>
                     <div class="profile_box">
                         <p class="head"><img src="images/membership.png">　會員</p>
-                        <p class="title">名稱：　<%= result.user[i].username %></p><br />
-                        <p class="title">稱謂：　<%= result.user[i].appellation %></p><br />
-                        <p class="title">帳號：　<%= result.user[i].id %></p><br />
+                        <p class="title">名稱：　<%= result.user.username %></p><br />
+                        <p class="title">稱謂：　<%= result.user.appellation %></p><br />
+                        <p class="title">帳號：　<%= result.user.id %></p><br />
                     </div>
                     <div class="card" style="background: none;">
                         <div class="card-block">
                             <form action="/diary_add" method="post">
                                 <div class="form-group">
                                     <p class="head"><img src="images/edit.png">　寫日記</p>
-                                    <input type="text" class="form-control" name="id" value="<%= result.user[i].id %>" hidden/>
+                                    <input type="text" class="form-control" name="id" value="<%= result.user.id %>" hidden/>
                                     <input type="text" class="form-control" name="diary" />
                                 </div>
                                 <button type="submit">
@@ -168,7 +167,6 @@
                             </form>
                         </div>
                     </div>
-                    <% } %>
                 </div>
                 <div class="col-md-2">
                 </div>

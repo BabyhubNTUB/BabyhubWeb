@@ -21,7 +21,7 @@ var one = async function(babyno){
     await sql('SELECT * FROM t02baby where babyno=$1', [babyno])
     .then((data) => {            
         console.log("DB"+result);
-        result.baby = data.rows;  
+        result.baby = data.rows[0];  
     }, (error) => {
         result.baby = [];
     });  
@@ -58,8 +58,9 @@ var list = async function(id){
 
 var add = async function(newData){
     var result;
+    var photo="baby.png";
 
-    await sql('INSERT INTO t02baby (id, name, gender,birthday) VALUES ($1, $2, $3, $4)', [newData.userid, newData.name, newData.gender, newData.birthday])
+    await sql('INSERT INTO t02baby (id, name, gender,birthday,photo) VALUES ($1, $2, $3, $4, )', [newData.userid, newData.name, newData.gender, newData.birthday,photo])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -86,7 +87,7 @@ var update = async function(newData){
     var results;
     console.log("==========================");
     console.log(newData);
-    await sql('UPDATE t02baby SET name=$1, birthday=$2 WHERE babyno = $3', [newData.name, newData.birthday, newData.babyno])
+    await sql('UPDATE t02baby SET name=$1, birthday=$2, photo=$3 WHERE babyno = $4', [newData.name, newData.birthday, newData.photo, newData.babyno])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {

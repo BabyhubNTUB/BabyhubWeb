@@ -13,15 +13,13 @@ router.get('/', function(req, res, next) {
         if (data==null){
             console.log('1-------------------------------');
             res.render('error');  //導向錯誤頁面
-        }else if(data.user.length > 0){
+        }else if(data == -1){
+            res.render('notFound');  //導向找不到頁面
+        }else{
             data.username = req.session.username;
             console.log(userid);
             console.log(data);
             res.render('profile', {result:data});  //將資料傳給顯示頁面
-        }else{
-            res.render('notFound');  //導向找不到頁面
-            console.log('notfound');
-            console.log(data);
         }  
     })
 });

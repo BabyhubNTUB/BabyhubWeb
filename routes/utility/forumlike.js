@@ -50,7 +50,7 @@ var like = async function (newData) {
     }
 
     if (addnot == 1) {
-        await sql('INSERT INTO t09notification (id, content) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2)', [newData.forumno, content])
+        await sql('INSERT INTO t09notification (id, content, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2, $3)', [newData.userid, content, newData.forumno])
             .then((data) => {
                 result = 0;
                 console.log("------------------------10");

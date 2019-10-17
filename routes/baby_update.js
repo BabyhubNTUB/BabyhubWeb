@@ -13,7 +13,8 @@ router.post('/', function(req, res, next) {
     var newData={
         babyno: babyno,
         name: req.body.name,
-        birthday: req.body.birthday
+        birthday: req.body.birthday,
+        photo: req.body.photo
     } 
     console.log(newData);
     baby.update(newData).then(d => {

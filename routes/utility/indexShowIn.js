@@ -45,12 +45,27 @@ var list = async function(id){
         result.baby = [];
     });	
 
+
+    var rowcnt =0;
     await sql('SELECT * FROM t09notification where id like $1 order by serno desc limit 3', [id])
-    .then((data) => {            
-        result.notification = data.rows;  
+    .then((data) => {
+        console.log(data.rowCount);
+        rowcnt = data.rowCount;
+        result.notification = data.rows; 
     }, (error) => {
         result.notification = [];
     });
+
+    if (rowcnt == 0) {
+        await sql('SELECT * FROM t09notification where serno=21')
+        .then((data) => {
+            result.notification = data.rows; 
+        }, (error) => {
+            result.notification = [];
+        });
+    }
+    
+
     console.log(result);    
     return result;
 }

@@ -113,7 +113,7 @@
 				</div>
 				<div class="col-md-2">
 					<div class="profilePage">
-						<img src="/images/baby1.jpg">
+						<img src="/images/<%= result.baby.photo %>">
 					</div>
 					<ul class="links">
 						<li>
@@ -130,13 +130,11 @@
 								<% } %>
 							</ul>
 						</li>
-						<% for(var i=0; i<result.baby.length; i++) {%>
 						<li>
-							<a href="/babysetting/<%= result.baby[i].babyno %>">
+							<a href="/babysetting/<%= result.baby.babyno %>">
 								<h4>寶寶設定</h4>
 							</a>
 						</li>
-						<% } %>
 						<li>
 							<a href="/profile">
 								<h4>回會員</h4>
@@ -146,16 +144,13 @@
 
 				</div>
 				<div class="col-md-7">
-					<% for(var i=0; i<result.baby.length; i++) {%>
 					<div class="profile_box">
 						<p class="head"><img
-								src="/images/membership.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= result.baby[i].name %>
+								src="/images/membership.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= result.baby.name %>
 						</p>
-						<p class="title">性別：　<%= result.baby[i].gender %></p><br />
-						<p class="title">生日：　<%= result.baby[i].birthday %></p><br />
-						<% } %>
+						<p class="title">性別：　<%= result.baby.gender %></p><br />
+						<p class="title">生日：　<%= result.baby.birthday %></p><br />
 					</div>
-					<% for(var i=0; i<result.baby.length; i++) {%>
 					<div class="card" style="background: none;">
 						<div class="card-block">
 							<h5 class="card-title">
@@ -166,9 +161,9 @@
 									<p class="card-text">
 										(今天)
 										<input type="text" class="form-control" name="babyno"
-											value="<%= result.baby[i].babyno %>" hidden />
+											value="<%= result.baby.babyno %>" hidden />
 										<br> 寶　寶：
-										<input name="baby" type="text-inline" value="<%= result.baby[i].name %>"
+										<input name="baby" type="text-inline" value="<%= result.baby.name %>"
 											style="background: none;" readonly>
 										<br> 身　長：
 										<input name="height" type="number" style="background: none;">　cm
@@ -185,7 +180,6 @@
 
 						</div>
 					</div>
-					<% } %>
 					<!-- 圖表位置 my.Chart.bundle.js~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 					<canvas id="myChart" width="100" height="50">
 					</canvas>

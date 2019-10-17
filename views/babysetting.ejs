@@ -14,6 +14,7 @@
 	<link rel="icon" href="/images/logo.png" type="image/ico" />
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 </head>
 
 <body class="is-preload">
@@ -112,7 +113,7 @@
 				</div>
 				<div class="col-md-2">
 					<div class="profilePage">
-						<img src="/images/baby1.jpg">
+						<img id="img" src="/images/<%= result.baby.photo %>" />
 					</div>
 					<ul class="links">
 						<li>
@@ -129,13 +130,11 @@
 								<% } %>
 							</ul>
 						</li>
-						<% for(var i=0; i<result.baby.length; i++) {%>
 						<li>
-							<a href="/babysetting/<%= result.baby[i].babyno %>">
+							<a href="/babysetting/<%= result.baby.babyno %>">
 								<h4>寶寶設定</h4>
 							</a>
 						</li>
-						<% } %>
 						<li>
 							<a href="/profile">
 								<h4>回會員</h4>
@@ -145,40 +144,57 @@
 
 				</div>
 				<div class="col-md-7">
-					<% for(var i=0; i<result.baby.length; i++) {%>
 					<form action="/baby_update" method="post">
 						<div class="form-group">
-							<input type="text" class="form-control" name="babyno" value="<%= result.baby[i].babyno %>"
+							<input type="text" class="form-control" name="babyno" value="<%= result.baby.babyno %>"
 								hidden />
 							<label for="exampleInputUsername1">
 								姓名
 							</label>
-							<input type="text" class="form-control" name="name" value="<%= result.baby[i].name %>" />
+							<input type="text" class="form-control" name="name" value="<%= result.baby.name %>" />
 							<label for="exampleInputUsername1">
 								性別
 							</label>
-							<input type="text" class="form-control" name="gender" value="<%= result.baby[i].gender %>"
+							<input type="text" class="form-control" name="gender" value="<%= result.baby.gender %>"
 								readonly />
 							<label for="exampleInputUsername1">
 								生日
 							</label>
-							<input type="date" class="form-control" name="birthday"
-								value="<%= result.baby[i].birthday %>" style="background: none;" />
-							<% } %>
+							<input type="date" class="form-control" name="birthday" value="<%= result.baby.birthday %>"
+								style="background: none;" />
 						</div>
+						<!-- <span class="name">選擇照片</span>
+						<span class="value"><input id="file" type="file" name="photo" /></span>
+						<img id="demo"/> -->
+						<input accept="image/*" id="uploadImage" name="photo" type="file">
+						<script>
+							$("#uploadImage").change(function(){
+							readImage( this );
+							});
+						
+							function readImage(input) {
+							if ( input.files && input.files[0] ) {
+								var FR= new FileReader();
+								FR.onload = function(e) {
+								//e.target.result = base64 format picture
+								$('#img').attr( "src", e.target.result );
+								};       
+								FR.readAsDataURL( input.files[0] );
+							}
+							}
+						</script>
+						<br><br>
 						<button type="submit">
 							更改
 						</button>
 					</form>
-					<% for(var i=0; i<result.baby.length; i++) {%>
 					<form action="/baby_del" method="post">
-						<input type="text" class="form-control" name="babyno" value="<%= result.baby[i].babyno %>"
+						<input type="text" class="form-control" name="babyno" value="<%= result.baby.babyno %>"
 							hidden />
 						<button type="submit">
 							刪除
 						</button>
 					</form>
-					<% } %>
 				</div>
 				<div class="col-md-2">
 				</div>

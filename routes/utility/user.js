@@ -29,8 +29,9 @@ var login = async function(id, password){
 //---------------------------------------------
 var add = async function(newData){
     var result;
+    var photo="profile.png";
 
-    await sql('INSERT INTO t01member (id, username, password,appellation) VALUES ($1, $2, $3, $4)', [newData.id, newData.username, newData.password, newData.appellation])
+    await sql('INSERT INTO t01member (id, username, password,appellation,photo) VALUES ($1, $2, $3, $4)', [newData.id, newData.username, newData.password, newData.appellation,photo])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -54,7 +55,7 @@ var update = async function(newData){
     var results;
     console.log("==========================");
     console.log(newData);
-    await sql('UPDATE t01member SET username=$1, password=$2 WHERE id = $3', [newData.username, newData.password,newData.id])
+    await sql('UPDATE t01member SET username=$1, password=$2, photo=$3 WHERE id = $4', [newData.username, newData.password, newData.photo, newData.id])
         .then((data) => {
             results = data.rowCount;
         }, (error) => {

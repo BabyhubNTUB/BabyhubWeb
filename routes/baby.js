@@ -16,7 +16,7 @@ router.get('/:babyno', function (req, res, next) {
         } else if (data == -1) {
             res.render('notFound');  //導向找不到頁面                
         } else {
-            data.baby[0].birthday = moment(data.baby[0].birthday).format("YYYY-MM-DD");
+            data.baby.birthday = moment(data.baby.birthday).format("YYYY-MM-DD");
             console.log(data);
             var date = [];
             var height = [];

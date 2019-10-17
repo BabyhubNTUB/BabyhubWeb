@@ -37,7 +37,7 @@ var query = async function(id){
 
     await sql('SELECT * FROM "t01member" WHERE id like $1', [id])
         .then((data) => {            
-            result.user = data.rows;  
+            result.user = data.rows[0];  
         }, (error) => {
             result.user = [];
         });

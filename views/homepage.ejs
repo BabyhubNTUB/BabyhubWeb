@@ -29,18 +29,8 @@
 			</a>
 			<nav class="main">
 				<ul>
-					<li class="bell">
-						<a class="fa-bell" href="#menu">Bell</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="fa-bell" data-toggle="dropdown">Dropdown link</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<% for(var i=0; i<result.notification.length; i++) {%>
-							<div class="list-group-item">
-								<a class="dropdown-item" style="font-size:10%; "><%= result.notification[i].content %></a>
-							</div>
-							<% } %>
-						</div>
+					<li class="profile" id="profile">
+						<a class="fa-bell">Bell</a>
 					</li>
 					<li class="bell">
 						<a class="fa-user" href="/profile">Bell</a>
@@ -51,6 +41,17 @@
 				</ul>
 	</div>
 	</header>
+	<div class="profile" id="profileList">
+		<% for(var i=0; i<result.notification.length; i++) {%>
+		<div class="profileList">
+			<div class="list-group-item">
+			<a href="/aforum/<%= result.notification[i].forumno %>">
+				<span><%= result.notification[i].content %></span>
+			</a>
+			</div>
+		</div>
+		<% } %>
+	</div>
 	<!-- Menu -->
 	<section id="menu">
 

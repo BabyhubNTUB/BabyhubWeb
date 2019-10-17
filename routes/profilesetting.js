@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
             console.log('2-------------------------------');
             res.render('notFound');  //導向找不到頁面                
         }else{
+            console.log(data);
             data.username = req.session.username;
             res.render('profilesetting', {result:data});  //將資料傳給顯示頁面
         }  

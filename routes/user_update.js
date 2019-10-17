@@ -12,7 +12,8 @@ router.post('/', function(req, res, next) {
     var newData={
         id:id,
         password: req.body.password,
-        username: req.body.username
+        username: req.body.username,
+        photo: req.body.photo
     } 
     console.log(newData);
     user.update(newData).then(d => {
