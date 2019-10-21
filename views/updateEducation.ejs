@@ -74,40 +74,39 @@
 			<!-- Footer -->
 			<section id="footer">
 				<ul class="icons">
-					<li><a href="https://www.instagram.com/vivian_0124/" class="fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="mailto:jashtinshen0729@gmail.com" class="fa-envelope"><span class="label">Email</span></a></li>
-					<li><a href="https://github.com/tomlinNTUB" class="fa-github-square"><span class="label">github</span></a></li>
-					<li><a href="tel:0983960930" class="fa-phone"><span class="label">github</span></a></li>
-					<li><a href="https://www.facebook.com/profile.php?id=100008400780348" class="fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
 				</ul>
-				<p class="copyright">2018 Copyright&copy;NTUB tomlin.</p>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
 			</section>
 
 		</section>
 
 		<!-- Main -->
 		<div id="main">
-            <div class="container-fluid">
+			<div class="container-fluid">
 				<div class="col-md-12">
 					<form action="/edu_update" method="post">
 						<div class="form-group">
-							<input type="text" name="serno" value="<%= item.serno %>" hidden/>
-							<input type="text" name="managerno" value="<%= item.managerno %>" hidden/>
+							<input type="text" name="serno" value="<%= item.serno %>" hidden />
+							<input type="text" name="managerno" value="<%= item.managerno %>" hidden />
 							<label for="exampleInputTitle1">
 								文章標題
 							</label>
-							<input type="text" name="title" value="<%= item.title %>"/>
+							<input type="text" name="title" value="<%= item.title %>" />
 							<label for="exampleInputSource1">
 								出處
 							</label>
-							<input type="text" name="source" value="<%= item.source %>"/>
+							<input type="text" name="source" value="<%= item.source %>" />
 						</div>
 						<div class="card">
 							<div class="card-block">
 								<p class="head"><img src="images/edit.png">文章內容</p>
 								<!-- <textarea id="full-featured"><p style=" font-size: 15px;">
 								</textarea> -->
-							<input type="text" name="content"  value="<%= item.content %>"/>	
+								<input type="text" name="content" value="<%= item.content %>" />
 							</div>
 						</div>
 						<button type="submit" class="btn">
@@ -117,19 +116,19 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/scripts.js"></script>
-		<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    	<script>tinymce.init({ selector: 'textarea' });</script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+	<script>tinymce.init({ selector: 'textarea' });</script>
 
 </body>
 

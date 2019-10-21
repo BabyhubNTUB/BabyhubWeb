@@ -14,7 +14,7 @@
     <link rel="icon" href="images/logo.png" type="image/ico" />
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 </head>
 
 <body class="is-preload">
@@ -91,17 +91,11 @@
         <!-- Footer -->
         <section id="footer">
             <ul class="icons">
-                <li><a href="https://www.instagram.com/vivian_0124/" class="fa-instagram"><span
-                            class="label">Instagram</span></a></li>
-                <li><a href="mailto:jashtinshen0729@gmail.com" class="fa-envelope"><span class="label">Email</span></a>
-                </li>
-                <li><a href="https://github.com/tomlinNTUB" class="fa-github-square"><span
+                <li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a></li>
+                <li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
                             class="label">github</span></a></li>
-                <li><a href="tel:0983960930" class="fa-phone"><span class="label">github</span></a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100008400780348" class="fa-facebook"><span
-                            class="label">Facebook</span></a></li>
             </ul>
-            <p class="copyright">2018 Copyright&copy;NTUB tomlin.</p>
+            <p class="copyright">Copyright&copy;NTUB IMD 108509</p>
         </section>
 
     </section>
@@ -159,8 +153,7 @@
                             <label for="exampleInputUsername1">
                                 帳號
                             </label>
-                            <input type="text" class="form-control" name="id" value="<%= result.user.id %>"
-                                readonly />
+                            <input type="text" class="form-control" name="id" value="<%= result.user.id %>" readonly />
                             <label for="exampleInputPassword1">
                                 新密碼
                             </label>
@@ -168,23 +161,23 @@
                                 value="<%= result.user.password %>" />
                         </div>
                         <input accept="image/*" id="uploadImage" name="photo" type="file">
-						<script>
-							$("#uploadImage").change(function(){
-							readImage( this );
-							});
-						
-							function readImage(input) {
-							if ( input.files && input.files[0] ) {
-								var FR= new FileReader();
-								FR.onload = function(e) {
-								//e.target.result = base64 format picture
-								$('#img').attr( "src", e.target.result );
-								};       
-								FR.readAsDataURL( input.files[0] );
-							}
-							}
-						</script>
-						<br><br>
+                        <script>
+                            $("#uploadImage").change(function () {
+                                readImage(this);
+                            });
+
+                            function readImage(input) {
+                                if (input.files && input.files[0]) {
+                                    var FR = new FileReader();
+                                    FR.onload = function (e) {
+                                        //e.target.result = base64 format picture
+                                        $('#img').attr("src", e.target.result);
+                                    };
+                                    FR.readAsDataURL(input.files[0]);
+                                }
+                            }
+                        </script>
+                        <br><br>
                         <button type="submit">
                             更改
                         </button>

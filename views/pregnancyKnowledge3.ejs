@@ -18,19 +18,19 @@
 	<!-- addforum按鈕 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript">
-	// 當頁面打開後就顯示
-		$(function() {
+		// 當頁面打開後就顯示
+		$(function () {
 			$('#addforum').show();
 		});
-	// gotop按鈕
-	// 當頁面打開後就顯示
-	$(function() {
+		// gotop按鈕
+		// 當頁面打開後就顯示
+		$(function () {
 			$('#gotop').show();
 			/* 按下GoTop按鈕時的事件 */
-			$('#gotop').click(function(){
+			$('#gotop').click(function () {
 				$('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
 				return false;
-    		});
+			});
 		});
 	</script>
 </head>
@@ -93,31 +93,31 @@
 			<!-- Footer -->
 			<section id="footer">
 				<ul class="icons">
-					<li><a href="https://www.instagram.com/vivian_0124/" class="fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="mailto:jashtinshen0729@gmail.com" class="fa-envelope"><span class="label">Email</span></a></li>
-					<li><a href="https://github.com/tomlinNTUB" class="fa-github-square"><span class="label">github</span></a></li>
-					<li><a href="tel:0983960930" class="fa-phone"><span class="label">github</span></a></li>
-					<li><a href="https://www.facebook.com/profile.php?id=100008400780348" class="fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
 				</ul>
-				<p class="copyright">2018 Copyright&copy;NTUB tomlin.</p>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
 			</section>
 
 		</section>
 
 		<!-- Main -->
 		<div class="row1">
-            <div class="pagetagtop">
+			<div class="pagetagtop">
 				<div class="row">
 					<div class="col-md-6">
-							<h1 style="padding-top:2%;">孕期知識</h1>
+						<h1 style="padding-top:2%;">孕期知識</h1>
 					</div>
 					<div class="col-md-6">
 						<!-- Search -->
 						<section>
 							<form class="search" method="get" action="/searchpre">
-								<input type="number" name="check" value="3" hidden/>
+								<input type="number" name="check" value="3" hidden />
 								<input type="text" name="keyword" style="padding-left: 20%;" />
-								<button type="submit" style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
+								<button type="submit"
+									style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
 							</form>
 						</section>
 					</div>
@@ -125,11 +125,11 @@
 			</div>
 			<div class="col-md-12">
 				<% for(var i=0; i<items.length; i++) {%>
-					<div class="Box">
-						<a href="/apregnancyKnowledge3/<%= items[i].serno %>">
-							<strong><%= items[i].title %></strong>
-						</a>
-					</div>
+				<div class="Box">
+					<a href="/apregnancyKnowledge3/<%= items[i].serno %>">
+						<strong><%= items[i].title %></strong>
+					</a>
+				</div>
 				<% } %>
 			</div>
 		</div>

@@ -74,27 +74,27 @@
 			<!-- Footer -->
 			<section id="footer">
 				<ul class="icons">
-					<li><a href="https://www.instagram.com/vivian_0124/" class="fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="mailto:jashtinshen0729@gmail.com" class="fa-envelope"><span class="label">Email</span></a></li>
-					<li><a href="https://github.com/tomlinNTUB" class="fa-github-square"><span class="label">github</span></a></li>
-					<li><a href="tel:0983960930" class="fa-phone"><span class="label">github</span></a></li>
-					<li><a href="https://www.facebook.com/profile.php?id=100008400780348" class="fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
 				</ul>
-				<p class="copyright">2018 Copyright&copy;NTUB tomlin.</p>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
 			</section>
 
 		</section>
 
 		<!-- Main -->
 		<div class="row">
-			<div class="row"  style="margin: auto; padding: auto; text-align: center;" >
+			<div class="row" style="margin: auto; padding: auto; text-align: center;">
 				<div class="col-md-12">
 					<!-- Search -->
 					<section>
 						<form class="searchforum" method="get" action="/search">
-							<input type="number" name="check" value="2" hidden/>
-							<input type="text" name="keyword" style="padding-left: 20%;"/>
-							<button type="submit" style="width:30%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal;">搜尋</button>
+							<input type="number" name="check" value="2" hidden />
+							<input type="text" name="keyword" style="padding-left: 20%;" />
+							<button type="submit"
+								style="width:30%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal;">搜尋</button>
 						</form>
 					</section>
 				</div>
@@ -102,11 +102,12 @@
 			<div class="col-md-12">
 				<ul class="boardtag">
 					<% for(var i=0; i<result.type.length; i++) {%>
-						<form class="forumtype" method="get" action="/forumtype">
-							<input type="number" name="check" value="2" hidden/>
-							<input type="text" name="type" value="<%=result.type[i].typeno %>" hidden />
-							<li><button style="background-color: transparent; padding: 0; height: auto; box-shadow:none;" type="submit"><a><%= result.type[i].name %></a></button></li>
-						</form>
+					<form class="forumtype" method="get" action="/forumtype">
+						<input type="number" name="check" value="2" hidden />
+						<input type="text" name="type" value="<%=result.type[i].typeno %>" hidden />
+						<li><button style="background-color: transparent; padding: 0; height: auto; box-shadow:none;"
+								type="submit"><a><%= result.type[i].name %></a></button></li>
+					</form>
 					<% } %>
 				</ul>
 			</div>
@@ -122,16 +123,17 @@
 							<td>發文日期</td>
 						</tr>
 						<% for(var i=0; i<result.forum.length; i++) {%>
-							<tr>
-								<td><%= result.forum[i].name %></td>
-								<td><a href="/aforum2/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a></td>
-								<td><%= result.forum[i].cntlike %></td>
-								<td><%= result.forum[i].cntcomment %></td>
-								<td><%= result.forum[i].username %></td>
-								<td><%= result.forum[i].forumdatetime %></td>
-							</tr>
+						<tr>
+							<td><%= result.forum[i].name %></td>
+							<td><a href="/aforum2/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
+							</td>
+							<td><%= result.forum[i].cntlike %></td>
+							<td><%= result.forum[i].cntcomment %></td>
+							<td><%= result.forum[i].username %></td>
+							<td><%= result.forum[i].forumdatetime %></td>
+						</tr>
 						<% } %>
-						
+
 						<tr>
 							<td>廣告</td>
 							<td><a href="#">頂級澳洲奶粉，給寶寶非凡的享受！</a></td>
@@ -140,7 +142,7 @@
 							<td></td>
 							<td></td>
 						</tr>
-						
+
 					</table>
 				</div>
 			</div>
@@ -151,14 +153,14 @@
 		</div>
 	</div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/scripts.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
 
 </body>
 
