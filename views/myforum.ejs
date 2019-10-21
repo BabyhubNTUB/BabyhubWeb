@@ -107,7 +107,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="profilePage">
-                        <img alt="Bootstrap Image Preview" src="images/profile.jpg" />
+                        <img alt="Bootstrap Image Preview" src="/images/<%= result.user.photo %>" />
                     </div>
                     <ul class="links">
                         <li>
@@ -161,7 +161,7 @@
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="forumno"
                                     value="<%= result.forum[i].forumno %>" hidden />
-                                <button type="submit">
+                                <button type="submit" style="box-shadow:none; float:right; height: 5%;">
                                     <a href="/editmyforum/<%= result.forum[i].forumno %>">編輯</a>
                                 </button>
                                 <form action="/for_del" method="post">
