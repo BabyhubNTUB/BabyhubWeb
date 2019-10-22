@@ -67,6 +67,7 @@ var grecord_add = require('./routes/grecord_add');
 var grecord_del = require('./routes/grecord_del');
 var grecord_update = require('./routes/grecord_update');
 var searchgrecord = require('./routes/searchgrecord');
+var searchgrecord2 = require('./routes/searchgrecord2');
 
 
 var mlogout= require('./routes/mlogout');
@@ -178,6 +179,7 @@ app.use('/grecord_add', grecord_add);
 app.use('/grecord_del', grecord_del);
 app.use('/grecord_update', grecord_update);
 app.use('/searchgrecord', searchgrecord);
+app.use('/searchgrecord2', searchgrecord2);
 
 
 

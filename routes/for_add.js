@@ -9,7 +9,7 @@ router.post('/', function (req, res, next) {
     var userid = req.session.userid;
     var typeno = req.body.typeno;
     var forumname = req.body.forumname;
-    // var now = new Date();
+    var now = new Date();
     var content = req.body.content;
 
     // 建立一個新資料物件
@@ -17,7 +17,7 @@ router.post('/', function (req, res, next) {
         userid: userid,
         typeno: typeno,
         forumname: forumname,
-        // forumdatetime:  now,
+        forumdate:  now,
         content: content
     }
     console.log(newData);

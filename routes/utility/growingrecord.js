@@ -120,6 +120,30 @@ var search = async function (id, date) {
     return result;
 }
 
+//---------------------------------------------
+// search2
+//---------------------------------------------
+var search2 = async function (id, babyno) {
+    var result = {};
+
+    await sql('SELECT * FROM t03growingrecord where babyno=$1 order by diarydate desc', [babyno])
+        .then((data) => {
+            result.record = data.rows;
+        }, (error) => {
+            result = [];
+        });
+
+    //取回protype資料
+    await sql('SELECT * FROM t02baby where id=$1', [id])
+        .then((data) => {
+            result.protype = data.rows;
+        }, (error) => {
+            result = [];
+        });
+    //回傳物件
+    return result;
+}
+
 //------------------------------------------
 // 取出型態資料
 //------------------------------------------
@@ -151,4 +175,4 @@ var getDropdownData = async function (id) {
 }
 
 //匯出
-module.exports = { list, one, add, del, update, search, getDropdownData };
+module.exports = { list, one, add, del, update, search, getDropdownData, search2 };

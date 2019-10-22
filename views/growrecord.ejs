@@ -103,7 +103,18 @@
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<div class="row">
-				<div class="col-md-12" style="text-align: right;">
+				<div class="col-md-6">
+					<% for(var i=0; i<result.protype.length; i++) {%>
+					<form action="/searchgrecord2" method="get">
+						<input name="babyno" value="<%= result.protype[i].babyno %>" hidden>
+						<button type="submit"
+							style="background: rgba(255,255,255,0.7); padding: 0; text-align: center; width: 70px;height: 70px;line-height: 70px;border-radius: 70px; margin-bottom: 2%;">
+							<a><%= result.protype[i].name %></a>
+						</button>
+					</form>
+					<% } %>
+				</div>
+				<div class="col-md-6" style="text-align: right;">
 					<!-- Search -->
 					<section>
 						<form class="search2" method="get" action="/searchgrecord">
@@ -153,18 +164,21 @@
 					</h5>
 					<p class="card-text">
 						<%= result.record[i].recorddate %>
-						<br> 寶　寶：<%= result.record[i].name %>
-						<br> 身　長：<%= result.record[i].height %><label>公分CM</label>
-						<br> 體　重：<%= result.record[i].weight %><label>公斤KG</label>
-						<br> 喝奶量：<%= result.record[i].drinkmilk %><label>毫升ML</label>
+						<div style="font-size: 120%;">
+							<br> 寶　寶：<%= result.record[i].name %>
+							<br> 身　長：<%= result.record[i].height %><label>公分CM</label>
+							<br> 體　重：<%= result.record[i].weight %><label>公斤KG</label>
+							<br> 喝奶量：<%= result.record[i].drinkmilk %><label>毫升ML</label>
+						</div>
 					</p>
 					<p>
-						<a class="btn" href="/updategrowrecord/<%= result.record[i].serno %>">編輯</a>
+						<button style="box-shadow:none; float:left; height: 5%; padding: 0;padding-right: 5%;"><a
+								href="/updategrowrecord/<%= result.record[i].serno %>">編輯</a></button>
 						<form action="/grecord_del" method="post">
 							<input type="text" class="form-control" name="serno" value="<%= result.record[i].serno %>"
 								hidden />
-							<button type="submit" style="box-shadow:none; float:left; height: 5%;">
-								刪除
+							<button type="submit" style="box-shadow:none; float:left; height: 5%; padding: 0;">
+								<a>刪除</a>
 							</button>
 						</form>
 					</p>

@@ -82,7 +82,7 @@ var add = async function (newData) {
     var result;
 
     console.log(newData);
-    await sql('INSERT INTO t04forum (id, forumname, typeno,content) VALUES ($1, $2, $3, $4)', [newData.userid, newData.forumname, newData.typeno, newData.content])
+    await sql('INSERT INTO t04forum (id, forumname, typeno,content,forumdate) VALUES ($1, $2, $3, $4, $5)', [newData.userid, newData.forumname, newData.typeno, newData.content,newData.forumdate])
         .then((data) => {
             result = 0;
         }, (error) => {

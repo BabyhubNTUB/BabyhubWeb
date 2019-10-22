@@ -142,16 +142,16 @@
 					<p class="card-text">
 						<%= item.diary[i].diarydate %>
 						<br>
-						<br><%= item.diary[i].diary %>
+						<br><div style="font-size: 200%;"><%= item.diary[i].diary %></div>
 						<br>
 					</p>
 					<p>
-						<a class="btn" href="/updatediary/<%= item.diary[i].serno %>">編輯</a>
+						<button style="box-shadow:none; float:left; height: 5%; padding: 0; padding-right: 5%;"><a href="/updatediary/<%= item.diary[i].serno %>">編輯</a></button>
 						<form action="/diary_del" method="post">
 							<input type="text" class="form-control" name="serno" value="<%= item.diary[i].serno %>"
 								hidden />
-							<button type="submit" style="box-shadow:none; float:left; height: 5%;">
-								刪除
+							<button type="submit" style="box-shadow:none; float:left; height: 5%; padding: 0;">
+								<a>刪除</a>
 							</button>
 						</form>
 					</p>
