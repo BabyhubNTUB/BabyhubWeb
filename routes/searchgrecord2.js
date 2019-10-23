@@ -21,8 +21,14 @@ router.get('/', function (req, res, next) {
             for (var i = 0; i < data.record.length; i++) {
                 data.record[i].recorddate = moment(data.record[i].recorddate).format("YYYY-MM-DD");
             }
+
+            console.log(data);
             res.render('growrecord', { result: data });  //將資料傳給顯示頁面
 
+        } else if (data.record.length == 0) {
+
+            console.log(data);
+            res.render('growrecord', { result: data });  //將資料傳給顯示頁面
         } else {
             res.render('notFound');  //導向找不到頁面
             console.log('notfound');

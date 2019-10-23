@@ -10,21 +10,21 @@ var list = async function(id){
     var result={};
     console.log('**********************');
 	console.log(id);
-    await sql('SELECT * FROM t04forum LIMIT 4')
+    await sql('SELECT * FROM t04forum order by forumno desc LIMIT 4')
         .then((data) => {            
             result.forum = data.rows;  
         }, (error) => {
             result.forum = [];
         });
 
-	await sql('SELECT * FROM t10education LIMIT 4')
+	await sql('SELECT * FROM t10education order by serno desc LIMIT 4')
         .then((data) => {            
             result.education = data.rows;  
         }, (error) => {
             result.education = [];
         });
 
-    await sql('SELECT * FROM t06pregnancyknowledge LIMIT 4')
+    await sql('SELECT * FROM t06pregnancyknowledge order by serno desc LIMIT 4')
         .then((data) => {            
             result.pregnancyknowledge = data.rows;  
         }, (error) => {

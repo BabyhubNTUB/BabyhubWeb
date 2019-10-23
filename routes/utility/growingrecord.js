@@ -126,7 +126,7 @@ var search = async function (id, date) {
 var search2 = async function (id, babyno) {
     var result = {};
 
-    await sql('SELECT * FROM t03growingrecord where babyno=$1 order by diarydate desc', [babyno])
+    await sql('SELECT * FROM t03growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno where t03growingrecord.babyno=$1 order by t03growingrecord.recorddate desc', [babyno])
         .then((data) => {
             result.record = data.rows;
         }, (error) => {

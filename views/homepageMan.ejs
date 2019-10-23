@@ -91,7 +91,7 @@
 				</div>
 				<div class="col-md-8">
 					<div class="list-group">
-						<a href="/forum" class="list-group-item list-group-item-info">討論版 熱門文章</a>
+						<a href="/forum" class="list-group-item list-group-item-info">討論版 最新文章</a>
 						<% for(var i=0; i<result.forum.length; i++) {%>
 						<div class="list-group-item">
 							<a href="/aforum/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
@@ -100,7 +100,7 @@
 						<a href="/forum" class="list-group-item list-group-item-warning">... 更多文章</a>
 					</div>
 					<div class="list-group">
-						<a href="/childEducation" class="list-group-item list-group-item-info">小孩教育 熱門文章</a>
+						<a href="/childEducation" class="list-group-item list-group-item-info">小孩教育 最新文章</a>
 						<% for(var i=0; i<result.education.length; i++) {%>
 						<div class="list-group-item">
 							<a
@@ -110,7 +110,7 @@
 						<a href="/childEducation" class="list-group-item list-group-item-warning">... 更多文章</a>
 					</div>
 					<div class="list-group">
-						<a href="/pregnancyKnowledge" class="list-group-item list-group-item-info">孕期知識 熱門文章</a>
+						<a href="/pregnancyKnowledge" class="list-group-item list-group-item-info">孕期知識 最新文章</a>
 						<% for(var i=0; i<result.pregnancyknowledge.length; i++) {%>
 						<div class="list-group-item">
 							<a

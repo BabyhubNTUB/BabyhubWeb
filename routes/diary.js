@@ -15,10 +15,13 @@ router.get('/', function (req, res, next) {
       res.render('error');  //導向錯誤頁面
     } else if (data == -1) {
       res.render('notFound');  //導向找不到頁面                
+    } else if (data.diary.length == 0) {
+      console.log(data);
+      res.render('diary', { item: data });  //將資料傳給顯示頁面
     } else {
       console.log(data);
-      for(var i=0; i<data.diary.length; i++){
-        data.diary[i].diarydate=moment(data.diary[i].diarydate).format("YYYY-MM-DD");
+      for (var i = 0; i < data.diary.length; i++) {
+        data.diary[i].diarydate = moment(data.diary[i].diarydate).format("YYYY-MM-DD");
       }
       console.log(data);
       res.render('diary', { item: data });  //將資料傳給顯示頁面

@@ -23,6 +23,10 @@ router.get('/', function (req, res, next) {
             }
             res.render('growrecord', { result: data });  //將資料傳給顯示頁面
 
+        } else if (data.record.length == 0) {
+
+            console.log(data);
+            res.render('growrecord', { result: data });  //將資料傳給顯示頁面
         } else {
             res.render('notFound');  //導向找不到頁面
             console.log('notfound');

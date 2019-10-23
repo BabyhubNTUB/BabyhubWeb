@@ -103,17 +103,17 @@
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<div class="row">
-				<div class="col-md-6">
-					<% for(var i=0; i<result.protype.length; i++) {%>
-					<form action="/searchgrecord2" method="get">
-						<input name="babyno" value="<%= result.protype[i].babyno %>" hidden>
-						<button type="submit"
-							style="background: rgba(255,255,255,0.7); padding: 0; text-align: center; width: 70px;height: 70px;line-height: 70px;border-radius: 70px; margin-bottom: 2%;">
-							<a><%= result.protype[i].name %></a>
-						</button>
-					</form>
-					<% } %>
-				</div>
+				<div class="row col-md-6">
+						<% for(var i=0; i<result.protype.length; i++) {%>
+						<form action="/searchgrecord2" method="get">
+							<input name="babyno" value="<%= result.protype[i].babyno %>" hidden>
+							<button type="submit"
+								style="background: rgba(113, 180, 200, 0.3); padding: 0; text-align: center; width: 70px;height: 70px;line-height: 70px;border-radius: 70px; margin-bottom: 2%;">
+								<a><%= result.protype[i].name %></a>
+							</button>
+						</form>
+						<% } %>
+					</div>
 				<div class="col-md-6" style="text-align: right;">
 					<!-- Search -->
 					<section>

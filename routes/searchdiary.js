@@ -23,6 +23,10 @@ router.get('/', function (req, res, next) {
             }
             res.render('diary', { item: data });  //將資料傳給顯示頁面
 
+        } else if (data.diary.length == 0) {
+
+            console.log(data);
+            res.render('diary', { item: data });  //將資料傳給顯示頁面
         } else {
             res.render('notFound');  //導向找不到頁面
             console.log('notfound');
