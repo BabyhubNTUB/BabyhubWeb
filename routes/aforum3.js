@@ -15,7 +15,7 @@ router.get('/:forumno', function(req, res, next) {
             console.log('error');    
             console.log(data);    
         }else if(data==-1){
-            res.render('notFound');  //導向找不到頁面    
+            res.render('notFound3');  //導向找不到頁面    
             console.log('notFound');
             console.log(data);            
         }else{

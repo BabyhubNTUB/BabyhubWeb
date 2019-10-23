@@ -213,6 +213,9 @@ app.use('/search', search);
 app.use('/searchchild', searchchild);
 app.use('/searchpre', searchpre);
 app.use('/forumtype', forumtype);
+
+
+app.use(express.static('public/images'));
 // ----------------------------------------------
 
 // catch 404 and forward to error handler

@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
                 res.render('error');  //導向錯誤頁面
                 console.log('error');
                 console.log(data);
-            }else if(data.forum.length > 0){
+            }else if(data.forum.length >= 0){
                 if(check==1){
                     res.render('forum', {result:data});  //將資料傳給顯示頁面
                 }else if(check==2){

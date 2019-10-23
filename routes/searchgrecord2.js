@@ -30,7 +30,7 @@ router.get('/', function (req, res, next) {
             console.log(data);
             res.render('growrecord', { result: data });  //將資料傳給顯示頁面
         } else {
-            res.render('notFound');  //導向找不到頁面
+            res.render('notFound2');  //導向找不到頁面
             console.log('notfound');
             console.log(data);
         }

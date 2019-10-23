@@ -5,16 +5,55 @@ var router = express.Router();
 var moment = require('moment');
 const baby = require('./utility/baby');
 
+//---------------------------
+// 引用multer外掛
+//---------------------------
+const multer  = require('multer');
+
+// 宣告上傳存放空間及檔名更改
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/images');
+    },
+
+    filename: function (req, file, cb) {
+        cb(null, Date.now()+"--"+file.originalname);    
+    }   
+})
+
+// 產生multer的上傳物件
+var maxSize=1024*1024;  //設定最大可接受圖片大小(1M)
+
+var upload = multer({
+    storage:storage
+})
+//---------------------------
+
 //接收POST請求
-router.post('/', function(req, res, next) {
+router.post('/', upload.single('photo'), function(req, res, next) {
     var babyno = req.body.babyno;
     console.log(babyno);
+
+    // 如果有選擇圖片
+    if (typeof req.file != 'undefined'){
+        // 傳入檔案不可超過maxSize
+        if(req.file.size > maxSize){
+            res.render('fileSizeError');  //圖片過大
+            return;
+        }                      
+    }
+    
+    var photo;                           //用來存放圖片名稱
+    // 如果有選擇圖片
+    if (typeof(req.file) != 'undefined'){
+        photo=req.file.filename;   //取得上傳照片名稱
+    }
 
     var newData={
         babyno: babyno,
         name: req.body.name,
         birthday: req.body.birthday,
-        photo: req.body.photo
+        photo: photo
     } 
     console.log(newData);
     baby.update(newData).then(d => {

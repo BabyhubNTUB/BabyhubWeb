@@ -135,10 +135,10 @@
 			</div>
 		</div>
 		<div class="col-md-12">
-			<% for(var i=0; i<items.length; i++) {%>
+			<% for(var i=0; i<items.forum.length; i++) {%>
 			<div class="Box">
-				<a href="/achildEducation/<%= items[i].serno %>">
-					<strong><%= items[i].title %></strong>
+				<a href="/achildEducation/<%= items.forum[i].serno %>">
+					<strong><%= items.forum[i].title %></strong>
 				</a>
 			</div>
 			<% } %>

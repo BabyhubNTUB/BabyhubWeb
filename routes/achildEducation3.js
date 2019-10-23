@@ -13,7 +13,7 @@ router.get('/:serno', function(req, res, next) {
         if (data==null){
             res.render('error');  //導向錯誤頁面
         }else if(data==-1){
-            res.render('notFound');  //導向找不到頁面                
+            res.render('notFound3');  //導向找不到頁面                
         }else{
             // data.inventorydate=moment(data.inventorydate).format("YYYY-MM-DD")
             res.render('achildEducation3', {item:data});  //將資料傳給顯示頁面

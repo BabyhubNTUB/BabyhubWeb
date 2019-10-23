@@ -139,7 +139,7 @@
 
 				</div>
 				<div class="col-md-7">
-					<form action="/baby_update" method="post">
+					<form action="/baby_update"  enctype="multipart/form-data" method="post">
 						<div class="form-group">
 							<input type="text" class="form-control" name="babyno" value="<%= result.baby.babyno %>"
 								hidden />
@@ -158,9 +158,6 @@
 							<input type="date" class="form-control" name="birthday" value="<%= result.baby.birthday %>"
 								style="background: none;" />
 						</div>
-						<!-- <span class="name">選擇照片</span>
-						<span class="value"><input id="file" type="file" name="photo" /></span>
-						<img id="demo"/> -->
 						<input accept="image/*" id="uploadImage" name="photo" type="file">
 						<script>
 							$("#uploadImage").change(function () {

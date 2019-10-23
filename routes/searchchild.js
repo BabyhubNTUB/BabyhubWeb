@@ -14,14 +14,16 @@ router.get('/', function(req, res, next) {
                 res.render('error');  //導向錯誤頁面
                 console.log('error');
                 console.log(data);
-            }else if(data.forum.length > 0){
+            }else if(data.forum.length >= 0){
                 if(check==1){
-                    res.render('childEducation', {result:data});  //將資料傳給顯示頁面
+                    res.render('childEducation', {items:data});  //將資料傳給顯示頁面
                 }else if(check==2){
-                    res.render('childEducation2', {result:data});  //將資料傳給顯示頁面
+                    console.log('***********2');
+                    console.log(data);
+                    res.render('childEducation2', {items:data});  //將資料傳給顯示頁面
                 }else{
-                    res.render('childEducation3', {result:data});  //將資料傳給顯示頁面
                     console.log(data); 
+                    res.render('childEducation3', {items:data});  //將資料傳給顯示頁面
                 }
             }else{
                 res.render('notFound');  //導向找不到頁面

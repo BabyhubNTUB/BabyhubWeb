@@ -11,12 +11,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/assets/css/main.css" />
-	<link rel="icon" href="images/logo.png" type="image/ico" />
+	<link rel="icon" href="/images/logo.png" type="image/ico" />
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body class="is-preload">
+
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -27,8 +28,8 @@
 			</a>
 			<nav class="main">
 				<ul>
-					<li class="bell">
-						<a class="fa-bell" href="#menu">Bell</a>
+					<li class="profile" id="profile">
+						<a class="fa-bell">Bell</a>
 					</li>
 					<li class="bell">
 						<a class="fa-user" href="/profile">Bell</a>
@@ -40,7 +41,17 @@
 			</nav>
 		</header>
 	</div>
-	<!--  -->
+	<div class="profile" id="profileList">
+		<% for(var i=0; i<result.notification.length; i++) {%>
+		<div class="profileList">
+			<div class="list-group-item">
+				<a href="/aforum/<%= result.notification[i].forumno %>">
+					<span><%= result.notification[i].content %></span>
+				</a>
+			</div>
+		</div>
+		<% } %>
+	</div>
 	<!-- Menu -->
 	<section id="menu">
 
@@ -63,6 +74,12 @@
 					<a href="/forum">
 						<h3>討論區</h3>
 						<p>跟媽媽們討論各種知識。</p>
+					</a>
+				</li>
+				<li>
+					<a href="/vaccine">
+						<h3>疫苗施打</h3>
+						<p>告訴你什麼時候該打什麼疫苗！</p>
 					</a>
 				</li>
 				<li>
@@ -105,12 +122,12 @@
 			<div class="col-md-6 left">
 				<img class="piclogo" src="images\logo.png">
 			</div>
-			<div class="col-md-6 right2" style="background: none">
-				<h1>失敗</h1><br><br>
+			<div class="col-md-6 right">
+				<h1>notfound</h1>
+				<br><br>
 				<button style="font-size: 50%; background: rgba(113, 180, 200, 0.3); border-radius: 70px;"><a href="javascript:history.go(-1);">回上一頁</a></button>
 			</div>
 		</div>
-	</div>
 	</div>
 
 	<!-- Scripts -->
@@ -120,6 +137,8 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+	<script>tinymce.init({ selector: 'textarea' });</script>
 	<script src="/assets/js/scripts.js"></script>
 
 </body>

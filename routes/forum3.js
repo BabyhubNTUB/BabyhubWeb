@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
             res.render('forum3', {result:data});  //將資料傳給顯示頁面
             console.log(data);
         }else{
-            res.render('notFound');  //導向找不到頁面
+            res.render('notFound3');  //導向找不到頁面
             console.log('notfound');
             console.log(data);
         }

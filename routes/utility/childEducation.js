@@ -11,9 +11,9 @@ var list = async function(){
 	
     await sql('SELECT * FROM t10education order by serno desc ')
         .then((data) => {            
-            result = data.rows;  
+            result.forum = data.rows;  
         }, (error) => {
-            result = null;
+            result.forum = null;
         });
 		
     return result;
@@ -97,6 +97,7 @@ var search = async function(keyword){
                 result.forum = [];
                 console.log(keyword);
             });
+            console.log(result);
     //回傳物件
     return result;  
 }

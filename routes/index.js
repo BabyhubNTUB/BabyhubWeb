@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
         }else if(data.forum.length > 0){
             res.render('index', {result:data});  //將資料傳給顯示頁面
         }else{
-            res.render('notFound');  //導向找不到頁面
+            res.render('notFound2');  //導向找不到頁面
         }
     })
 });
