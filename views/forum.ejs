@@ -11,7 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/assets/css/forum.css" />
-	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link rel="icon" href="/images/bear.png" type="image/ico" />
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
 
@@ -59,125 +59,136 @@
 				</ul>
 			</nav>
 		</header>
-	</div>
-	<!-- Menu -->
-	<section id="menu">
+		<!-- Menu -->
+		<section id="menu">
 
-		<!-- Links -->
-		<section>
-			<ul class="links">
-				<li>
-					<a href="/childEducation">
-						<h3>小孩教育</h3>
-						<p>提供小孩教育的知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/pregnancyKnowledge">
-						<h3>孕期知識</h3>
-						<p>孕期知識、胎教等。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/forum">
-						<h3>討論區</h3>
-						<p>跟媽媽們討論各種知識。</p>
-					</a>
-				</li>
+			<!-- Links -->
+			<section>
+				<ul class="links">
+					<li>
+						<a href="/childEducation">
+							<h3>小孩教育</h3>
+							<p>提供小孩教育的知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/pregnancyKnowledge">
+							<h3>孕期知識</h3>
+							<p>孕期知識、胎教等。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/forum">
+							<h3>討論區</h3>
+							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
 
-				<li>
-					<a href="/growrecord">
-						<h3>成長紀錄</h3>
-						<p>填寫寶寶的身體變化吧！</p>
-					</a>
-				</li>
-				<li>
-					<a href="/diary">
-						<h3>日記</h3>
-						<p>填寫寶寶每日的生活小點滴吧！</p>
-					</a>
-				</li>
-			</ul>
+					<li>
+						<a href="/growrecord">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/diary">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Actions -->
+			<section>
+				<ul class="actions stacked">
+					<li>
+						<a href="/logout" class="button large fit">登出 Logout</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
+				</ul>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
+			</section>
+
 		</section>
-		<!-- Actions -->
-		<section>
-			<ul class="actions stacked">
-				<li>
-					<a href="/logout" class="button large fit">登出 Logout</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Footer -->
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a></li>
-				<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
-							class="label">github</span></a></li>
-			</ul>
-			<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
-		</section>
 
-	</section>
+		<!-- Main -->
 
-	<!-- Main -->
-	<div class="row">
-		<div class="row" style="margin: auto; padding: auto; text-align: center;">
-			<div class="col-md-12">
-				<!-- Search -->
-				<section>
-					<form class="searchforum" method="get" action="/search">
-						<input type="number" name="check" value="1" hidden />
-						<input type="text" name="keyword" style="padding-left: 20%;" />
-						<button type="submit"
-							style="width:30%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal;">搜尋</button>
-					</form>
-				</section>
+		<div id="main">
+			<!-- <div class="row" style="margin: auto; padding: auto; text-align: center;"> -->
+			<div class="row">
+				<div class="col-md-6">
+					<h1 style="padding-top:2%;">小孩教育</h1>
+				</div>
+				<div class="col-md-6">
+					<!-- Search -->
+					<section>
+						<form class="searchforum" method="get" action="/search">
+							<input type="number" name="check" value="1" hidden />
+							<input type="text" name="keyword" style="padding-left: 20%;" />
+							<button type="submit"
+									style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
+							</form>
+					</section>
+				</div>
 			</div>
-		</div>
-		<div class="col-md-12">
-			<ul class="boardtag">
-				<% for(var i=0; i<result.type.length; i++) {%>
-				<form class="forumtype" method="get" action="/forumtype">
-					<input type="number" name="check" value="1" hidden />
-					<input type="text" name="type" value="<%=result.type[i].typeno %>" hidden />
-					<li><button style="background-color: transparent; padding: 0; height: auto; box-shadow:none;"
-							type="submit"><a><%= result.type[i].name %></a></button></li>
-				</form>
-				<% } %>
-			</ul>
-		</div>
-		<div class="col-md-12">
-			<div class="content">
-				<table>
-					<tr>
-						<td>分類</td>
-						<td>標題</td>
-						<td>喜歡</td>
-						<td>回覆</td>
-						<td>發表人</td>
-						<td>發文日期</td>
-					</tr>
-					<% for(var i=0; i<result.forum.length; i++) {%>
-					<tr>
-						<td><%= result.forum[i].name %></td>
-						<td><a href="/aforum/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a></td>
-						<td><%= result.forum[i].cntlike %></td>
-						<td><%= result.forum[i].cntcomment %></td>
-						<td><%= result.forum[i].username %></td>
-						<td><%= result.forum[i].forumdatetime %></td>
-					</tr>
-					<% } %>
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="boardtag">
+						<% for(var i=0; i<result.type.length; i++) {%>
+						<form class="forumtype" method="get" action="/forumtype">
+							<input type="number" name="check" value="1" hidden />
+							<input type="text" name="type" value="<%=result.type[i].typeno %>" hidden />
+							<li><button
+									style="background-color: transparent; padding: 0; height: auto; box-shadow:none;"
+									type="submit"><a><%= result.type[i].name %></a></button></li>
+						</form>
+						<% } %>
+					</ul>
+				</div>
+				<div class="col-md-12">
+					<div class="content">
+						<table>
+							<tr>
+								<td>分類</td>
+								<td>標題</td>
+								<td>喜歡</td>
+								<td>回覆</td>
+								<td>發表人</td>
+								<td>發文日期</td>
+							</tr>
+							<% for(var i=0; i<result.forum.length; i++) {%>
+							<tr>
+								<td><%= result.forum[i].name %></td>
+								<td><a
+										href="/aforum/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
+								</td>
+								<td><%= result.forum[i].cntlike %></td>
+								<td><%= result.forum[i].cntcomment %></td>
+								<td><%= result.forum[i].username %></td>
+								<td><%= result.forum[i].forumdatetime %></td>
+							</tr>
+							<% } %>
 
-					<tr>
-						<td>廣告</td>
-						<td><a href="#">頂級澳洲奶粉，給寶寶非凡的享受！</a></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
+							<tr>
+								<td>廣告</td>
+								<td><a href="#">頂級澳洲奶粉，給寶寶非凡的享受！</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
 
-				</table>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

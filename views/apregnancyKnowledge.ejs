@@ -11,7 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/assets/css/forum.css" />
-	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link rel="icon" href="/images/bear.png" type="image/ico" />
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
 </head>
@@ -40,89 +40,87 @@
 				</ul>
 			</nav>
 		</header>
-	</div>
-	<!-- Menu -->
-	<section id="menu">
+		<!-- Menu -->
+		<section id="menu">
 
-		<!-- Links -->
-		<section>
-			<ul class="links">
-				<li>
-					<a href="/childEducation">
-						<h3>小孩教育</h3>
-						<p>提供小孩教育的知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/pregnancyKnowledge">
-						<h3>孕期知識</h3>
-						<p>孕期知識、胎教等。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/forum">
-						<h3>討論區</h3>
-						<p>跟媽媽們討論各種知識。</p>
-					</a>
-				</li>
+			<!-- Links -->
+			<section>
+				<ul class="links">
+					<li>
+						<a href="/childEducation">
+							<h3>小孩教育</h3>
+							<p>提供小孩教育的知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/pregnancyKnowledge">
+							<h3>孕期知識</h3>
+							<p>孕期知識、胎教等。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/forum">
+							<h3>討論區</h3>
+							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
 
 
-				<li>
-					<a href="/growrecord">
-						<h3>成長紀錄</h3>
-						<p>填寫寶寶的身體變化吧！</p>
-					</a>
-				</li>
-				<li>
-					<a href="/diary">
-						<h3>日記</h3>
-						<p>填寫寶寶每日的生活小點滴吧！</p>
-					</a>
-				</li>
-			</ul>
+					<li>
+						<a href="/growrecord">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/diary">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Actions -->
+			<section>
+				<ul class="actions stacked">
+					<li>
+						<a href="/logout" class="button large fit">登出 Logout</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
+				</ul>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
+			</section>
+
 		</section>
-		<!-- Actions -->
-		<section>
-			<ul class="actions stacked">
-				<li>
-					<a href="/logout" class="button large fit">登出 Logout</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Footer -->
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a></li>
-				<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
-							class="label">github</span></a></li>
-			</ul>
-			<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
-		</section>
 
-	</section>
-
-	<!-- Main -->
-	<div id="main">
-		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<article class="post">
-					<header>
-						<div class="title">
-							<h2><a href="#"><%= item.title %></a></h2>
-						</div>
-						<!--<div class="meta">
+		<!-- Main -->
+		<div id="main">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<article class="post">
+						<header>
+							<div class="title">
+								<h2><a href="#"><%= item.title %></a></h2>
+							</div>
+							<!--<div class="meta">
 										<time class="published" datetime="2015-11-01">November 1, 2015</time>
 										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>-->
-					</header>
-					<p><%= item.content %></p>
-				</article>
-
-
+						</header>
+						<p><%= item.content %></p>
+					</article>
+				</div>
 			</div>
 		</div>
-
 	</div>
 
 	<!-- Scripts -->

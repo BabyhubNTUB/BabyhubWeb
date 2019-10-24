@@ -11,7 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/assets/css/forum.css" />
-	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link rel="icon" href="/images/bear.png" type="image/ico" />
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
 </head>
@@ -40,132 +40,133 @@
 				</ul>
 			</nav>
 		</header>
-	</div>
-	<!-- Menu -->
-	<section id="menu">
+		<!-- Menu -->
+		<section id="menu">
 
-		<!-- Links -->
-		<section>
-			<ul class="links">
-				<li>
-					<a href="/childEducation">
-						<h3>小孩教育</h3>
-						<p>提供小孩教育的知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/pregnancyKnowledge">
-						<h3>孕期知識</h3>
-						<p>孕期知識、胎教等。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/forum">
-						<h3>討論區</h3>
-						<p>跟媽媽們討論各種知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/growrecord">
-						<h3>成長紀錄</h3>
-						<p>填寫寶寶的身體變化吧！</p>
-					</a>
-				</li>
-				<li>
-					<a href="/diary">
-						<h3>日記</h3>
-						<p>填寫寶寶每日的生活小點滴吧！</p>
-					</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Actions -->
-		<section>
-			<ul class="actions stacked">
-				<li>
-					<a href="/logout" class="button large fit">登出 Logout</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Footer -->
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a></li>
-				<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
-							class="label">github</span></a></li>
-			</ul>
-			<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
+			<!-- Links -->
+			<section>
+				<ul class="links">
+					<li>
+						<a href="/childEducation">
+							<h3>小孩教育</h3>
+							<p>提供小孩教育的知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/pregnancyKnowledge">
+							<h3>孕期知識</h3>
+							<p>孕期知識、胎教等。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/forum">
+							<h3>討論區</h3>
+							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/growrecord">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/diary">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Actions -->
+			<section>
+				<ul class="actions stacked">
+					<li>
+						<a href="/logout" class="button large fit">登出 Logout</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
+				</ul>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
+			</section>
+
 		</section>
 
-	</section>
-
-	<!-- Main -->
-	<div id="main">
-		<div class="row">
-			<div class="col-md-2">
+		<!-- Main -->
+		<div id="main">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<article class="post">
+						<header>
+							<div class="title">
+								<h2><a><%= result.aforum.forumname %></a></h2>
+							</div>
+							<div class="meta">
+								<time class="published" datetime="2015-11-01"><%= result.aforum.forumdatetime %></time>
+								<a style="font-size: 100%;" class="author"><span
+										class="name"><%= result.cnt.username %></span><img src="/images/avatar.jpg"
+										alt="" /></a>
+							</div>
+						</header>
+						<p><%= result.aforum.content %></p>
+						<footer>
+							<ul class="stats" style="padding: 0;">
+								<form class="form-group" action="/like" method="post">
+									<input type="text" name="forumno" value="<%= result.aforum.forumno %>" hidden>
+									<button type="submit" style="width: 5%; height: 50%; box-shadow: none; padding: 0;">
+										<a class="icon fa-heart-o"><%= result.cnt.cntlike %></a>
+									</button>
+								</form>
+							</ul>
+						</footer>
+					</article>
+				</div>
 			</div>
-			<div class="col-md-8">
-				<article class="post">
-					<header>
-						<div class="title">
-							<h2><a><%= result.aforum.forumname %></a></h2>
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<article class="message">
+						<h3>留言回應</h3>
+						<% for(var i=0; i<result.com.length; i++) {%>
+						<div class="list-group-item">
+							<p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
+									<span class="mesname"><%= result.com[i].username %></span></a></p>
+							<div class="col-md-12">
+								<p><%= result.com[i].content %></p>
+							</div>
 						</div>
-						<div class="meta">
-							<time class="published" datetime="2015-11-01"><%= result.aforum.forumdatetime %></time>
-							<a style="font-size: 100%;" class="author"><span
-									class="name"><%= result.cnt.username %></span><img src="/images/avatar.jpg"
-									alt="" /></a>
+						<% } %>
+						<div class="list-group-item">
+							<div class="col-md-12">
+								<form class="form-group" style="text-align:right;" action="/com_add" method="POST">
+									<div class="form-group">
+										<input type="text" class="form-control comment" name="forumno"
+											value="<%= result.aforum.forumno %>" hidden>
+										<input type="text" class="form-control comment" name="content"
+											placeholder="Enter">
+									</div>
+									<button
+										style="background-color: transparent; padding: 0; height: auto; box-shadow:none; text-align:right;"
+										type="submit">
+										新增
+									</button>
+								</form>
+							</div>
 						</div>
-					</header>
-					<p><%= result.aforum.content %></p>
-					<footer>
-						<ul class="stats" style="padding: 0;">
-							<form class="form-group" action="/like" method="post">
-								<input type="text" name="forumno" value="<%= result.aforum.forumno %>" hidden>
-								<button type="submit" style="width: 5%; height: 50%; box-shadow: none; padding: 0;">
-									<a class="icon fa-heart-o"><%= result.cnt.cntlike %></a>
-								</button>
-							</form>
-						</ul>
-					</footer>
-				</article>
+					</article>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-8">
-				<article class="message">
-					<h3>留言回應</h3>
-					<% for(var i=0; i<result.com.length; i++) {%>
-					<div class="list-group-item">
-						<p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
-								<span class="mesname"><%= result.com[i].username %></span></a></p>
-						<div class="col-md-12">
-							<p><%= result.com[i].content %></p>
-						</div>
-					</div>
-					<% } %>
-					<div class="list-group-item">
-						<div class="col-md-12">
-							<form class="form-group" style="text-align:right;" action="/com_add" method="POST">
-								<div class="form-group">
-									<input type="text" class="form-control comment" name="forumno"
-										value="<%= result.aforum.forumno %>" hidden>
-									<input type="text" class="form-control comment" name="content" placeholder="Enter">
-								</div>
-								<button
-									style="background-color: transparent; padding: 0; height: auto; box-shadow:none; text-align:right;"
-									type="submit">
-									新增
-								</button>
-							</form>
-						</div>
-					</div>
-				</article>
-			</div>
-		</div>
-
 	</div>
 
 	<!-- Scripts -->

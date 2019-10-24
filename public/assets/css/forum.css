@@ -211,8 +211,9 @@ abc:active {
 }
 
 div.list-group{
-	background: #e29292;
+	/* background: #e29292; */
 	margin-bottom: 2%;
+	border-radius: 150px;
 }
 
 /* login Button*/
@@ -225,6 +226,9 @@ input[type=text], input[type=password] {
 	box-sizing: border-box;
 	border-radius:5px;
 	/* background-color: blue; */
+	font-size: 50%; 
+	background: rgba(113, 180, 200, 0.3); 
+	border-radius: 70px;
 }
 
 .logcon label{
@@ -288,7 +292,7 @@ span a{
 margin-top: 10%;
 }
 .right{
-	background: #ffffff !important;
+	/* background: #ffffff !important; */
 }
 .right a{
 	font-size: 300%;
@@ -306,11 +310,14 @@ margin-top: 10%;
 
 html, body {
     width: 100%;
-    height: 100%;
-    background: #ee9ca7;
+	height: 100%;
+	background-image:url(images/background.png) !important;
+	background-repeat: no-repeat;
+    background-size:cover !important;
+    /* background: #ee9ca7;
     background: -webkit-linear-gradient(to top, rgb(255, 227, 231), rgb(255, 252, 219));
     background: linear-gradient(to top,rgb(255, 227, 231), rgb(255, 252, 219));
-    background-attachment: fixed;
+    background-attachment: fixed; */
 }
 
 a{
@@ -2210,6 +2217,9 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+		font-size: 50%; 
+		background: rgba(113, 180, 200, 0.3); 
+		border-radius: 70px;
 	}
 
 		input[type="submit"]:hover,
@@ -4050,13 +4060,13 @@ input, select, textarea {
 		color:#919191 !important;
 	}
 	.content tr:first-child{
-		background: #fff3f3 !important;
+		background:rgb(184, 209, 218, 0.8) !important;
 	}
 	.content tr:nth-child(odd){
-		background: #ffeeee;
+		background: #fffcee;
 	}
 	.content tr:nth-child(even){
-		background: #ffeaf7;
+		background: #fffcee;
 	}
 	@media screen and (max-width: 1980px) {
 		.content{

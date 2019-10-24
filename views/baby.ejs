@@ -11,7 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/assets/css/main.css" />
-	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link rel="icon" href="/images/bear.png" type="image/ico" />
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
 </head>
@@ -40,146 +40,143 @@
 				</ul>
 			</nav>
 		</header>
-	</div>
-	<!-- Menu -->
-	<section id="menu">
+		<!-- Menu -->
+		<section id="menu">
 
-		<!-- Links -->
-		<section>
-			<ul class="links">
-				<li>
-					<a href="/childEducation">
-						<h3>小孩教育</h3>
-						<p>提供小孩教育的知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/pregnancyKnowledge">
-						<h3>孕期知識</h3>
-						<p>孕期知識、胎教等。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/forum">
-						<h3>討論區</h3>
-						<p>跟媽媽們討論各種知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/growrecord">
-						<h3>成長紀錄</h3>
-						<p>填寫寶寶的身體變化吧！</p>
-					</a>
-				</li>
-				<li>
-					<a href="/diary">
-						<h3>日記</h3>
-						<p>填寫寶寶每日的生活小點滴吧！</p>
-					</a>
-				</li>
-			</ul>
+			<!-- Links -->
+			<section>
+				<ul class="links">
+					<li>
+						<a href="/childEducation">
+							<h3>小孩教育</h3>
+							<p>提供小孩教育的知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/pregnancyKnowledge">
+							<h3>孕期知識</h3>
+							<p>孕期知識、胎教等。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/forum">
+							<h3>討論區</h3>
+							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/growrecord">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/diary">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Actions -->
+			<section>
+				<ul class="actions stacked">
+					<li>
+						<a href="/logout" class="button large fit">登出 Logout</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
+				</ul>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
+			</section>
+
 		</section>
-		<!-- Actions -->
-		<section>
-			<ul class="actions stacked">
-				<li>
-					<a href="/logout" class="button large fit">登出 Logout</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Footer -->
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a></li>
-				<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
-							class="label">github</span></a></li>
-			</ul>
-			<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
-		</section>
 
-	</section>
-
-	<!-- Main -->
-	<div id="main">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-1">
-				</div>
-				<div class="col-md-2">
-					<div class="profilePage">
-						<img src="/images/<%= result.baby.photo %>">
-					</div>
-					<ul class="links">
-						<li>
-							<a href="/addbaby">
-								<h4>新增寶寶</h4>
-							</a>
-							<ul class="links">
-								<% for(var i=0; i<result.list.length; i++) {%>
-								<li>
-									<a href="/baby/<%= result.list[i].babyno %>">
-										<strong><%= result.list[i].name %></strong>
-									</a>
-								</li>
-								<% } %>
-							</ul>
-						</li>
-						<li>
-							<a href="/babysetting/<%= result.baby.babyno %>">
-								<h4>寶寶設定</h4>
-							</a>
-						</li>
-						<li>
-							<a href="/profile">
-								<h4>回會員</h4>
-							</a>
-						</li>
-					</ul>
-
-				</div>
-				<div class="col-md-7">
-					<div class="profile_box">
-						<p class="head"><img
-								src="/images/membership.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= result.baby.name %>
-						</p>
-						<p class="title">性別：　<%= result.baby.gender %></p><br />
-						<p class="title">生日：　<%= result.baby.birthday %></p><br />
-					</div>
-					<div class="card" style="background: none;">
-						<div class="card-block">
-							<h5 class="card-title">
-								成長記錄
-							</h5>
-							<form action="/grecord_add" method="post">
-								<div class="form-group">
-									<p class="card-text">
-										(今天)
-										<input type="text" class="form-control" name="babyno"
-											value="<%= result.baby.babyno %>" hidden />
-										<br> 寶　寶：
-										<input name="baby" type="text-inline" value="<%= result.baby.name %>"
-											style="background: none;" readonly>
-										<br> 身　長：
-										<input name="height" type="number" style="background: none;">　cm
-										<br> 體　重：
-										<input name="weight" type="number" style="background: none;">　kg
-										<br> 喝奶量：
-										<input name="drinkmilk" type="number" style="background: none;">　cc
-									</p>
-								</div>
-								<button type="submit">
-									撰寫
-								</button>
-							</form>
-
+		<!-- Main -->
+		<div id="main">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="profilePage">
+							<img src="/images/<%= result.baby.photo %>">
 						</div>
+						<ul class="links">
+							<li>
+								<a href="/addbaby">
+									<h4>新增寶寶</h4>
+								</a>
+								<ul class="links">
+									<% for(var i=0; i<result.list.length; i++) {%>
+									<li>
+										<a href="/baby/<%= result.list[i].babyno %>">
+											<strong><%= result.list[i].name %></strong>
+										</a>
+									</li>
+									<% } %>
+								</ul>
+							</li>
+							<li>
+								<a href="/babysetting/<%= result.baby.babyno %>">
+									<h4>寶寶設定</h4>
+								</a>
+							</li>
+							<li>
+								<a href="/profile">
+									<h4>回會員</h4>
+								</a>
+							</li>
+						</ul>
+
 					</div>
-					<!-- 圖表位置 my.Chart.bundle.js~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-					<canvas id="myChart" width="100" height="50">
-					</canvas>
-					<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-				</div>
-				<div class="col-md-2">
+					<div class="col-md-9">
+						<div class="profile_box">
+							<p class="head"><img
+									src="/images/membership.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= result.baby.name %>
+							</p>
+							<p class="title">性別：　<%= result.baby.gender %></p><br />
+							<p class="title">生日：　<%= result.baby.birthday %></p><br />
+						</div>
+						<div class="card" style="background: none;">
+							<div class="card-block">
+								<h5 class="card-title">
+									成長記錄
+								</h5>
+								<form action="/grecord_add" method="post">
+									<div class="form-group">
+										<p class="card-text">
+											(今天)
+											<input type="text" class="form-control" name="babyno"
+												value="<%= result.baby.babyno %>" hidden />
+											<br> 寶　寶：
+											<input name="baby" type="text-inline" value="<%= result.baby.name %>"
+												style="background: none;" readonly>
+											<br> 身　長：
+											<input name="height" type="number" style="background: none;">　cm
+											<br> 體　重：
+											<input name="weight" type="number" style="background: none;">　kg
+											<br> 喝奶量：
+											<input name="drinkmilk" type="number" style="background: none;">　cc
+										</p>
+									</div>
+									<button type="submit">
+										撰寫
+									</button>
+								</form>
+
+							</div>
+						</div>
+						<!-- 圖表位置 my.Chart.bundle.js~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+						<canvas id="myChart" width="100" height="50">
+						</canvas>
+						<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+					</div>
 				</div>
 			</div>
 		</div>

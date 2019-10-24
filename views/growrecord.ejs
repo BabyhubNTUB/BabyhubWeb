@@ -11,7 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" href="images/logo.png" type="image/ico" />
+	<link rel="icon" href="images/bear.png" type="image/ico" />
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 </head>
@@ -99,93 +99,103 @@
 		</section>
 
 		<!-- Main -->
-		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<div class="row">
-					<div class="row col-md-6">
-						<% for(var i=0; i<result.protype.length; i++) {%>
-						<form action="/searchgrecord2" method="get">
-							<input name="babyno" value="<%= result.protype[i].babyno %>" hidden>
+		<div id="main">
+			<div class="row">
+				<div class="row col-md-2"></div>
+				<div class="row col-md-4">
+					<% for(var i=0; i<result.protype.length; i++) {%>
+					<form action="/searchgrecord2" method="get">
+						<input name="babyno" value="<%= result.protype[i].babyno %>" hidden>
+						<button type="submit"
+							style="background: rgba(113, 180, 200, 0.3); padding: 0; text-align: center; width: 70px;height: 70px;line-height: 70px;border-radius: 70px; margin-bottom: 2%;">
+							<a><%= result.protype[i].name %></a>
+						</button>
+					</form>
+					<% } %>
+				</div>
+				<div class="col-md-5" style="text-align: right;">
+					<!-- Search -->
+					<section>
+						<form class="search2" method="get" action="/searchgrecord">
+							<input type="date" name="keyword" placeholder="Search"
+								style="background: none; margin: auto;" />
 							<button type="submit"
-								style="background: rgba(113, 180, 200, 0.3); padding: 0; text-align: center; width: 70px;height: 70px;line-height: 70px;border-radius: 70px; margin-bottom: 2%;">
-								<a><%= result.protype[i].name %></a>
-							</button>
+								style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
 						</form>
-						<% } %>
-					</div>
-					<div class="col-md-6" style="text-align: right;">
-						<!-- Search -->
-						<section>
-							<form class="search2" method="get" action="/searchgrecord">
-								<input type="date" name="keyword" placeholder="Search"
-									style="background: none; margin: auto;" />
-								<button type="submit"
-									style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
-							</form>
-						</section>
-					</div>
+					</section>
 				</div>
-				<div class="card" style="background: none;">
-					<div class="card-block">
-						<h5 class="card-title">
-							成長記錄
-						</h5>
-						<form action="/grecord_add" method="post">
-							<div class="form-group">
-								<p class="card-text">
-									(今天)
-									<br> 寶　寶：<br><br>
-									<select name="babyno">
-										<% for(var i=0; i<result.protype.length; i++) {%>
-										<option value="<%= result.protype[i].babyno %>"><%= result.protype[i].name %>
-										</option>
-										<% } %>
-									</select>
-									<br> 身　長：
-									<input name="height" type="number" style="background: none;">　cm
-									<br> 體　重：
-									<input name="weight" type="number" style="background: none;">　kg
-									<br> 喝奶量：
-									<input name="drinkmilk" type="number" style="background: none;">　ml
-								</p>
-							</div>
-							<button type="submit">
-								撰寫
-							</button>
-						</form>
-					</div>
-				</div>
-				<% for(var i=0; i<result.record.length; i++) {%>
-				<div class="card" style="background: none;">
-					<div class="card-block">
-						<h5 class="card-title">
-							成長記錄
-						</h5>
-						<p class="card-text">
-							<%= result.record[i].recorddate %>
-							<div style="font-size: 120%;">
-								<br> 寶　寶：<%= result.record[i].name %>
-								<br> 身　長：<%= result.record[i].height %><label>公分CM</label>
-								<br> 體　重：<%= result.record[i].weight %><label>公斤KG</label>
-								<br> 喝奶量：<%= result.record[i].drinkmilk %><label>毫升ML</label>
-							</div>
-						</p>
-						<p>
-							<button style="box-shadow:none; float:left; height: 5%; padding: 0;padding-right: 5%;"><a
-									href="/updategrowrecord/<%= result.record[i].serno %>">編輯</a></button>
-							<form action="/grecord_del" method="post">
-								<input type="text" class="form-control" name="serno"
-									value="<%= result.record[i].serno %>" hidden />
-								<button type="submit" style="box-shadow:none; float:left; height: 5%; padding: 0;">
-									<a>刪除</a>
+			</div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="card" style="background: none;">
+						<div class="card-block">
+							<h5 class="card-title">
+								成長記錄
+							</h5>
+							<form action="/grecord_add" method="post">
+								<div class="form-group">
+									<p class="card-text">
+										(今天)
+										<br> 寶　寶：<br><br>
+										<select name="babyno">
+											<% for(var i=0; i<result.protype.length; i++) {%>
+											<option value="<%= result.protype[i].babyno %>">
+												<%= result.protype[i].name %>
+											</option>
+											<% } %>
+										</select>
+										<br> 身　長：
+										<input name="height" type="number" style="background: none;">　cm
+										<br> 體　重：
+										<input name="weight" type="number" style="background: none;">　kg
+										<br> 喝奶量：
+										<input name="drinkmilk" type="number" style="background: none;">　ml
+									</p>
+								</div>
+								<button type="submit">
+									撰寫
 								</button>
 							</form>
-						</p>
+						</div>
 					</div>
 				</div>
-				<% } %>
 			</div>
+			<% for(var i=0; i<result.record.length; i++) {%>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="card" style="background: none;">
+						<div class="card-block">
+							<h5 class="card-title">
+								成長記錄
+							</h5>
+							<p class="card-text">
+								<%= result.record[i].recorddate %>
+								<div style="font-size: 120%;">
+									<br> 寶　寶：<%= result.record[i].name %>
+									<br> 身　長：<%= result.record[i].height %><label>公分CM</label>
+									<br> 體　重：<%= result.record[i].weight %><label>公斤KG</label>
+									<br> 喝奶量：<%= result.record[i].drinkmilk %><label>毫升ML</label>
+								</div>
+							</p>
+							<p>
+								<button
+									style="box-shadow:none; float:left; height: 5%; padding: 0;padding-right: 5%;"><a
+										href="/updategrowrecord/<%= result.record[i].serno %>">編輯</a></button>
+								<form action="/grecord_del" method="post">
+									<input type="text" class="form-control" name="serno"
+										value="<%= result.record[i].serno %>" hidden />
+									<button type="submit" style="box-shadow:none; float:left; height: 5%; padding: 0;">
+										<a>刪除</a>
+									</button>
+								</form>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% } %>
 		</div>
 	</div>
 

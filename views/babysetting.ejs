@@ -11,7 +11,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/assets/css/main.css" />
-	<link rel="icon" href="/images/logo.png" type="image/ico" />
+	<link rel="icon" href="/images/bear.png" type="image/ico" />
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
@@ -41,154 +41,151 @@
 				</ul>
 			</nav>
 		</header>
-	</div>
-	<!-- Menu -->
-	<section id="menu">
+		<!-- Menu -->
+		<section id="menu">
 
-		<!-- Links -->
-		<section>
-			<ul class="links">
-				<li>
-					<a href="/childEducation">
-						<h3>小孩教育</h3>
-						<p>提供小孩教育的知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/pregnancyKnowledge">
-						<h3>孕期知識</h3>
-						<p>孕期知識、胎教等。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/forum">
-						<h3>討論區</h3>
-						<p>跟媽媽們討論各種知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/growrecord">
-						<h3>成長紀錄</h3>
-						<p>填寫寶寶的身體變化吧！</p>
-					</a>
-				</li>
-				<li>
-					<a href="/diary">
-						<h3>日記</h3>
-						<p>填寫寶寶每日的生活小點滴吧！</p>
-					</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Actions -->
-		<section>
-			<ul class="actions stacked">
-				<li>
-					<a href="/logout" class="button large fit">登出 Logout</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Footer -->
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a></li>
-				<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
-							class="label">github</span></a></li>
-			</ul>
-			<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
+			<!-- Links -->
+			<section>
+				<ul class="links">
+					<li>
+						<a href="/childEducation">
+							<h3>小孩教育</h3>
+							<p>提供小孩教育的知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/pregnancyKnowledge">
+							<h3>孕期知識</h3>
+							<p>孕期知識、胎教等。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/forum">
+							<h3>討論區</h3>
+							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/growrecord">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/diary">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Actions -->
+			<section>
+				<ul class="actions stacked">
+					<li>
+						<a href="/logout" class="button large fit">登出 Logout</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
+				</ul>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
+			</section>
+
 		</section>
 
-	</section>
+		<!-- Main -->
+		<div id="main">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="profilePage">
+							<img id="img" src="/images/<%= result.baby.photo %>" />
+						</div>
+						<ul class="links">
+							<li>
+								<a href="/addbaby">
+									<h4>新增寶寶</h4>
+								</a>
+								<ul class="links">
+									<% for(var i=0; i<result.list.length; i++) {%>
+									<li>
+										<a href="/baby/<%= result.list[i].babyno %>">
+											<strong><%= result.list[i].name %></strong>
+										</a>
+									</li>
+									<% } %>
+								</ul>
+							</li>
+							<li>
+								<a href="/babysetting/<%= result.baby.babyno %>">
+									<h4>寶寶設定</h4>
+								</a>
+							</li>
+							<li>
+								<a href="/profile">
+									<h4>回會員</h4>
+								</a>
+							</li>
+						</ul>
 
-	<!-- Main -->
-	<div id="main">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-1">
-				</div>
-				<div class="col-md-2">
-					<div class="profilePage">
-						<img id="img" src="/images/<%= result.baby.photo %>" />
 					</div>
-					<ul class="links">
-						<li>
-							<a href="/addbaby">
-								<h4>新增寶寶</h4>
-							</a>
-							<ul class="links">
-								<% for(var i=0; i<result.list.length; i++) {%>
-								<li>
-									<a href="/baby/<%= result.list[i].babyno %>">
-										<strong><%= result.list[i].name %></strong>
-									</a>
-								</li>
-								<% } %>
-							</ul>
-						</li>
-						<li>
-							<a href="/babysetting/<%= result.baby.babyno %>">
-								<h4>寶寶設定</h4>
-							</a>
-						</li>
-						<li>
-							<a href="/profile">
-								<h4>回會員</h4>
-							</a>
-						</li>
-					</ul>
+					<div class="col-md-9">
+						<form action="/baby_update" enctype="multipart/form-data" method="post">
+							<div class="form-group">
+								<input type="text" class="form-control" name="babyno" value="<%= result.baby.babyno %>"
+									hidden />
+								<label for="exampleInputUsername1">
+									姓名
+								</label>
+								<input type="text" class="form-control" name="name" value="<%= result.baby.name %>" />
+								<label for="exampleInputUsername1">
+									性別
+								</label>
+								<input type="text" class="form-control" name="gender" value="<%= result.baby.gender %>"
+									readonly />
+								<label for="exampleInputUsername1">
+									生日
+								</label>
+								<input type="date" class="form-control" name="birthday"
+									value="<%= result.baby.birthday %>" style="background: none;" />
+							</div>
+							<input accept="image/*" id="uploadImage" name="photo" type="file">
+							<script>
+								$("#uploadImage").change(function () {
+									readImage(this);
+								});
 
-				</div>
-				<div class="col-md-7">
-					<form action="/baby_update"  enctype="multipart/form-data" method="post">
-						<div class="form-group">
+								function readImage(input) {
+									if (input.files && input.files[0]) {
+										var FR = new FileReader();
+										FR.onload = function (e) {
+											//e.target.result = base64 format picture
+											$('#img').attr("src", e.target.result);
+										};
+										FR.readAsDataURL(input.files[0]);
+									}
+								}
+							</script>
+							<br><br>
+							<button type="submit">
+								更改
+							</button>
+						</form>
+						<form action="/baby_del" method="post">
 							<input type="text" class="form-control" name="babyno" value="<%= result.baby.babyno %>"
 								hidden />
-							<label for="exampleInputUsername1">
-								姓名
-							</label>
-							<input type="text" class="form-control" name="name" value="<%= result.baby.name %>" />
-							<label for="exampleInputUsername1">
-								性別
-							</label>
-							<input type="text" class="form-control" name="gender" value="<%= result.baby.gender %>"
-								readonly />
-							<label for="exampleInputUsername1">
-								生日
-							</label>
-							<input type="date" class="form-control" name="birthday" value="<%= result.baby.birthday %>"
-								style="background: none;" />
-						</div>
-						<input accept="image/*" id="uploadImage" name="photo" type="file">
-						<script>
-							$("#uploadImage").change(function () {
-								readImage(this);
-							});
-
-							function readImage(input) {
-								if (input.files && input.files[0]) {
-									var FR = new FileReader();
-									FR.onload = function (e) {
-										//e.target.result = base64 format picture
-										$('#img').attr("src", e.target.result);
-									};
-									FR.readAsDataURL(input.files[0]);
-								}
-							}
-						</script>
-						<br><br>
-						<button type="submit">
-							更改
-						</button>
-					</form>
-					<form action="/baby_del" method="post">
-						<input type="text" class="form-control" name="babyno" value="<%= result.baby.babyno %>"
-							hidden />
-						<button type="submit">
-							刪除
-						</button>
-					</form>
-				</div>
-				<div class="col-md-2">
+							<button type="submit">
+								刪除
+							</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

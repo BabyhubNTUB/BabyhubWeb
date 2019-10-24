@@ -16,7 +16,7 @@ var list = async function () {
             result.type = [];
         });
 
-    await sql('SELECT * FROM forum')
+    await sql('SELECT * FROM forum order by forumno desc')
         .then((data) => {
             result.forum = data.rows;
         }, (error) => {
