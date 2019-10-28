@@ -111,11 +111,11 @@
 								<label for="exampleInputUsername1">
 									文章標題
 								</label>
-								<input type="text" class="form-control" name="forumname" value="" />
+								<input type="text" class="form-control" name="forumname" maxlength="50" required/>
 								<label for="exampleInputUsername1">
 									文章類別
 								</label>
-								<select name="typeno">
+								<select name="typeno" required>
 									<option value="1">新生兒(0-3歲)</option>
 									<option value="2">幼兒(3-6歲)</option>
 									<option value="3">特殊疾病照護</option>
@@ -135,7 +135,7 @@
 		
 								</textarea> -->
 
-									<input type="text" name="content" />
+									<input type="text" name="content" required/>
 								</div>
 							</div>
 							<button type="submit" class="btn">

@@ -6,7 +6,7 @@ const edu = require('./utility/childEducation');
 
 //接收POST請求
 router.post('/', function (req, res, next) {
-    var managerno = "V0124";
+    var managerno = req.session.managerno;
     var title = req.body.title;
     var source = req.body.source;
     var content = req.body.content;
