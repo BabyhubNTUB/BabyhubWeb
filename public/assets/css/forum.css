@@ -3633,14 +3633,12 @@ input, select, textarea {
 			display:none;
 			position:fixed;
 			margin:0;
+			margin-right: 5%;
 			padding:0;
-			width:160px;
+			width:10%;
 			right:0px;
-			top:60px;
+			top:8%;
 			z-index:10;
-		}
-		div.profile .profileList{
-			margin-top:10px
 		}
 		div.profile .profileList a{			
 			cursor:pointer;

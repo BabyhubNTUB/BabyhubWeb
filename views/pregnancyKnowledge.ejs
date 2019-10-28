@@ -42,8 +42,8 @@
 			</a>
 			<nav class="main">
 				<ul>
-					<li class="bell">
-						<a class="fa-bell" href="#menu">Bell</a>
+					<li class="profile" id="profile">
+						<a class="fa-bell">Bell</a>
 					</li>
 					<li class="bell">
 						<a class="fa-user" href="/profile">Bell</a>
@@ -54,93 +54,105 @@
 				</ul>
 			</nav>
 		</header>
-	</div>
-	<!-- Menu -->
-	<section id="menu">
-
-		<!-- Links -->
-		<section>
-			<ul class="links">
-				<li>
-					<a href="/childEducation">
-						<h3>小孩教育</h3>
-						<p>提供小孩教育的知識。</p>
+		<div class="profile" id="profileList">
+			<% for(var i=0; i<noti.length; i++) {%>
+			<div class="profileList">
+				<div class="list-group-item">
+					<a href="/aforum/<%= noti[i].forumno %>">
+						<span><%= noti[i].content %></span>
 					</a>
-				</li>
-				<li>
-					<a href="/pregnancyKnowledge">
-						<h3>孕期知識</h3>
-						<p>孕期知識、胎教等。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/forum">
-						<h3>討論區</h3>
-						<p>跟媽媽們討論各種知識。</p>
-					</a>
-				</li>
-				<li>
-					<a href="/growrecord">
-						<h3>成長紀錄</h3>
-						<p>填寫寶寶的身體變化吧！</p>
-					</a>
-				</li>
-				<li>
-					<a href="/diary">
-						<h3>日記</h3>
-						<p>填寫寶寶每日的生活小點滴吧！</p>
-					</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Actions -->
-		<section>
-			<ul class="actions stacked">
-				<li>
-					<a href="/logout" class="button large fit">登出 Logout</a>
-				</li>
-			</ul>
-		</section>
-		<!-- Footer -->
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a></li>
-				<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
-							class="label">github</span></a></li>
-			</ul>
-			<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
-		</section>
-
-	</section>
-
-	<!-- Main -->
-	<div class="row1">
-		<div class="pagetagtop">
-			<div class="row">
-				<div class="col-md-6">
-					<h1 style="padding-top:2%;">孕期知識</h1>
 				</div>
-				<div class="col-md-6">
-					<!-- Search -->
-					<section>
-						<form class="search" method="get" action="/searchpre">
-							<input type="number" name="check" value="1" hidden />
-							<input type="text" name="keyword" style="padding-left: 20%;" />
-							<button type="submit"
-								style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
-						</form>
-					</section>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-12">
-			<% for(var i=0; i<items.length; i++) {%>
-			<div class="Box">
-				<a href="/apregnancyKnowledge/<%= items[i].serno %>">
-					<strong><%= items[i].title %></strong>
-				</a>
 			</div>
 			<% } %>
+		</div>
+		<!-- Menu -->
+		<section id="menu">
+
+			<!-- Links -->
+			<section>
+				<ul class="links">
+					<li>
+						<a href="/childEducation">
+							<h3>小孩教育</h3>
+							<p>提供小孩教育的知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/pregnancyKnowledge">
+							<h3>孕期知識</h3>
+							<p>孕期知識、胎教等。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/forum">
+							<h3>討論區</h3>
+							<p>跟媽媽們討論各種知識。</p>
+						</a>
+					</li>
+					<li>
+						<a href="/growrecord">
+							<h3>成長紀錄</h3>
+							<p>填寫寶寶的身體變化吧！</p>
+						</a>
+					</li>
+					<li>
+						<a href="/diary">
+							<h3>日記</h3>
+							<p>填寫寶寶每日的生活小點滴吧！</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Actions -->
+			<section>
+				<ul class="actions stacked">
+					<li>
+						<a href="/logout" class="button large fit">登出 Logout</a>
+					</li>
+				</ul>
+			</section>
+			<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
+					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
+								class="label">github</span></a></li>
+				</ul>
+				<p class="copyright">Copyright&copy;NTUB IMD 108509</p>
+			</section>
+
+		</section>
+
+		<!-- Main -->
+		<div class="row1">
+			<div class="pagetagtop">
+				<div class="row">
+					<div class="col-md-6">
+						<h1 style="padding-top:2%;">孕期知識</h1>
+					</div>
+					<div class="col-md-6">
+						<!-- Search -->
+						<section>
+							<form class="search" method="get" action="/searchpre">
+								<input type="number" name="check" value="1" hidden />
+								<input type="text" name="keyword" style="padding-left: 20%;" />
+								<button type="submit"
+									style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
+							</form>
+						</section>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<% for(var i=0; i<items.length; i++) {%>
+				<div class="Box">
+					<a href="/apregnancyKnowledge/<%= items[i].serno %>">
+						<strong><%= items[i].title %></strong>
+					</a>
+				</div>
+				<% } %>
+			</div>
 		</div>
 	</div>
 	<!-- gotop按鈕 -->

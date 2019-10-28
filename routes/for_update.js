@@ -3,6 +3,7 @@ var router = express.Router();
 
 //增加引用函式
 const forum = require('./utility/forum');
+const noti = require('./utility/notification');
 
 //接收POST請求
 router.post('/', function(req, res, next) {
@@ -14,13 +15,30 @@ router.post('/', function(req, res, next) {
         forumname: req.body.forumname,
         content: req.body.content
     } 
-    console.log(newData);
+    
     forum.update(newData).then(d => {
         if (d>=0){
-            res.render('userSuccess', {results:d});  //傳至成功頁面
+            var id = req.session.userid;
+            noti.list(id).then(noti => {
+                if (noti == null) {
+                    res.render('error');  //導向錯誤頁面
+                } else if (noti == -1) {
+                    res.render('notFound');  //導向找不到頁面                
+                } else { 
+                    res.render('userSuccess', {results:d,noti:noti});  //將資料傳給顯示頁面
+                }
+            })
         }else{
-            res.render('userFail');     //導向錯誤頁面
-            console.log('fail');
+            var id = req.session.userid;
+            noti.list(id).then(noti => {
+                if (noti == null) {
+                    res.render('error');  //導向錯誤頁面
+                } else if (noti == -1) {
+                    res.render('notFound');  //導向找不到頁面                
+                } else {              
+                    res.render('userFail', {noti:noti});  //將資料傳給顯示頁面
+                }
+            })
         }  
     })
 });

@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 // ----------------------------------------------
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var register = require('./routes/register');
 var member_add = require('./routes/member_add');
 var registerSuccess = require('./routes/registerSuccess');
@@ -52,7 +51,6 @@ var achildEducation = require('./routes/achildEducation');
 var aforum = require('./routes/aforum');
 var apregnancyKnowledge = require('./routes/apregnancyKnowledge');
 var updatediary = require('./routes/updatediary');
-var updateforum = require('./routes/updateforum');
 var updategrowrecord = require('./routes/updategrowrecord');
 var myforum = require('./routes/myforum');
 var like = require('./routes/like');
@@ -118,7 +116,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ----------------------------------------------
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/register', register);
 app.use('/member_add', member_add);
 app.use('/registerSuccess', registerSuccess);
@@ -162,7 +159,6 @@ app.use('/achildEducation', achildEducation );
 app.use('/aforum', aforum );
 app.use('/apregnancyKnowledge', apregnancyKnowledge );
 app.use('/updatediary', updatediary );
-app.use('/updateforum', updateforum );
 app.use('/updategrowrecord', updategrowrecord );
 app.use('/myforum', myforum );
 app.use('/like', like );

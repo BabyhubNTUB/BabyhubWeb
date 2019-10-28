@@ -3,6 +3,7 @@ var router = express.Router();
 
 //增加引用函式
 const growingrecord = require('./utility/growingrecord');
+const noti = require('./utility/notification');
 var moment = require('moment');
 
 
@@ -14,23 +15,21 @@ router.get('/', function (req, res, next) {
     growingrecord.search(id, keyword).then(data => {
         if (data == null) {
             res.render('error');  //導向錯誤頁面
-            console.log('error');
-            console.log(data);
-        } else if (data.record.length > 0) {
-
+        } else if (data.record.length >= 0) {
             for (var i = 0; i < data.record.length; i++) {
                 data.record[i].recorddate = moment(data.record[i].recorddate).format("YYYY-MM-DD");
             }
-            res.render('growrecord', { result: data });  //將資料傳給顯示頁面
-
-        } else if (data.record.length == 0) {
-
-            console.log(data);
-            res.render('growrecord', { result: data });  //將資料傳給顯示頁面
+            noti.list(id).then(noti => {
+                if (noti == null) {
+                    res.render('error');  //導向錯誤頁面
+                } else if (noti == -1) {
+                    res.render('notFound');  //導向找不到頁面                
+                } else {              
+                    res.render('growrecord', {result: data,noti:noti});  //將資料傳給顯示頁面
+                }
+            })
         } else {
             res.render('notFound');  //導向找不到頁面
-            console.log('notfound');
-            console.log(data);
         }
     })
 });

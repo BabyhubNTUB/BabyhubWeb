@@ -28,8 +28,8 @@
 			</a>
 			<nav class="main">
 				<ul>
-					<li class="bell">
-						<a class="fa-bell" href="#menu">Bell</a>
+					<li class="profile" id="profile">
+						<a class="fa-bell">Bell</a>
 					</li>
 					<li class="bell">
 						<a class="fa-user" href="/profile">Bell</a>
@@ -40,6 +40,17 @@
 				</ul>
 			</nav>
 		</header>
+		<div class="profile" id="profileList">
+			<% for(var i=0; i<noti.length; i++) {%>
+			<div class="profileList">
+				<div class="list-group-item">
+					<a href="/aforum/<%= noti[i].forumno %>">
+						<span><%= noti[i].content %></span>
+					</a>
+				</div>
+			</div>
+			<% } %>
+		</div>
 		<!-- Menu -->
 		<section id="menu">
 
@@ -111,7 +122,7 @@
 								<label for="exampleInputUsername1">
 									文章標題
 								</label>
-								<input type="text" class="form-control" name="forumname" maxlength="50" required/>
+								<input type="text" class="form-control" name="forumname" maxlength="50" required />
 								<label for="exampleInputUsername1">
 									文章類別
 								</label>
@@ -135,7 +146,7 @@
 		
 								</textarea> -->
 
-									<input type="text" name="content" required/>
+									<input type="text" name="content" required />
 								</div>
 							</div>
 							<button type="submit" class="btn">

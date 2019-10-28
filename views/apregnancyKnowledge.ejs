@@ -28,8 +28,8 @@
 			</a>
 			<nav class="main">
 				<ul>
-					<li class="bell">
-						<a class="fa-bell" href="#menu">Bell</a>
+					<li class="profile" id="profile">
+						<a class="fa-bell">Bell</a>
 					</li>
 					<li class="bell">
 						<a class="fa-user" href="/profile">Bell</a>
@@ -40,6 +40,17 @@
 				</ul>
 			</nav>
 		</header>
+		<div class="profile" id="profileList">
+			<% for(var i=0; i<noti.length; i++) {%>
+			<div class="profileList">
+				<div class="list-group-item">
+					<a href="/aforum/<%= noti[i].forumno %>">
+						<span><%= noti[i].content %></span>
+					</a>
+				</div>
+			</div>
+			<% } %>
+		</div>
 		<!-- Menu -->
 		<section id="menu">
 
@@ -104,8 +115,8 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
 					<article class="post">
 						<header>
 							<div class="title">

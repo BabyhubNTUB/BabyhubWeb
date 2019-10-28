@@ -11,7 +11,7 @@ router.post('/', function(req, res, next) {
     user.del(id).then(d => {
         if(d>=0){
             console.log('成功!!!!!!!!!!!!!');
-            res.render('userSuccess', {results:d});  //傳至成功頁面     
+            res.render('index', {results:d});  //傳至成功頁面     
         }else{
             console.log('失敗!!!!!!!!!!!!!!');
             res.render('userFail');     //導向錯誤頁面

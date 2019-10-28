@@ -15,17 +15,17 @@ var list = async function(id){
     .then((data) => {
         console.log(data.rowCount);
         rowcnt = data.rowCount;
-        result.notification = data.rows; 
+        result = data.rows; 
     }, (error) => {
-        result.notification = [];
+        result = [];
     });
 
     if (rowcnt == 0) {
         await sql('SELECT * FROM t09notification where serno=21')
         .then((data) => {
-            result.notification = data.rows; 
+            result = data.rows; 
         }, (error) => {
-            result.notification = [];
+            result = [];
         });
     }
     

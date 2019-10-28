@@ -4,6 +4,8 @@ var router = express.Router();
 //增加引用函式
 // var moment = require('moment');
 const product = require('./utility/childEducation');
+const noti = require('./utility/notification');
+
 
 //接收GET請求
 router.get('/:serno', function(req, res, next) {
@@ -15,8 +17,16 @@ router.get('/:serno', function(req, res, next) {
         }else if(data==-1){
             res.render('notFound');  //導向找不到頁面                
         }else{
-            // data.inventorydate=moment(data.inventorydate).format("YYYY-MM-DD")
-            res.render('achildEducation', {item:data});  //將資料傳給顯示頁面
+            var id = req.session.userid;
+            noti.list(id).then(noti => {
+                if (noti == null) {
+                    res.render('error');  //導向錯誤頁面
+                } else if (noti == -1) {
+                    res.render('notFound');  //導向找不到頁面                
+                } else {              
+                    res.render('achildEducation', {item:data,noti:noti});  //將資料傳給顯示頁面
+                }
+            })
         }  
     })
 });

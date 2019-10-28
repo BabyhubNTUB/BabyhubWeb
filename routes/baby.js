@@ -3,6 +3,7 @@ var router = express.Router();
 
 //增加引用函式
 const baby = require('./utility/baby');
+const noti = require('./utility/notification');
 var moment = require('moment');
 
 
@@ -17,7 +18,6 @@ router.get('/:babyno', function (req, res, next) {
             res.render('notFound');  //導向找不到頁面                
         } else {
             data.baby.birthday = moment(data.baby.birthday).format("YYYY-MM-DD");
-            console.log(data);
             var date = [];
             var height = [];
             var weight = [];
@@ -51,7 +51,17 @@ router.get('/:babyno', function (req, res, next) {
                 backgroundColor: 'rgba(61, 104, 167, 1)',
                 borderColor: 'rgba(61, 104, 167, 1)'
             }];
-            res.render('baby', { result: data });  //將資料傳給顯示頁面
+
+            var id = req.session.userid;
+            noti.list(id).then(noti => {
+                if (noti == null) {
+                    res.render('error');  //導向錯誤頁面
+                } else if (noti == -1) {
+                    res.render('notFound');  //導向找不到頁面                
+                } else {              
+                    res.render('baby', {result: data,noti:noti});  //將資料傳給顯示頁面
+                }
+            })
         }
     })
 });

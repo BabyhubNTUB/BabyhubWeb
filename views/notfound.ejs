@@ -41,11 +41,11 @@
 			</nav>
 		</header>
 		<div class="profile" id="profileList">
-			<% for(var i=0; i<result.notification.length; i++) {%>
+			<% for(var i=0; i<noti.length; i++) {%>
 			<div class="profileList">
 				<div class="list-group-item">
-					<a href="/aforum/<%= result.notification[i].forumno %>">
-						<span><%= result.notification[i].content %></span>
+					<a href="/aforum/<%= noti[i].forumno %>">
+						<span><%= noti[i].content %></span>
 					</a>
 				</div>
 			</div>

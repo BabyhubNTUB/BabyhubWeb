@@ -3,24 +3,29 @@ var router = express.Router();
 
 //增加引用函式
 const member = require('./utility/member');
+const noti = require('./utility/notification');
 
 //接收GET請求
 router.get('/', function(req, res, next) {
     //var id = req.query.id;   //取出參數
     var userid = req.session.userid;
-    console.log(userid);
     member.query(userid).then(data => {
         if (data==null){
-            console.log('1-------------------------------');
             res.render('error');  //導向錯誤頁面
         }else if(data==-1){
-            
-            console.log('2-------------------------------');
             res.render('notFound');  //導向找不到頁面                
         }else{
-            console.log(data);
             data.username = req.session.username;
-            res.render('profilesetting', {result:data});  //將資料傳給顯示頁面
+            var id = req.session.userid;
+            noti.list(id).then(noti => {
+                if (noti == null) {
+                    res.render('error');  //導向錯誤頁面
+                } else if (noti == -1) {
+                    res.render('notFound');  //導向找不到頁面                
+                } else {              
+                    res.render('profilesetting', {result:data,noti:noti});  //將資料傳給顯示頁面
+                }
+            })
         }  
     })
 });

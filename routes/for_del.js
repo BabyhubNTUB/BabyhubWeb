@@ -7,7 +7,7 @@ const forum = require('./utility/forum');
 //接收POST請求
 router.post('/', function(req, res, next) {
     var forumno = req.body.forumno;   //取得產品編號
-    console.log(forumno);
+    
     forum.del(forumno).then(d => {
         if(d>=0){
             res.render('managerSuccess', {results:d});  //傳至成功頁面     
