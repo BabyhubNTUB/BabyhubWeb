@@ -12,7 +12,7 @@ var like = async function (newData) {
     console.log(newData);
     var rowcnt = 0;
     var content = '';
-    var addnot = 0;
+    var addnoti = 0;
 
     await sql('SELECT * FROM t11forumlike where id=$1 and forumno=$2', [newData.userid, newData.forumno])
         .then((data) => {
@@ -50,7 +50,7 @@ var like = async function (newData) {
     }
 
     if (addnoti == 1) {
-        await sql('INSERT INTO t09notification (id, content, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2, $3)', [newData.userid, content, newData.forumno])
+        await sql('INSERT INTO t09notification (id, content, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
             .then((data) => {
                 result = 0;
                 console.log("------------------------10");

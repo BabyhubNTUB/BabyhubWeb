@@ -3,6 +3,7 @@ var router = express.Router();
 
 //增加引用函式
 const like = require('./utility/forumlike');
+const noti = require('./utility/notification');
 
 //接收POST請求
 router.post('/', function (req, res, next) {
