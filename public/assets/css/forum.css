@@ -7,7 +7,27 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+img.circle {
+	vertical-align: middle;
+	margin: auto !important;
+	width: 40% !important;
+}
+/*----------------------------------------*/
+.list-group-item:first-child {
+    border-top-right-radius: 20px !important;
+    border-top-left-radius: 20px !important;
+}
+.list-group-item:nth-child(2) {
+    border-top-right-radius: 20px !important;
+    border-top-left-radius: 20px !important;
+}
 
+.list-group-item:last-child {
+    border-bottom-right-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
+
+/*----------------------------------------*/
 div.row1{
 	position: absolute;
 	left: 10%;
@@ -79,9 +99,10 @@ div.searchbox{
 input{
 	width:80%;
 }
-div.message{
+div.message{/*a*/
 	width: 100%;
 	padding-top: 0px;
+	border-radius:20px;
 }
 /*textarea*/
 .commentFrame{
@@ -312,7 +333,7 @@ html, body {
     width: 100%;
 	height: 100%;
 	background-image:url(images/background.png) !important;
-	background-attachment:scroll;
+	background-attachment:fixed !important;
 	background-repeat: no-repeat;
     background-size:cover !important;
     /* background: #ee9ca7;
@@ -3093,7 +3114,8 @@ input, select, textarea {
 
 	.post {
 		padding: 3em 3em 1em 3em ;
-		background: #ffffff;
+		background: #fffcee; /*改黃色!!!還要加圓角!!!*//*a*/
+		border-radius: 20px;
 		border: solid 1px rgba(160, 160, 160, 0.3);
 		margin: 0 0 3em 0;
 		position: relative;
@@ -3130,7 +3152,7 @@ input, select, textarea {
 				}
 
 			.post > header .meta {
-				padding: 3.75em 3em 1.75em 3em ;
+				padding: 2.75em 2em 0.75em 2em ;
 				border-left: solid 1px rgba(160, 160, 160, 0.3);
 				min-width: 17em;
 				text-align: right;
@@ -4042,6 +4064,8 @@ input, select, textarea {
 		background:rgba(184, 209, 218, 0.753);
 		box-shadow:1px 1px 4px #dadada;
 		color:#3c3b3b;
+		border-top-right-radius: 10px !important;
+    	border-top-left-radius: 10px !important; 
 	}
 	@media screen and (max-width: 414px){
 		.boardtag{
@@ -4119,7 +4143,7 @@ input, select, textarea {
 	div.Box{
 		margin:0 0 30px 0;
 		padding:10px;
-		background:#c55a5a0c;
+		background:#fffceea4;
 		border-radius:10px;
 		width: 100%;
 	}

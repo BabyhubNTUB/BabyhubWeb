@@ -43,9 +43,16 @@ var one = async function (forumno) {
             result.aforum = null;
         });
 
+    var rowcnt = 0;
     await sql('SELECT * FROM t05forumcomment a, t01member b WHERE a.id=b.id and forumno = $1', [forumno])
         .then((data) => {
             if (data.rows.length > 0) {
+                result.com = data.rows;
+            } else if (data.rows.length == 0) {
+                data.rows[0]={};
+                data.rows[0].username='';
+                data.rows[0].content = '目前沒有留言!';
+                data.rows[0].photo='';
                 result.com = data.rows;
             } else {
                 result.com = -1;
@@ -82,7 +89,7 @@ var add = async function (newData) {
     var result;
 
     console.log(newData);
-    await sql('INSERT INTO t04forum (id, forumname, typeno,content,forumdate) VALUES ($1, $2, $3, $4, $5)', [newData.userid, newData.forumname, newData.typeno, newData.content,newData.forumdate])
+    await sql('INSERT INTO t04forum (id, forumname, typeno,content,forumdate) VALUES ($1, $2, $3, $4, $5)', [newData.userid, newData.forumname, newData.typeno, newData.content, newData.forumdate])
         .then((data) => {
             result = 0;
         }, (error) => {
@@ -177,20 +184,5 @@ var type = async function (type) {
     return result;
 }
 
-// var one = async function (forumno) {
-//     var result = {};
-
-//     await sql('SELECT * FROM t04forum WHERE forumno = $1', [forumno])
-//         .then((data) => {
-//             if (data.rows.length > 0) {
-//                 result.aforum = data.rows[0];
-//             } else {
-//                 result.aforum = -1;
-//             }
-//         }, (error) => {
-//             result.aforum = null;
-//         });
-//     return result;
-// }
 //匯出
 module.exports = { list, one, add, del, update, search, type };

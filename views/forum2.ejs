@@ -85,69 +85,72 @@
 		</section>
 
 		<!-- Main -->
-		<div class="row">
-			<div class="row" style="margin: auto; padding: auto; text-align: center;">
-				<div class="col-md-12">
+		<div class="main">
+			<div class="row">
+				<div class="col-md-6">
+					<h1 style="padding-top:2%;">討論區</h1>
+				</div>
+				<div class="col-md-6">
 					<!-- Search -->
 					<section>
-						<form class="searchforum" method="get" action="/search">
+						<form class="search" method="get" action="/search">
 							<input type="number" name="check" value="2" hidden />
 							<input type="text" name="keyword" style="padding-left: 20%;" />
 							<button type="submit"
-								style="width:30%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal;">搜尋</button>
+								style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
 						</form>
 					</section>
 				</div>
 			</div>
-			<div class="col-md-12">
-				<ul class="boardtag">
-					<% for(var i=0; i<result.type.length; i++) {%>
-					<form class="forumtype" method="get" action="/forumtype">
-						<input type="number" name="check" value="2" hidden />
-						<input type="text" name="type" value="<%=result.type[i].typeno %>" hidden />
-						<li><button style="background-color: transparent; padding: 0; height: auto; box-shadow:none;"
-								type="submit"><a><%= result.type[i].name %></a></button></li>
-					</form>
-					<% } %>
-				</ul>
-			</div>
-			<div class="col-md-12">
-				<div class="content">
-					<table>
-						<tr>
-							<td>分類</td>
-							<td>標題</td>
-							<td>喜歡</td>
-							<td>回覆</td>
-							<td>發表人</td>
-							<td>發文日期</td>
-						</tr>
-						<% for(var i=0; i<result.forum.length; i++) {%>
-						<tr>
-							<td><%= result.forum[i].name %></td>
-							<td><a href="/aforum2/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
-							</td>
-							<td><%= result.forum[i].cntlike %></td>
-							<td><%= result.forum[i].cntcomment %></td>
-							<td><%= result.forum[i].username %></td>
-							<td><%= result.forum[i].forumdatetime %></td>
-						</tr>
-						<% } %>
-
-						<tr>
-							<td>廣告</td>
-							<td><a href="#">頂級澳洲奶粉，給寶寶非凡的享受！</a></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-
-					</table>
-				</div>
-			</div>
-			<div class="pagetag">
+			<div class="row">
 				<div class="col-md-12">
+					<ul class="boardtag">
+						<% for(var i=0; i<result.type.length; i++) {%>
+						<form class="forumtype" method="get" action="/forumtype">
+							<input type="number" name="check" value="2" hidden />
+							<input type="text" name="type" value="<%=result.type[i].typeno %>" hidden />
+							<li><button
+									style="background-color: transparent; padding: 0; height: auto; box-shadow:none;"
+									type="submit"><a><%= result.type[i].name %></a></button></li>
+						</form>
+						<% } %>
+					</ul>
+				</div>
+				<div class="col-md-12">
+					<div class="content">
+						<table>
+							<tr>
+								<td>分類</td>
+								<td>標題</td>
+								<td>喜歡</td>
+								<td>回覆</td>
+								<td>發表人</td>
+								<td>發文日期</td>
+							</tr>
+							<% for(var i=0; i<result.forum.length; i++) {%>
+							<tr>
+								<td><%= result.forum[i].name %></td>
+								<td><a
+										href="/aforum2/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
+								</td>
+								<td><%= result.forum[i].cntlike %></td>
+								<td><%= result.forum[i].cntcomment %></td>
+								<td><%= result.forum[i].username %></td>
+								<td><%= result.forum[i].forumdatetime %></td>
+							</tr>
+							<% } %>
+
+							<tr>
+								<td>廣告</td>
+								<td><a href="#">頂級澳洲奶粉，給寶寶非凡的享受！</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -96,8 +96,9 @@
 							</div>
 							<div class="meta">
 								<time class="published" datetime="2015-11-01"><%= result.aforum.forumdatetime %></time>
-								<a href="#" class="author"><span class="name"><%= result.cnt.username %></span><img
-										src="/images/avatar.jpg" alt="" /></a>
+								<a style="font-size: 100%;" class="author"><span
+										class="name"><%= result.cnt.username %></span><img class="circle" src="/images/<%= result.cnt.photo %>"
+										alt="" /></a>
 							</div>
 						</header>
 						<p><%= result.aforum.content %></p>
@@ -113,8 +114,8 @@
 					<article class="message">
 						<h3>留言回應</h3>
 						<% for(var i=0; i<result.com.length; i++) {%>
-						<div class="list-group-item">
-							<p><a href="#" class="author"><img src="/images/avatar.jpg" alt="">
+						<div class="list-group-item" style="background: #fffcee;">
+							<p><a href="#" class="author"><img src="/images/<%= result.com[i].photo %>" alt="">
 									<span class="mesname"><%= result.com[i].username %></span></a></p>
 							<div class="col-md-12">
 								<p><%= result.com[i].content %></p>
