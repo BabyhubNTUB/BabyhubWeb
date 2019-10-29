@@ -15,13 +15,12 @@ router.post('/', function(req, res, next) {
         source: req.body.source, 
         content: req.body.content
     } 
-    console.log(newData);
+    
     edu.update(newData).then(d => {
         if (d>=0){
             res.render('managerSuccess', {results:d});  //傳至成功頁面
         }else{
             res.render('managerFail');     //導向錯誤頁面
-            console.log('fail');
         }  
     })
 });

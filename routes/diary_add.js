@@ -16,17 +16,17 @@ router.post('/', function (req, res, next) {
         diary: diary,
         diarydate: diarydate
     }
-    
+
     edu.add(newData).then(d => {
-        if (d==0) {
+        if (d == 0) {
             var id = req.session.userid;
             noti.list(id).then(noti => {
                 if (noti == null) {
                     res.render('error');  //導向錯誤頁面
                 } else if (noti == -1) {
-                    res.render('notFound');  //導向找不到頁面                
-                } else {              
-                    res.render('userSuccess', {noti:noti});  //將資料傳給顯示頁面
+                    res.render('notFound', { noti: noti });  //導向找不到頁面                
+                } else {
+                    res.render('userSuccess', { noti: noti });  //將資料傳給顯示頁面
                 }
             })
         } else {
@@ -35,9 +35,9 @@ router.post('/', function (req, res, next) {
                 if (noti == null) {
                     res.render('error');  //導向錯誤頁面
                 } else if (noti == -1) {
-                    res.render('notFound');  //導向找不到頁面                
-                } else {              
-                    res.render('userFail', {noti:noti});  //將資料傳給顯示頁面
+                    res.render('notFound', { noti: noti });  //導向找不到頁面                
+                } else {
+                    res.render('userFail', { noti: noti });  //將資料傳給顯示頁面
                 }
             })
         }

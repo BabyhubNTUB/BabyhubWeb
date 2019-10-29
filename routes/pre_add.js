@@ -17,13 +17,12 @@ router.post('/', function (req, res, next) {
         source: source, 
         content: content,
     }
-    console.log(newData);
+    
     pre.addMan(newData).then(d => {
         if (d==0) {
             res.render('managerSuccess');  //傳至成功頁面
         } else {
             res.render('managerFail');     //導向錯誤頁面
-            console.log("****************************");
         }
     })
 });

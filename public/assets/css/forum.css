@@ -3636,7 +3636,7 @@ input, select, textarea {
 			margin:0;
 			margin-right: 5%;
 			padding:0;
-			width:10%;
+			width:12%;
 			right:0px;
 			top:8%;
 			z-index:10;
@@ -4115,49 +4115,6 @@ input, select, textarea {
 		}
 	}
 
-/* vaccine */
-	div.vaccineBox{
-		margin:0 0 30px 0;
-		padding:10px;
-		background:#c55a5a0c;
-		border-radius:10px;
-	}
-	div.vaccineBox span.num{
-		background: #f1848496;
-		border-radius:10px;
-		padding:8px;
-		font-size:20px;
-		font-weight: 600;
-	}
-	div.vaccineBox strong{
-		font-size:32px;
-	}
-	div.vaccineBox span.date{
-		font-size:24px;
-	}
-	div.vaccineBox span.detail{
-		font-size:20px;
-	}
-	div.vaccineBox a.reach{
-		position: relative;
-		top:-60px;
-		padding:10px;
-		font-weight: 600;
-		font-size:30px;
-		background:#ff000025;
-		border:4px #ff00005e solid;
-		border-radius: 16px;
-		margin:90%;
-	}
-	div.vaccineBox img{
-		position:relative;
-		top:-150px;
-		left:1055px;
-		width:150px;
-		margin:0;
-		padding:0;
-	}
-
 /* Box */
 	div.Box{
 		margin:0 0 30px 0;
@@ -4182,51 +4139,6 @@ input, select, textarea {
 	div.Box span.detail{
 		font-size:20px;
 	}
-/* achievementBox */
-	div.achievementBox{
-		margin:0 0 30px 0;
-		padding:30px 30px 0px ;
-		background:#c55a5a0c;
-		border-radius:10px;
-		background-image:url("images/achievement.png")	;
-		height:150px;
-	}
-	div.achievementBox span.num{
-		background: #f1848496;
-		border-radius:10px;
-		padding:8px;
-		font-size:20px;
-		font-weight: 600;
-	}
-	div.achievementBox strong{
-		font-size: 32px;
-	}
-	div.achievementBox span.date{
-		font-size:24px;
-	}
-	div.achievementBox span.detail{
-		font-size:20px;
-	}
-	div.achievementBox a.reach{
-		position: relative;
-		top:-60px;
-		padding:10px;
-		font-weight: 600;
-		font-size:30px;
-		background:#ff000025;
-		border:4px #ff00005e solid;
-		border-radius: 16px;
-		margin:90%;
-	}
-	div.achievementBox img{
-		position:relative;
-		top:-150px;
-		left:1055px;
-		width:150px;
-		margin:0;
-		padding:0;
-	}
-
 /* profile */
     div.profile_box{
 		margin-bottom: 10px;

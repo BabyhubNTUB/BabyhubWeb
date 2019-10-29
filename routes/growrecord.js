@@ -18,7 +18,7 @@ router.get('/', function (req, res, next) {
         if (noti == null) {
           res.render('error');  //導向錯誤頁面
         } else if (noti == -1) {
-          res.render('notFound');  //導向找不到頁面                
+          res.render('notFound', { noti: noti });  //導向找不到頁面                
         } else {
           res.render('growrecord', { result: d, noti: noti });  //將資料傳給顯示頁面
         }

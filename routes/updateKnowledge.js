@@ -20,7 +20,7 @@ router.post('/', function(req, res, next) {
             }
             res.render('updateKnowledge', {item:data});  //將資料傳給更新頁面
         }else{
-            res.render('notFound');  //導向找不到頁面
+            res.render('notFound3');  //導向找不到頁面
         }  
     })
 });
