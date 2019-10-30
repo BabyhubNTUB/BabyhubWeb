@@ -3658,9 +3658,9 @@ input, select, textarea {
 			margin:0;
 			margin-right: 5%;
 			padding:0;
-			width:12%;
+			width:200px;
 			right:0px;
-			top:8%;
+			top:75px;
 			z-index:10;
 		}
 		div.profile .profileList a{			
