@@ -17,6 +17,11 @@
 </head>
 
 <body class="is-preload">
+	<!-- Preloader -->
+	<div id="preloader">
+		<i class="circle-preloader"></i>
+		<img src="/images/logo.png" alt="">
+	</div>
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -73,8 +78,8 @@
 			<!-- Footer -->
 			<section id="footer">
 				<ul class="icons">
-					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span
-								class="label">Email</span></a></li>
+					<li><a href="mailto:10456015@ntub.edu.tw" class="fa-envelope"><span class="label">Email</span></a>
+					</li>
 					<li><a href="https://github.com/BabyhubNTUB" class="fa-github-square"><span
 								class="label">github</span></a></li>
 				</ul>
@@ -91,31 +96,36 @@
 					<div class="list-group">
 						<a href="/forum2" class="list-group-item list-group-item-info">討論版 最新文章</a>
 						<% for(var i=0; i<result.forum.length; i++) {%>
-							<div class="list-group-item list-group-item-warning">
-									<a href="/aforum2/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
-							</div>
+						<div class="list-group-item list-group-item-warning">
+							<a href="/aforum2/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
+						</div>
 						<% } %>
-						<a href="/forum2" class="list-group-item list-group-item-warning" style="color: #a8a8a8 !important; text-align:right !important;">... 更多文章</a>
+						<a href="/forum2" class="list-group-item list-group-item-warning"
+							style="color: #a8a8a8 !important; text-align:right !important;">... 更多文章</a>
 					</div>
 					<div class="list-group">
 						<a href="/childEducation2" class="list-group-item list-group-item-info">小孩教育 最新文章</a>
 						<% for(var i=0; i<result.education.length; i++) {%>
-							<div class="list-group-item list-group-item-warning">
-									<a href="/achildEducation2/<%= result.education[i].serno %>"><%= result.education[i].title %></a>
-							</div>
+						<div class="list-group-item list-group-item-warning">
+							<a
+								href="/achildEducation2/<%= result.education[i].serno %>"><%= result.education[i].title %></a>
+						</div>
 						<% } %>
-						<a href="/childEducation" class="list-group-item list-group-item-warning" style="color: #a8a8a8 !important;">... 更多文章</a>
+						<a href="/childEducation" class="list-group-item list-group-item-warning"
+							style="color: #a8a8a8 !important;">... 更多文章</a>
 					</div>
 					<div class="list-group">
 						<a href="/pregnancyKnowledge2" class="list-group-item list-group-item-info">孕期知識 最新文章</a>
 						<% for(var i=0; i<result.pregnancyknowledge.length; i++) {%>
-							<div class="list-group-item list-group-item-warning">
-									<a href="/apregnancyKnowledge2/<%= result.pregnancyknowledge[i].serno %>"><%= result.pregnancyknowledge[i].title %></a>
-							</div>
+						<div class="list-group-item list-group-item-warning">
+							<a
+								href="/apregnancyKnowledge2/<%= result.pregnancyknowledge[i].serno %>"><%= result.pregnancyknowledge[i].title %></a>
+						</div>
 						<% } %>
-						<a href="/pregnancyKnowledge2" class="list-group-item list-group-item-warning" style="color: #a8a8a8 !important;">... 更多文章</a>
+						<a href="/pregnancyKnowledge2" class="list-group-item list-group-item-warning"
+							style="color: #a8a8a8 !important;">... 更多文章</a>
 					</div>
-					
+
 				</div>
 			</div>
 

@@ -7,12 +7,20 @@
 
 
 (function ($) {
-
+	
 	var $window = $(window),
 		$body = $('body'),
 		$menu = $('#menu'),
 		$sidebar = $('#sidebar'),
 		$main = $('#main');
+
+	// loading
+	// $window.on('load', function(){
+	// 	$('#preloader').fadeOut('slow',function(){
+	// 		$(this).remove();
+	// 	});
+	// });
+
 
 	// Breakpoints.
 	breakpoints({
