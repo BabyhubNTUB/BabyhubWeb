@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //增加引用函式
+var moment = require('moment');
 const forum = require('./utility/forum');
 const noti = require('./utility/notification');
 
@@ -29,6 +30,7 @@ router.get('/:forumno', function (req, res, next) {
                 } else if (noti == -1) {
                     res.render('notFound', { noti: noti });  //導向找不到頁面                
                 } else {
+                    data.aforum.forumdate = moment(data.aforum.forumdate).format("YYYY-MM-DD");
                     res.render('aforum', { result: data, noti: noti });  //將資料傳給顯示頁面
                 }
             })

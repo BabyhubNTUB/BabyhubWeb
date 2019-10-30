@@ -295,9 +295,6 @@ html, body {
 	background-repeat: no-repeat;
     background-size:cover !important;
     background: #ee9ca7;
-    /* background: -webkit-linear-gradient(to top, rgb(255, 227, 231), rgb(255, 252, 219));
-    background: linear-gradient(to top,rgb(255, 227, 231), rgb(255, 252, 219));
-    background-attachment: fixed; */
 	overflow-x:hidden;
 }
 

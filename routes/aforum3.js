@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //增加引用函式
-// var moment = require('moment');
+var moment = require('moment');
 const product = require('./utility/forum');
 
 //接收GET請求
@@ -19,7 +19,7 @@ router.get('/:forumno', function(req, res, next) {
             console.log('notFound');
             console.log(data);            
         }else{
-            // data.inventorydate=moment(data.inventorydate).format("YYYY-MM-DD")
+            data.aforum.forumdate = moment(data.aforum.forumdate).format("YYYY-MM-DD");
             res.render('aforum3', {result:data});  //將資料傳給顯示頁面
             console.log(data);
         }  

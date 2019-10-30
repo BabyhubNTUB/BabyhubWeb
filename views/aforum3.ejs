@@ -91,12 +91,12 @@
 					<article class="post">
 						<header>
 							<div class="title">
-								<h2><a href="#"><%= result.aforum.forumname %></a></h2>
+								<h2><a><strong><%= result.aforum.forumname %></strong></a></h2>
+								<br>
+								<time class="published" datetime="2015-11-01" style="color: #9e9e9e;"><%= result.aforum.forumdate %></time>
 							</div>
 							<div class="meta">
-								<time class="published" datetime="2015-11-01"><%= result.aforum.forumdatetime %></time>
-								<a style="font-size: 100%;" class="author"><span
-										class="name"><%= result.cnt.username %></span><img class="circle" src="/images/<%= result.cnt.photo %>"
+								<a style="font-size: 100%;" class="author"><%= result.cnt.username %><img class="circle" src="/images/<%= result.cnt.photo %>"
 										alt="" /></a>
 							</div>
 						</header>
