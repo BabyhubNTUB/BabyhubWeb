@@ -125,7 +125,7 @@
 								<input type="date" name="keyword" placeholder="Search"
 									style="background: none; margin: auto;" />
 								<button type="submit"
-									style="width:10%; height:50%; text-align: center; padding: 0; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
+									style="width:10%; height:50%; text-align: center; padding: 5px; font-family:'Noto Sans TC', sans-serif; font-weight:normal; margin-right:0; ">搜尋</button>
 							</form>
 						</section>
 					</div>
@@ -160,12 +160,12 @@
 							<br>
 						</p>
 						<p>
-							<button style="box-shadow:none; float:left; height: 5%; padding: 0; padding-right: 5%;"><a
+							<button style="box-shadow:none; float:left; height: 5%; padding: 5px;"><a
 									href="/updatediary/<%= item.diary[i].serno %>">編輯</a></button>
 							<form action="/diary_del" method="post">
 								<input type="text" class="form-control" name="serno" value="<%= item.diary[i].serno %>"
 									hidden />
-								<button type="submit" style="box-shadow:none; float:left; height: 5%; padding: 0;">
+								<button type="submit" style="box-shadow:none; float:left; height: 5%; padding: 5px;">
 									<a>刪除</a>
 								</button>
 							</form>

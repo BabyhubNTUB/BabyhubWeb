@@ -114,9 +114,7 @@
         <div id="main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-1">
-                    </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="profilePage">
                             <img alt="Bootstrap Image Preview" src="/images/<%= result.user.photo %>" />
                         </div>
@@ -152,17 +150,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-9">
                         <div class="list-group">
-                            <!-- <div class="list-group">
-                                        <a href="/forum2" class="list-group-item list-group-item-info">討論版 熱門文章</a>
-                                        <% for(var i=0; i<result.forum.length; i++) {%>
-                                            <div class="list-group-item">
-                                                    <a href="/aforum2/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
-                                            </div>
-                                        <% } %>
-                                        <a href="/forum2" class="list-group-item list-group-item-warning">... 更多文章</a>
-                                    </div> -->
                             <a class="list-group-item list-group-item-info">我的文章</a>
                             <% for(var i=0; i<result.forum.length; i++) {%>
                             <div class="list-group-item">
@@ -180,15 +169,13 @@
                                         <input type="text" class="form-control" name="forumno"
                                             value="<%= result.forum[i].forumno %>" hidden />
                                         <button type="submit" style="box-shadow:none; float:right; height: 5%;">
-                                            刪除
+                                            <a>刪除</a>
                                         </button>
                                     </form>
                                 </div>
                             </div>
                             <% } %>
                         </div>
-                    </div>
-                    <div class="col-md-2">
                     </div>
                 </div>
             </div>
