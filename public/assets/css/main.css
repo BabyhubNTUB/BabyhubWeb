@@ -3558,9 +3558,11 @@ input, select, textarea {
 				padding: 0 0.5em 0 0;
 			}
 		
+		#header .textlogopic{
+			width: 10em;
+		}
 		@media screen and (max-width: 1980px) {
 			#header .textlogopic{
-				width:10em;
 				height:auto;
 				margin:0 0 0.3em 1em;
 				padding:0;
@@ -3586,7 +3588,6 @@ input, select, textarea {
 		@media screen and (max-width: 460px) {
 			#header .textlogopic{
 				height: auto;
-				width: 6em;
 				margin:0.1em;
 				padding:0;
 			}
@@ -3594,7 +3595,6 @@ input, select, textarea {
 		@media screen and (max-width: 375px) {
 			#header .textlogopic{
 				height: auto;
-				width: 3.5em;
 				margin:0.1em;
 				padding:0;
 			}
