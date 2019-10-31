@@ -9,7 +9,7 @@ const sql = require('./asyncDB');
 var list = async function (id) {
     var result = [];
 
-    await sql('SELECT * FROM t03growingrecord where id = $1 order by diarydate desc ', [id])
+    await sql('SELECT * FROM growingrecord where id = $1 order by diarydate desc ', [id])
         .then((data) => {
             if (data.rows.length > 0) {
                 result = data.rows[0];
@@ -28,7 +28,7 @@ var one = async function (serno) {
     var result = [];
     console.log(serno);
 
-    await sql('SELECT * FROM t03growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno where serno = $1 ', [serno])
+    await sql('SELECT * FROM growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno where serno = $1 ', [serno])
         .then((data) => {
             if (data.rows.length > 0) {
                 result = data.rows[0];
@@ -46,7 +46,7 @@ var one = async function (serno) {
 var add = async function (newData) {
     var result;
 
-    await sql('INSERT INTO t03growingrecord (babyno, height, weight, drinkmilk, recorddate) VALUES ($1, $2, $3, $4, $5)', [newData.babyno, newData.height, newData.weight, newData.drinkmilk, newData.recorddate])
+    await sql('INSERT INTO growingrecord (babyno, height, weight, drinkmilk, recorddate) VALUES ($1, $2, $3, $4, $5)', [newData.babyno, newData.height, newData.weight, newData.drinkmilk, newData.recorddate])
         .then((data) => {
             result = 0;
             console.log("------------------------1");
@@ -61,7 +61,7 @@ var add = async function (newData) {
 var del = async function (serno) {
     var result;
 
-    await sql('DELETE FROM t03growingrecord WHERE serno = $1', [serno])
+    await sql('DELETE FROM growingrecord WHERE serno = $1', [serno])
         .then((data) => {
             result = data.rowCount;
         }, (error) => {
@@ -77,7 +77,7 @@ var del = async function (serno) {
 var update = async function (newData) {
     var results;
 
-    await sql('UPDATE t03growingrecord SET height=$1, weight=$2, drinkmilk=$3 WHERE serno = $4', [newData.height, newData.weight, newData.drinkmilk, newData.serno])
+    await sql('UPDATE growingrecord SET height=$1, weight=$2, drinkmilk=$3 WHERE serno = $4', [newData.height, newData.weight, newData.drinkmilk, newData.serno])
         .then((data) => {
             results = data.rowCount;
         }, (error) => {
@@ -102,7 +102,7 @@ var search = async function (id, date) {
     console.log(dd);
     var result = {};
 
-    await sql('SELECT * FROM t03growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno join t01member on t02baby.id=t01member.id where t01member.id =$1 and extract(year from recorddate)=$2 and extract(month from recorddate)=$3 and extract(day from recorddate)=$4', [id, yy, mm, dd])
+    await sql('SELECT * FROM growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno join t01member on t02baby.id=t01member.id where t01member.id =$1 and extract(year from recorddate)=$2 and extract(month from recorddate)=$3 and extract(day from recorddate)=$4', [id, yy, mm, dd])
         .then((data) => {
             result.record = data.rows;
         }, (error) => {
@@ -110,7 +110,7 @@ var search = async function (id, date) {
         });
 
     //取回protype資料
-    await sql('SELECT * FROM t02baby where id=$1', [id])
+    await sql('SELECT * FROM baby where id=$1', [id])
         .then((data) => {
             result.protype = data.rows;
         }, (error) => {
@@ -126,7 +126,7 @@ var search = async function (id, date) {
 var search2 = async function (id, babyno) {
     var result = {};
 
-    await sql('SELECT * FROM t03growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno where t03growingrecord.babyno=$1 order by t03growingrecord.recorddate desc', [babyno])
+    await sql('SELECT * FROM growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno where t03growingrecord.babyno=$1 order by t03growingrecord.recorddate desc', [babyno])
         .then((data) => {
             result.record = data.rows;
         }, (error) => {
@@ -134,7 +134,7 @@ var search2 = async function (id, babyno) {
         });
 
     //取回protype資料
-    await sql('SELECT * FROM t02baby where id=$1', [id])
+    await sql('SELECT * FROM baby where id=$1', [id])
         .then((data) => {
             result.protype = data.rows;
         }, (error) => {
@@ -153,14 +153,14 @@ var getDropdownData = async function (id) {
     console.log(id);
 
     //取回protype資料
-    await sql('SELECT * FROM t02baby where id=$1', [id])
+    await sql('SELECT * FROM baby where id=$1', [id])
         .then((data) => {
             result.protype = data.rows;
         }, (error) => {
             result = [];
         });
 
-    await sql('SELECT * FROM t03growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno join t01member on t02baby.id=t01member.id where t01member.id =$1', [id])
+    await sql('SELECT * FROM growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno join t01member on t02baby.id=t01member.id where t01member.id =$1', [id])
         .then((data) => {
             result.record = data.rows;
         }, (error) => {

@@ -10,7 +10,7 @@ var add = async function (newData) {
     var result;
     var content;
 
-    await sql('INSERT INTO t05forumcomment (forumno,id,content) VALUES ($1,$2,$3)', [newData.forumno, newData.userid, newData.content])
+    await sql('INSERT INTO forumcomment (forumno,id,content) VALUES ($1,$2,$3)', [newData.forumno, newData.userid, newData.content])
         .then((data) => {
             result = 0;
             content = newData.username + "在你的貼文下留言";
@@ -20,7 +20,7 @@ var add = async function (newData) {
         });
 
 
-    await sql('INSERT INTO t09notification (id, content, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
+    await sql('INSERT INTO notification (id, content, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
         .then((data) => {
             result = 0;
             console.log("------------------------1");
@@ -38,7 +38,7 @@ var add = async function (newData) {
 var del = async function (serno) {
     var result;
 
-    await sql('DELETE FROM t05forumcomment WHERE serno = $1', [serno])
+    await sql('DELETE FROM forumcomment WHERE serno = $1', [serno])
         .then((data) => {
             result = data.rowCount;
         }, (error) => {

@@ -10,7 +10,7 @@ var list = async function(id){
     var result=[];
     console.log(id);
     
-    await sql('SELECT * FROM t08diary where id = $1 order by diarydate desc ' ,[id])
+    await sql('SELECT * FROM diary where id = $1 order by diarydate desc ' ,[id])
         .then((data) => {
             if(data.rows.length > 0){
                 result.diary = data.rows;   
@@ -29,7 +29,7 @@ var one = async function(serno){
     var result=[];
     console.log(serno);
     
-    await sql('SELECT * FROM t08diary where serno = $1 ' ,[serno])
+    await sql('SELECT * FROM diary where serno = $1 ' ,[serno])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];   

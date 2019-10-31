@@ -10,7 +10,7 @@ var login = async function(id, password){
     var result;
 
     //取得員工資料
-    await sql('SELECT * FROM "t01member" WHERE id=$1 and password=$2', [id, password])
+    await sql('SELECT * FROM "member" WHERE id=$1 and password=$2', [id, password])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];
@@ -31,7 +31,7 @@ var add = async function(newData){
     var result;
     var photo="profile.png";
 
-    await sql('INSERT INTO t01member (id, username, password,appellation,photo) VALUES ($1, $2, $3, $4)', [newData.id, newData.username, newData.password, newData.appellation,photo])
+    await sql('INSERT INTO member (id, username, password,appellation,photo) VALUES ($1, $2, $3, $4)', [newData.id, newData.username, newData.password, newData.appellation,photo])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -42,7 +42,7 @@ var add = async function(newData){
 }
 var del = async function(id){
     var result;
-    await sql('DELETE FROM t01member WHERE id = $1', [id])
+    await sql('DELETE FROM member WHERE id = $1', [id])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {
@@ -55,7 +55,7 @@ var update = async function(newData){
     var results;
     console.log("==========================");
     console.log(newData);
-    await sql('UPDATE t01member SET username=$1, password=$2, photo=$3 WHERE id = $4', [newData.username, newData.password, newData.photo, newData.id])
+    await sql('UPDATE member SET username=$1, password=$2, photo=$3 WHERE id = $4', [newData.username, newData.password, newData.photo, newData.id])
         .then((data) => {
             results = data.rowCount;
         }, (error) => {

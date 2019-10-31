@@ -9,14 +9,14 @@ const sql = require('./asyncDB');
 var list = async function () {
     var result = {};
 
-    await sql('SELECT * FROM t15forumtype')
+    await sql('SELECT * FROM forumtype')
         .then((data) => {
             result.type = data.rows;
         }, (error) => {
             result.type = [];
         });
 
-    await sql('SELECT * FROM forum order by forumno desc')
+    await sql('SELECT * FROM allforum order by forumno desc')
         .then((data) => {
             result.forum = data.rows;
         }, (error) => {
@@ -32,7 +32,7 @@ var list = async function () {
 var one = async function (forumno) {
     var result = {};
 
-    await sql('SELECT * FROM t04forum WHERE forumno = $1', [forumno])
+    await sql('SELECT * FROM forum WHERE forumno = $1', [forumno])
         .then((data) => {
             if (data.rows.length > 0) {
                 result.aforum = data.rows[0];
@@ -44,7 +44,7 @@ var one = async function (forumno) {
         });
 
     var rowcnt = 0;
-    await sql('SELECT * FROM t05forumcomment a, t01member b WHERE a.id=b.id and forumno = $1', [forumno])
+    await sql('SELECT * FROM forumcomment a, t01member b WHERE a.id=b.id and forumno = $1', [forumno])
         .then((data) => {
             if (data.rows.length > 0) {
                 result.com = data.rows;
@@ -61,7 +61,7 @@ var one = async function (forumno) {
             result.com = null;
         });
 
-    await sql('SELECT * FROM forum WHERE forumno = $1', [forumno])
+    await sql('SELECT * FROM allforum WHERE forumno = $1', [forumno])
         .then((data) => {
             if (data.rows.length > 0) {
                 result.cnt = data.rows[0];
@@ -72,7 +72,7 @@ var one = async function (forumno) {
             result.cnt = null;
         });
 
-    await sql('SELECT * FROM t15forumtype ORDER BY typeno')
+    await sql('SELECT * FROM forumtype ORDER BY typeno')
         .then((data) => {
             if (data.rows.length > 0) {
                 result.type = data.rows[0];
@@ -89,7 +89,7 @@ var add = async function (newData) {
     var result;
 
     console.log(newData);
-    await sql('INSERT INTO t04forum (id, forumname, typeno,content,forumdate) VALUES ($1, $2, $3, $4, $5)', [newData.userid, newData.forumname, newData.typeno, newData.content, newData.forumdate])
+    await sql('INSERT INTO forum (id, forumname, typeno,content,forumdate) VALUES ($1, $2, $3, $4, $5)', [newData.userid, newData.forumname, newData.typeno, newData.content, newData.forumdate])
         .then((data) => {
             result = 0;
         }, (error) => {
@@ -106,7 +106,7 @@ var add = async function (newData) {
 var del = async function (forumno) {
     var result;
 
-    await sql('DELETE FROM t04forum WHERE forumno = $1', [forumno])
+    await sql('DELETE FROM forum WHERE forumno = $1', [forumno])
         .then((data) => {
             result = data.rowCount;
         }, (error) => {
@@ -122,7 +122,7 @@ var del = async function (forumno) {
 var update = async function (newData) {
     var results;
 
-    await sql('UPDATE t04forum SET forumname=$1, typeno=$2, content=$3 WHERE forumno = $4', [newData.forumname, newData.typeno, newData.content, newData.forumno])
+    await sql('UPDATE forum SET forumname=$1, typeno=$2, content=$3 WHERE forumno = $4', [newData.forumname, newData.typeno, newData.content, newData.forumno])
         .then((data) => {
             results = data.rowCount;
         }, (error) => {
@@ -141,13 +141,13 @@ var search = async function (keyword) {
 
     var result = {};
 
-    await sql('SELECT * FROM t15forumtype')
+    await sql('SELECT * FROM forumtype')
         .then((data) => {
             result.type = data.rows;
         }, (error) => {
             result.type = [];
         });
-    await sql('SELECT * FROM forum WHERE forumname like $1', ['%' + keyword + '%'])
+    await sql('SELECT * FROM allforum WHERE forumname like $1', ['%' + keyword + '%'])
         .then((data) => {
             result.forum = data.rows;
         }, (error) => {
@@ -167,7 +167,7 @@ var type = async function (type) {
 
     var result = {};
 
-    await sql('SELECT * FROM t15forumtype')
+    await sql('SELECT * FROM forumtype')
         .then((data) => {
             result.type = data.rows;
         }, (error) => {

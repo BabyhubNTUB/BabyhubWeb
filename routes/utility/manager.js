@@ -10,7 +10,7 @@ var login = async function(managerno, password){
     var result;
 
     //取得員工資料
-    await sql('SELECT * FROM "t12manager" WHERE managerno=$1 and password=$2', [managerno, password])
+    await sql('SELECT * FROM "manager" WHERE managerno=$1 and password=$2', [managerno, password])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];

@@ -14,7 +14,7 @@ var like = async function (newData) {
     var content = '';
     var addnoti = 0;
 
-    await sql('SELECT * FROM t11forumlike where id=$1 and forumno=$2', [newData.userid, newData.forumno])
+    await sql('SELECT * FROM forumlike where id=$1 and forumno=$2', [newData.userid, newData.forumno])
         .then((data) => {
             console.log(data.rowCount);
             rowcnt = data.rowCount;
@@ -24,7 +24,7 @@ var like = async function (newData) {
         });
 
     if (rowcnt == 0) {
-        await sql('INSERT INTO t11forumlike (id, forumno) VALUES ($1, $2)', [newData.userid, newData.forumno])
+        await sql('INSERT INTO forumlike (id, forumno) VALUES ($1, $2)', [newData.userid, newData.forumno])
             .then((data) => {
                 content = newData.username + "按了你的貼文讚";
                 addnoti = 1;
@@ -34,7 +34,7 @@ var like = async function (newData) {
                 console.log("------------------------13");
             });
     } else if (rowcnt > 0) {
-        await sql('DELETE FROM t11forumlike WHERE id = $1 and forumno = $2', [newData.userid, newData.forumno])
+        await sql('DELETE FROM forumlike WHERE id = $1 and forumno = $2', [newData.userid, newData.forumno])
             .then((data) => {
                 result = 0;
                 console.log("------------------------20");
@@ -50,7 +50,7 @@ var like = async function (newData) {
     }
 
     if (addnoti == 1) {
-        await sql('INSERT INTO t09notification (id, content, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
+        await sql('INSERT INTO notification (id, content, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
             .then((data) => {
                 result = 0;
                 console.log("------------------------10");

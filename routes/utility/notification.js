@@ -11,7 +11,7 @@ var list = async function(id){
     console.log('**********************');
 	console.log(id);
     var rowcnt =0;
-    await sql('SELECT * FROM t09notification where id like $1 order by serno desc limit 3', [id])
+    await sql('SELECT * FROM notification where id like $1 order by serno desc limit 3', [id])
     .then((data) => {
         if (data.rows.length > 0) {
             result = data.rows;

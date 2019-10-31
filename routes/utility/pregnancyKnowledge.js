@@ -9,7 +9,7 @@ const sql = require('./asyncDB');
 var list = async function(){
     var result=[];
 	
-    await sql('SELECT * FROM t06pregnancyknowledge order by serno desc LIMIT 10 ')
+    await sql('SELECT * FROM pregnancyknowledge order by serno desc LIMIT 10 ')
         .then((data) => {            
             result = data.rows;  
         }, (error) => {
@@ -25,7 +25,7 @@ var list = async function(){
 var three = async function(serno){
     var result={};
     
-    await sql('SELECT * FROM t06pregnancyknowledge WHERE serno = $1', [serno])
+    await sql('SELECT * FROM pregnancyknowledge WHERE serno = $1', [serno])
         .then((data) => {
             if(data.rows.length > 0){
                 result = data.rows[0];   
@@ -42,7 +42,7 @@ var three = async function(serno){
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO t06pregnancyknowledge (managerno, title, source,content) VALUES ($1, $2, $3, $4)', [newData.managerno, newData.title, newData.source, newData.content])
+    await sql('INSERT INTO pregnancyknowledge (managerno, title, source,content) VALUES ($1, $2, $3, $4)', [newData.managerno, newData.title, newData.source, newData.content])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -55,7 +55,7 @@ var add = async function(newData){
 var del = async function(serno){
     var result;
 
-    await sql('DELETE FROM t06pregnancyknowledge WHERE serno = $1', [serno])
+    await sql('DELETE FROM pregnancyknowledge WHERE serno = $1', [serno])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {
@@ -70,7 +70,7 @@ var del = async function(serno){
 var update = async function(newData){
     var results;
 
-    await sql('UPDATE t06pregnancyknowledge SET title=$1, source=$2, content=$3 WHERE serno = $4', [newData.title, newData.source, newData.content, newData.serno])
+    await sql('UPDATE pregnancyknowledge SET title=$1, source=$2, content=$3 WHERE serno = $4', [newData.title, newData.source, newData.content, newData.serno])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {
