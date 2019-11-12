@@ -47,7 +47,7 @@ var one = async function(serno){
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO t08diary (id, diarydate, diary) VALUES ($1, $2, $3)', [newData.id, newData.diarydate, newData.diary])
+    await sql('INSERT INTO diary (id, diarydate, diary) VALUES ($1, $2, $3)', [newData.id, newData.diarydate, newData.diary])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -61,7 +61,7 @@ var add = async function(newData){
 var del = async function(serno){
     var result;
 
-    await sql('DELETE FROM t08diary WHERE serno = $1', [serno])
+    await sql('DELETE FROM diary WHERE serno = $1', [serno])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {
@@ -77,7 +77,7 @@ var del = async function(serno){
 var update = async function(newData){
     var results;
 
-    await sql('UPDATE t08diary SET diary=$1 WHERE serno = $2', [newData.diary, newData.serno])
+    await sql('UPDATE diary SET diary=$1 WHERE serno = $2', [newData.diary, newData.serno])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {
@@ -95,7 +95,7 @@ var search = async function(id,date){
       
         var result={};
 
-        await sql('SELECT * FROM t08diary WHERE id=$1 And diarydate=$2',[id,date])
+        await sql('SELECT * FROM diary WHERE id=$1 And diarydate=$2',[id,date])
             .then((data) => {            
                 result.diary = data.rows;  
             }, (error) => {

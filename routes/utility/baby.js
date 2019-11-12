@@ -11,7 +11,7 @@ var one = async function(babyno){
     var result={};
     console.log(babyno);
 
-    await sql('SELECT * FROM baby where id like(SELECT id FROM t01member where id like (SELECT id FROM t02baby where babyno=$1))', [babyno])
+    await sql('SELECT * FROM baby where id like(SELECT id FROM member where id like (SELECT id FROM baby where babyno=$1))', [babyno])
     .then((data) => {            
         result.list = data.rows;  
     }, (error) => {

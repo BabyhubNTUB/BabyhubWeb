@@ -88,7 +88,7 @@ var search = async function(keyword){
       
         var result={};
         
-        await sql('SELECT * FROM t06pregnancyknowledge WHERE title like $1',['%'+keyword+'%'])
+        await sql('SELECT * FROM pregnancyknowledge WHERE title like $1',['%'+keyword+'%'])
             .then((data) => {            
                 result.forum = data.rows;  
             }, (error) => {

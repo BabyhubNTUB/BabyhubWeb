@@ -43,12 +43,12 @@ var one = async function (forumno) {
             result.aforum = null;
         });
 
-    var rowcnt = 0;
-    await sql('SELECT * FROM forumcomment a, t01member b WHERE a.id=b.id and forumno = $1', [forumno])
+    await sql('SELECT * FROM forumcomment a, member b WHERE a.id=b.id and forumno = $1', [forumno])
         .then((data) => {
+            console.log(data.rowCount);
             if (data.rows.length > 0) {
                 result.com = data.rows;
-            } else if (data.rows.length == 0) {
+            } else if (data.rowCount== 0) {
                 data.rows[0]={};
                 data.rows[0].username='';
                 data.rows[0].content = '目前沒有留言!';

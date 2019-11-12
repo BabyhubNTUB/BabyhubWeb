@@ -10,7 +10,6 @@ var list = async function(id){
     var result={};
     console.log('**********************');
 	console.log(id);
-    var rowcnt =0;
     await sql('SELECT * FROM notification where id like $1 order by serno desc limit 3', [id])
     .then((data) => {
         if (data.rows.length > 0) {

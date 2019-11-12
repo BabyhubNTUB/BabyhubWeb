@@ -20,7 +20,7 @@ var add = async function (newData) {
         });
 
 
-    await sql('INSERT INTO notification (id, content, forumno) VALUES ((SELECT id from t04forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
+    await sql('INSERT INTO notification (id, content, forumno) VALUES ((SELECT id from forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
         .then((data) => {
             result = 0;
             console.log("------------------------1");

@@ -28,7 +28,7 @@ var one = async function (serno) {
     var result = [];
     console.log(serno);
 
-    await sql('SELECT * FROM growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno where serno = $1 ', [serno])
+    await sql('SELECT * FROM growingrecord join baby on baby.babyno=growingrecord.babyno where serno = $1 ', [serno])
         .then((data) => {
             if (data.rows.length > 0) {
                 result = data.rows[0];
@@ -102,7 +102,7 @@ var search = async function (id, date) {
     console.log(dd);
     var result = {};
 
-    await sql('SELECT * FROM growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno join t01member on t02baby.id=t01member.id where t01member.id =$1 and extract(year from recorddate)=$2 and extract(month from recorddate)=$3 and extract(day from recorddate)=$4', [id, yy, mm, dd])
+    await sql('SELECT * FROM growingrecord join baby on baby.babyno=growingrecord.babyno join member on baby.id=member.id where member.id =$1 and extract(year from recorddate)=$2 and extract(month from recorddate)=$3 and extract(day from recorddate)=$4', [id, yy, mm, dd])
         .then((data) => {
             result.record = data.rows;
         }, (error) => {
@@ -126,7 +126,7 @@ var search = async function (id, date) {
 var search2 = async function (id, babyno) {
     var result = {};
 
-    await sql('SELECT * FROM growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno where t03growingrecord.babyno=$1 order by t03growingrecord.recorddate desc', [babyno])
+    await sql('SELECT * FROM growingrecord join baby on baby.babyno=growingrecord.babyno where growingrecord.babyno=$1 order by growingrecord.recorddate desc', [babyno])
         .then((data) => {
             result.record = data.rows;
         }, (error) => {
@@ -160,7 +160,7 @@ var getDropdownData = async function (id) {
             result = [];
         });
 
-    await sql('SELECT * FROM growingrecord join t02baby on t02baby.babyno=t03growingrecord.babyno join t01member on t02baby.id=t01member.id where t01member.id =$1', [id])
+    await sql('SELECT * FROM growingrecord join baby on baby.babyno=growingrecord.babyno join member on baby.id=member.id where member.id =$1', [id])
         .then((data) => {
             result.record = data.rows;
         }, (error) => {
