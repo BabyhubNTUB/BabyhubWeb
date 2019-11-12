@@ -11,17 +11,12 @@ router.get('/:forumno', function(req, res, next) {
 
     product.one(forumno).then(data => {
         if (data==null){
-            res.render('error');  //導向錯誤頁面
-            console.log('error');    
-            console.log(data);    
+            res.render('error');  //導向錯誤頁面    
         }else if(data==-1){
-            res.render('notFound3');  //導向找不到頁面    
-            console.log('notFound');
-            console.log(data);            
+            res.render('notFound3');  //導向找不到頁面 
         }else{
             data.aforum.forumdate = moment(data.aforum.forumdate).format("YYYY-MM-DD");
             res.render('aforum3', {result:data});  //將資料傳給顯示頁面
-            console.log(data);
         }  
     })
 });

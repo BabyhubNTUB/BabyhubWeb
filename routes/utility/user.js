@@ -53,14 +53,11 @@ var del = async function(id){
 }
 var update = async function(newData){
     var results;
-    console.log("==========================");
-    console.log(newData);
     await sql('UPDATE member SET username=$1, password=$2, photo=$3 WHERE id = $4', [newData.username, newData.password, newData.photo, newData.id])
         .then((data) => {
             results = data.rowCount;
         }, (error) => {
-            results = -1;
-            console.log('error');
+            results = -1;            
         });
 
     return results;      

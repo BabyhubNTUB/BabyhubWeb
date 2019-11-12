@@ -26,13 +26,11 @@ var list = async function (id) {
 
 var one = async function (serno) {
     var result = [];
-    console.log(serno);
-
+    
     await sql('SELECT * FROM growingrecord join baby on baby.babyno=growingrecord.babyno where serno = $1 ', [serno])
         .then((data) => {
             if (data.rows.length > 0) {
-                result = data.rows[0];
-                console.log("------------------------");
+                result = data.rows[0];                
             } else {
                 result = -1;
             }
@@ -48,11 +46,9 @@ var add = async function (newData) {
 
     await sql('INSERT INTO growingrecord (babyno, height, weight, drinkmilk, recorddate) VALUES ($1, $2, $3, $4, $5)', [newData.babyno, newData.height, newData.weight, newData.drinkmilk, newData.recorddate])
         .then((data) => {
-            result = 0;
-            console.log("------------------------1");
+            result = 0;            
         }, (error) => {
-            result = -1;
-            console.log("------------------------");
+            result = -1;            
         });
 
     return result;
@@ -81,8 +77,7 @@ var update = async function (newData) {
         .then((data) => {
             results = data.rowCount;
         }, (error) => {
-            results = -1;
-            console.log('error');
+            results = -1;            
         });
 
     return results;
@@ -90,16 +85,11 @@ var update = async function (newData) {
 //---------------------------------------------
 // search
 //---------------------------------------------
-var search = async function (id, date) {
-    console.log("date: " + date)
-    var d =new Date(date);
-    console.log(d);
+var search = async function (id, date) {    
+    var d =new Date(date);    
     var yy = d.getFullYear();
     var mm = d.getMonth()+1;
-    var dd = d.getDate();
-    console.log(yy);
-    console.log(mm);
-    console.log(dd);
+    var dd = d.getDate();    
     var result = {};
 
     await sql('SELECT * FROM growingrecord join baby on baby.babyno=growingrecord.babyno join member on baby.id=member.id where member.id =$1 and extract(year from recorddate)=$2 and extract(month from recorddate)=$3 and extract(day from recorddate)=$4', [id, yy, mm, dd])
@@ -149,8 +139,7 @@ var search2 = async function (id, babyno) {
 //------------------------------------------
 var getDropdownData = async function (id) {
     //儲存下拉式選單資料  
-    var result = {};
-    console.log(id);
+    var result = {};    
 
     //取回protype資料
     await sql('SELECT * FROM baby where id=$1', [id])
@@ -166,9 +155,6 @@ var getDropdownData = async function (id) {
         }, (error) => {
             result = [];
         });
-
-    //設定回傳資料  
-    console.log(result);
 
     //回傳
     return result;

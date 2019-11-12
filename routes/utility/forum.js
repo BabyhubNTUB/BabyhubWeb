@@ -44,8 +44,7 @@ var one = async function (forumno) {
         });
 
     await sql('SELECT * FROM forumcomment a, member b WHERE a.id=b.id and forumno = $1', [forumno])
-        .then((data) => {
-            console.log(data.rowCount);
+        .then((data) => {            
             if (data.rows.length > 0) {
                 result.com = data.rows;
             } else if (data.rowCount== 0) {
@@ -88,13 +87,11 @@ var one = async function (forumno) {
 var add = async function (newData) {
     var result;
 
-    console.log(newData);
     await sql('INSERT INTO forum (id, forumname, typeno,content,forumdate) VALUES ($1, $2, $3, $4, $5)', [newData.userid, newData.forumname, newData.typeno, newData.content, newData.forumdate])
         .then((data) => {
             result = 0;
         }, (error) => {
-            result = -1;
-            console.log("------------------------");
+            result = -1;            
         });
 
     return result;
@@ -126,8 +123,7 @@ var update = async function (newData) {
         .then((data) => {
             results = data.rowCount;
         }, (error) => {
-            results = -1;
-            console.log('error');
+            results = -1;            
         });
 
     return results;
@@ -137,7 +133,6 @@ var update = async function (newData) {
 // search
 //---------------------------------------------
 var search = async function (keyword) {
-    console.log("keyword: " + keyword)
 
     var result = {};
 
@@ -151,8 +146,7 @@ var search = async function (keyword) {
         .then((data) => {
             result.forum = data.rows;
         }, (error) => {
-            result.forum = [];
-            console.log(keyword);
+            result.forum = [];            
         });
     //回傳物件
     return result;
@@ -162,8 +156,7 @@ var search = async function (keyword) {
 //---------------------------------------------
 // type
 //---------------------------------------------
-var type = async function (type) {
-    console.log("type: " + type)
+var type = async function (type) {    
 
     var result = {};
 
@@ -177,8 +170,7 @@ var type = async function (type) {
         .then((data) => {
             result.forum = data.rows;
         }, (error) => {
-            result.forum = [];
-            console.log(type);
+            result.forum = [];            
         });
     //回傳物件
     return result;

@@ -8,13 +8,11 @@ const sql = require('./asyncDB');
 //------------------------------------------
 var list = async function(id){
     var result=[];
-    console.log(id);
     
     await sql('SELECT * FROM diary where id = $1 order by diarydate desc ' ,[id])
         .then((data) => {
             if(data.rows.length > 0){
-                result.diary = data.rows;   
-                console.log("------------------------");
+                result.diary = data.rows;                   
             }else{
                 result = -1;
             }    
@@ -27,13 +25,11 @@ var list = async function(id){
 
 var one = async function(serno){
     var result=[];
-    console.log(serno);
     
     await sql('SELECT * FROM diary where serno = $1 ' ,[serno])
         .then((data) => {
             if(data.rows.length > 0){
-                result = data.rows[0];   
-                console.log("------------------------");
+                result = data.rows[0];                   
             }else{
                 result = -1;
             }    
@@ -52,7 +48,6 @@ var add = async function(newData){
             result = 0;  
         }, (error) => {
             result = -1;
-            console.log("------------------------");
         });
 		
     return result;
@@ -82,7 +77,6 @@ var update = async function(newData){
             results = data.rowCount;  
         }, (error) => {
             results = -1;
-            console.log('error');
         });
 		
     return results;
@@ -90,8 +84,7 @@ var update = async function(newData){
 //---------------------------------------------
 // search
 //---------------------------------------------
-var search = async function(id,date){   
-    console.log("date: "+date)
+var search = async function(id,date){ 
       
         var result={};
 
@@ -99,8 +92,7 @@ var search = async function(id,date){
             .then((data) => {            
                 result.diary = data.rows;  
             }, (error) => {
-                result = [];
-                console.log(date);
+                result = [];                
             });
     //回傳物件
     return result;  

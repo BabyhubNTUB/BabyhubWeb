@@ -16,7 +16,6 @@ router.post('/', function (req, res, next) {
         username: username,
         forumno: forumno
     }
-    console.log(newData);
     like.like(newData).then(d => {
         if (d==0) {
             var id = req.session.userid;

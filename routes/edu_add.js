@@ -17,7 +17,6 @@ router.post('/', function (req, res, next) {
         source: source, 
         content: content
     }
-    console.log(newData);
     edu.add(newData).then(d => {
         if (d==0) {
             res.render('managerSuccess');  //傳至成功頁面

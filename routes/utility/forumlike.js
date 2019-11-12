@@ -8,19 +8,16 @@ const sql = require('./asyncDB');
 //寶寶資料
 //------------------------------------------
 var like = async function (newData) {
-    var result = {};
-    console.log(newData);
+    var result = {};    
     var rowcnt = 0;
     var content = '';
     var addnoti = 0;
 
     await sql('SELECT * FROM forumlike where id=$1 and forumno=$2', [newData.userid, newData.forumno])
-        .then((data) => {
-            console.log(data.rowCount);
+        .then((data) => {            
             rowcnt = data.rowCount;
         }, (error) => {
-            result = -1;
-            console.log("------------------------3");
+            result = -1;            
         });
 
     if (rowcnt == 0) {
@@ -29,40 +26,28 @@ var like = async function (newData) {
                 content = newData.username + "按了你的貼文讚";
                 addnoti = 1;
             }, (error) => {
-                result = -1;
-                console.log(data);
-                console.log("------------------------13");
+                result = -1;                
             });
     } else if (rowcnt > 0) {
         await sql('DELETE FROM forumlike WHERE id = $1 and forumno = $2', [newData.userid, newData.forumno])
             .then((data) => {
-                result = 0;
-                console.log("------------------------20");
+                result = 0;                
             }, (error) => {
-                result = -1;
-                console.log("------------------------22");
-            });
-        console.log("------------------------21");
+                result = -1;                
+            });        
     } else {
-        result = -1;
-        console.log(data);
-        console.log("------------------------23");
+        result = -1;        
     }
 
     if (addnoti == 1) {
         await sql('INSERT INTO notification (id, content, forumno) VALUES ((SELECT id from forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
             .then((data) => {
-                result = 0;
-                console.log("------------------------10");
+                result = 0;                
             }, (error) => {
-                result = -1;
-                console.log(data);
-                console.log("------------------------12");
-            });
-        console.log("------------------------11");
+                result = -1;               
+            });        
     }
-    
-    console.log(result);
+        
     return result;
 }
 //匯出

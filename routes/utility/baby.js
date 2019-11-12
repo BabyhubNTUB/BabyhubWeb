@@ -9,7 +9,6 @@ const sql = require('./asyncDB');
 //------------------------------------------
 var one = async function(babyno){
     var result={};
-    console.log(babyno);
 
     await sql('SELECT * FROM baby where id like(SELECT id FROM member where id like (SELECT id FROM baby where babyno=$1))', [babyno])
     .then((data) => {            
@@ -20,7 +19,6 @@ var one = async function(babyno){
     
     await sql('SELECT * FROM baby where babyno=$1', [babyno])
     .then((data) => {            
-        console.log("DB"+result);
         result.baby = data.rows[0];  
     }, (error) => {
         result.baby = [];
@@ -31,8 +29,7 @@ var one = async function(babyno){
         result.record = data.rows;  
     }, (error) => {
         result.record = [];
-    }); 
-    console.log(result);
+    });     
     return result;
 }
 
@@ -51,8 +48,7 @@ var list = async function(id){
         result.baby = data.rows;  
     }, (error) => {
         result.baby = [];
-    });	
-    // console.log(result);    
+    });	 
     return result;
 }
 
@@ -64,8 +60,7 @@ var add = async function(newData){
         .then((data) => {
             result = 0;  
         }, (error) => {
-            result = -1;
-            console.log("------------------------");
+            result = -1;            
         });
 		
     return result;
@@ -84,15 +79,12 @@ var del = async function(babyno){
     return result;
 }
 var update = async function(newData){
-    var results;
-    console.log("==========================");
-    console.log(newData);
+    var results;    
     await sql('UPDATE baby SET name=$1, birthday=$2, photo=$3 WHERE babyno = $4', [newData.name, newData.birthday, newData.photo, newData.babyno])
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {
-            results = -1;
-            console.log('error');
+            results = -1;            
         });
 		
     return results;

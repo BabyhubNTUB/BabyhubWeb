@@ -33,7 +33,6 @@ var upload = multer({
 //接收POST請求
 router.post('/', upload.single('photo'), function (req, res, next) {
     var babyno = req.body.babyno;
-    console.log(babyno);
 
     // 如果有選擇圖片
     if (typeof req.file != 'undefined') {

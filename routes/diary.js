@@ -8,7 +8,7 @@ var moment = require('moment');
 
 //接收GET請求
 router.get('/', function (req, res, next) {
-  //var id = req.query.id;   //取出參數
+  //取出參數
   var userid = req.session.userid;
   diary.list(userid).then(data => {
     if (data == null) {

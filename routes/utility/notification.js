@@ -8,8 +8,6 @@ const sql = require('./asyncDB');
 //---------------------------------------------
 var list = async function(id){
     var result={};
-    console.log('**********************');
-	console.log(id);
     await sql('SELECT * FROM notification where id like $1 order by serno desc limit 3', [id])
     .then((data) => {
         if (data.rows.length > 0) {
@@ -24,8 +22,7 @@ var list = async function(id){
     }, (error) => {
         result = [];
     });
-
-    console.log(result);    
+   
     return result;
 }
 

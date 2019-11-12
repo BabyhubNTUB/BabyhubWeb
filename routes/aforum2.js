@@ -16,7 +16,6 @@ router.get('/:forumno', function(req, res, next) {
             res.render('notFound2');  //導向找不到頁面                
         }else{
             data.aforum.forumdate = moment(data.aforum.forumdate).format("YYYY-MM-DD");
-            console.log(data);
             res.render('aforum2', {result:data});  //將資料傳給顯示頁面
         }  
     })

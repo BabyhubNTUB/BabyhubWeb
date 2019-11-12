@@ -8,8 +8,6 @@ const sql = require('./asyncDB');
 //---------------------------------------------
 var list = async function(id){
     var result={};
-    console.log('**********************');
-	console.log(id);
     await sql('SELECT * FROM forum order by forumno desc LIMIT 4')
         .then((data) => {            
             result.forum = data.rows;  
@@ -49,7 +47,6 @@ var list = async function(id){
     var rowcnt =0;
     await sql('SELECT * FROM notification where id like $1 order by serno desc limit 3', [id])
     .then((data) => {
-        console.log(data.rowCount);
         rowcnt = data.rowCount;
         result.notification = data.rows; 
     }, (error) => {
@@ -65,8 +62,6 @@ var list = async function(id){
         });
     }
     
-
-    console.log(result);    
     return result;
 }
 

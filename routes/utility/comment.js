@@ -14,7 +14,6 @@ var add = async function (newData) {
         .then((data) => {
             result = 0;
             content = newData.username + "在你的貼文下留言";
-            console.log(content);
         }, (error) => {
             result = -1;
         });
@@ -22,12 +21,9 @@ var add = async function (newData) {
 
     await sql('INSERT INTO notification (id, content, forumno) VALUES ((SELECT id from forum WHERE forumno=$1), $2, $3)', [newData.forumno, content, newData.forumno])
         .then((data) => {
-            result = 0;
-            console.log("------------------------1");
+            result = 0;            
         }, (error) => {
-            result = -1;
-            console.log(data);
-            console.log("------------------------");
+            result = -1;            
         });
     return result;
 }

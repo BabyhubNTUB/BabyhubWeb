@@ -8,7 +8,6 @@ const sql = require('./asyncDB');
 //------------------------------------------
 var query = async function(id){
     var result={};
-    console.log(id);
 
     await sql('SELECT * FROM "member" WHERE id like $1', [id])
         .then((data) => {            
@@ -31,7 +30,6 @@ var query = async function(id){
             result.user = [];
         });
         
-        console.log(result);
     return result;
 }
 

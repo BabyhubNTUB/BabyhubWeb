@@ -29,7 +29,6 @@ var list = async function(){
         }, (error) => {
             result.pregnancyknowledge = [];
         });	
-    // console.log(result);    
     return result;
 }
 

@@ -47,7 +47,6 @@ var add = async function(newData){
             result = 0;  
         }, (error) => {
             result = -1;
-            console.log("------------------------");
         });
 		
     return result;
@@ -76,8 +75,7 @@ var update = async function(newData){
         .then((data) => {
             results = data.rowCount;  
         }, (error) => {
-            results = -1;
-            console.log('error');
+            results = -1;           
         });
 		
     return results;
@@ -85,8 +83,7 @@ var update = async function(newData){
 //---------------------------------------------
 // search
 //---------------------------------------------
-var search = async function(keyword){   
-    console.log("keyword: "+keyword)
+var search = async function(keyword){ 
       
         var result={};
 
@@ -94,10 +91,9 @@ var search = async function(keyword){
             .then((data) => {            
                 result.forum = data.rows;  
             }, (error) => {
-                result.forum = [];
-                console.log(keyword);
+                result.forum = [];                
             });
-            console.log(result);
+            
     //回傳物件
     return result;  
 }
