@@ -43,24 +43,20 @@ var list = async function(id){
         result.baby = [];
     });	
 
-
-    var rowcnt =0;
     await sql('SELECT * FROM notification where id like $1 order by serno desc limit 3', [id])
     .then((data) => {
-        rowcnt = data.rowCount;
-        result.notification = data.rows; 
+        if (data.rows.length > 0) {
+            result.notification = data.rows;
+        } else if (data.rows.length == 0) {
+            data.rows[0]={};
+            data.rows[0].content = '目前沒有通知!';
+            result.notification = data.rows;
+        } else {
+            result.notification = -1;
+        } 
     }, (error) => {
-        result.notification = [];
+        result = [];
     });
-
-    if (rowcnt == 0) {
-        await sql('SELECT * FROM notification where serno=21')
-        .then((data) => {
-            result.notification = data.rows; 
-        }, (error) => {
-            result.notification = [];
-        });
-    }
     
     return result;
 }
