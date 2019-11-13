@@ -82,7 +82,6 @@ var update = async function(newData){
 // search
 //---------------------------------------------
 var search = async function(keyword){
-      
         var result={};
         
         await sql('SELECT * FROM pregnancyknowledge WHERE title like $1',['%'+keyword+'%'])

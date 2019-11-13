@@ -30,33 +30,33 @@ var list = async function(id){
         });	
 
     await sql('SELECT * FROM member where id like $1', [id])
-    .then((data) => {            
-        result.member = data.rows;  
-    }, (error) => {
-        result.member = [];
-    });	
+        .then((data) => {            
+            result.member = data.rows;  
+        }, (error) => {
+            result.member = [];
+        });	
     
     await sql('SELECT * FROM baby where id like $1', [id])
-    .then((data) => {            
-        result.baby = data.rows;  
-    }, (error) => {
-        result.baby = [];
-    });	
+        .then((data) => {            
+            result.baby = data.rows;  
+        }, (error) => {
+            result.baby = [];
+        });	
 
     await sql('SELECT * FROM notification where id like $1 order by serno desc limit 3', [id])
-    .then((data) => {
-        if (data.rows.length > 0) {
-            result.notification = data.rows;
-        } else if (data.rows.length == 0) {
-            data.rows[0]={};
-            data.rows[0].content = '目前沒有通知!';
-            result.notification = data.rows;
-        } else {
-            result.notification = -1;
-        } 
-    }, (error) => {
-        result = [];
-    });
+        .then((data) => {
+            if (data.rows.length > 0) {
+                result.notification = data.rows;
+            } else if (data.rows.length == 0) {
+                data.rows[0]={};
+                data.rows[0].content = '目前沒有通知!';
+                result.notification = data.rows;
+            } else {
+                result.notification = -1;
+            } 
+        }, (error) => {
+            result = [];
+        });
     
     return result;
 }

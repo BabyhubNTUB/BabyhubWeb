@@ -23,7 +23,6 @@ var list = async function (id) {
     return result;
 }
 
-
 var one = async function (serno) {
     var result = [];
     
