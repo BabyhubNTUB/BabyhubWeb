@@ -30,11 +30,14 @@ var login = async function(id, password){
 var add = async function(newData){
     var result;
     var photo="profile.png";
+    console.log(newData);
 
-    await sql('INSERT INTO member (id, username, password,appellation,photo) VALUES ($1, $2, $3, $4)', [newData.id, newData.username, newData.password, newData.appellation,photo])
+    await sql('INSERT INTO "member" (id, username, password,appellation,photo) VALUES ($1, $2, $3, $4, $5)', [newData.id, newData.username, newData.password, newData.appellation,photo])
         .then((data) => {
+            console.log(data);
             result = 0;  
         }, (error) => {
+            console.log("data");
             result = -1;
         });
 		
@@ -42,7 +45,7 @@ var add = async function(newData){
 }
 var del = async function(id){
     var result;
-    await sql('DELETE FROM member WHERE id = $1', [id])
+    await sql('DELETE FROM "member" WHERE id = $1', [id])
         .then((data) => {
             result = data.rowCount;  
         }, (error) => {
@@ -53,7 +56,7 @@ var del = async function(id){
 }
 var update = async function(newData){
     var results;
-    await sql('UPDATE member SET username=$1, password=$2, photo=$3 WHERE id = $4', [newData.username, newData.password, newData.photo, newData.id])
+    await sql('UPDATE "member" SET username=$1, password=$2, photo=$3 WHERE id = $4', [newData.username, newData.password, newData.photo, newData.id])
         .then((data) => {
             results = data.rowCount;
         }, (error) => {
