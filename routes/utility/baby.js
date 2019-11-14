@@ -56,7 +56,7 @@ var add = async function(newData){
     var result;
     var photo="baby.png";
 
-    await sql('INSERT INTO baby (id, name, gender,birthday,photo) VALUES ($1, $2, $3, $4, )', [newData.userid, newData.name, newData.gender, newData.birthday,photo])
+    await sql('INSERT INTO baby (id, name, gender,birthday,photo) VALUES ($1, $2, $3, $4,$5 )', [newData.userid, newData.name, newData.gender, newData.birthday,photo])
         .then((data) => {
             result = 0;  
         }, (error) => {
