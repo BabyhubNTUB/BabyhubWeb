@@ -107,6 +107,7 @@
 								<a class="icon fa-comments-o"> <%= result.cnt.cntcomment %></a>
 								<form action="/for_del" method="post">
 									<input type="text" name="forumno" value="<%= result.aforum.forumno %>" hidden>
+									<input type="number" name="check" value="3" hidden />
 									<button type="submit" style="box-shadow:none; float:right; height: 5%;"><a
 											class="icon fa-trash" id="deleteForum"></a></button>
 								</form>

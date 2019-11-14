@@ -16,15 +16,19 @@ router.post('/', function (req, res, next) {
         content: req.body.content
     }
 
+    console.log(newData);
     forum.update(newData).then(d => {
         if (d >= 0) {
             var id = req.session.userid;
             noti.list(id).then(noti => {
                 if (noti == null) {
+                    console.log("1")
                     res.render('error');  //導向錯誤頁面
                 } else if (noti == -1) {
+                    console.log("2")
                     res.render('notFound', { noti: noti });  //導向找不到頁面                
                 } else {
+                    console.log("3")
                     res.render('userSuccess', { results: d, noti: noti });  //將資料傳給顯示頁面
                 }
             })
@@ -32,10 +36,13 @@ router.post('/', function (req, res, next) {
             var id = req.session.userid;
             noti.list(id).then(noti => {
                 if (noti == null) {
+                    console.log("4")
                     res.render('error');  //導向錯誤頁面
                 } else if (noti == -1) {
+                    console.log("5")
                     res.render('notFound', { noti: noti });  //導向找不到頁面                
                 } else {
+                    console.log("6")
                     res.render('userFail', { noti: noti });  //將資料傳給顯示頁面
                 }
             })
