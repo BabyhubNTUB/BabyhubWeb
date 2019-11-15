@@ -148,7 +148,15 @@ var search = async function (keyword) {
         });
     await sql('SELECT * FROM allforum WHERE forumname like $1', ['%' + keyword + '%'])
         .then((data) => {
-            result.forum = data.rows;
+            if (data.rows.length > 0) {
+                result.forum = data.rows;
+            } else if (data.rows.length == 0) {
+                data.rows[0]={};
+                data.rows[0].forumname = '找不到符合的文章!';
+                result.forum = data.rows;
+            } else {
+                result.forum = -1;
+            } 
         }, (error) => {
             result.forum = [];            
         });
@@ -170,9 +178,17 @@ var type = async function (type) {
         }, (error) => {
             result.type = [];
         });
-    await sql('SELECT * FROM forum where typeno=$1', [type])
+    await sql('SELECT * FROM allforum where typeno=$1', [type])
         .then((data) => {
-            result.forum = data.rows;
+            if (data.rows.length > 0) {
+                result.forum = data.rows;
+            } else if (data.rows.length == 0) {
+                data.rows[0]={};
+                data.rows[0].forumname = '找不到符合的文章!';
+                result.forum = data.rows;
+            } else {
+                result.forum = -1;
+            } 
         }, (error) => {
             result.forum = [];            
         });
