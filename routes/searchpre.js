@@ -10,10 +10,11 @@ router.get('/', function (req, res, next) {
     var keyword = req.query.keyword;   //取出參數
     var check = req.query.check;
 
+    console.log(keyword);
     articlelist.search(keyword).then(data => {
         if (data == null) {
             res.render('error');  //導向錯誤頁面
-        } else if (data.forum.length >= 0) {
+        } else if (data.length >= 0) {
             if (check == 1) {
                 var id = req.session.userid;
                 noti.list(id).then(noti => {
@@ -22,13 +23,14 @@ router.get('/', function (req, res, next) {
                     } else if (noti == -1) {
                         res.render('notFound', { noti: noti });  //導向找不到頁面                
                     } else {
-                        res.render('pregnancyKnowledge', { result: data, noti: noti });  //將資料傳給顯示頁面
+                        res.render('pregnancyKnowledge', { items: data, noti: noti });  //將資料傳給顯示頁面
                     }
                 })
             } else if (check == 2) {
-                res.render('pregnancyKnowledge2', { result: data });  //將資料傳給顯示頁面
+                console.log(data)
+                res.render('pregnancyKnowledge2', { items: data });  //將資料傳給顯示頁面
             } else {
-                res.render('pregnancyKnowledge3', { result: data });  //將資料傳給顯示頁面
+                res.render('pregnancyKnowledge3', { items: data });  //將資料傳給顯示頁面
             }
         } else {
             if (check == 1) {

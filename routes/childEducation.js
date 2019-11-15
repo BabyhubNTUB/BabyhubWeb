@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     childEducation.list().then(data => {
         if(data==null){
             res.render('error');  //導向錯誤頁面
-        }else if(data.forum.length >= 0){
+        }else if(data.length >= 0){
             var id = req.session.userid;
             noti.list(id).then(noti => {
                 if (noti == null) {

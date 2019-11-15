@@ -11,9 +11,9 @@ var list = async function(){
 	
     await sql('SELECT * FROM education order by serno desc ')
         .then((data) => {            
-            result.forum = data.rows;  
+            result = data.rows;  
         }, (error) => {
-            result.forum = null;
+            result = null;
         });
 		
     return result;
@@ -89,9 +89,17 @@ var search = async function(keyword){
 
         await sql('SELECT * FROM education WHERE title like $1',['%'+keyword+'%'])
             .then((data) => {            
-                result.forum = data.rows;  
+                if (data.rows.length > 0) {
+                    result= data.rows;
+                } else if (data.rows.length == 0) {
+                    data.rows[0]={};
+                    data.rows[0].title = '找不到符合的文章!';
+                    result = data.rows;
+                } else {
+                    result = -1;
+                }   
             }, (error) => {
-                result.forum = [];                
+                result = [];                
             });
             
     //回傳物件

@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
     childEducation.list().then(data => {
         if(data==null){
             res.render('error');  //導向錯誤頁面
-        }else if(data.forum.length >= 0){
+        }else if(data.length >= 0){
             res.render('childEducation3', {items:data});  //將資料傳給顯示頁面
         }else{
             res.render('notFound');  //導向找不到頁面
