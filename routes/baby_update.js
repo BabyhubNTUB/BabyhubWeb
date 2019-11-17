@@ -47,6 +47,8 @@ router.post('/', upload.single('photo'), function (req, res, next) {
     // 如果有選擇圖片
     if (typeof (req.file) != 'undefined') {
         photo = req.file.filename;   //取得上傳照片名稱
+    }else{
+        photo ='profile.png';
     }
 
     var newData = {
