@@ -43,7 +43,7 @@ var one = async function(serno){
 var add = async function(newData){
     var result;
 
-    await sql('INSERT INTO diary (id, diarydate, diary) VALUES ($1, $2, $3)', [newData.id, newData.diarydate, newData.diary])
+    await sql('INSERT INTO "diary" (id, diarydate, diary) VALUES ($1, $2, $3)', [newData.id, newData.diarydate, newData.diary])
         .then((data) => {
             result = 0;  
         }, (error) => {
@@ -91,13 +91,10 @@ var search = async function(id,date){
     var dd = d.getDate();     
     var result={};
 
-        console.log(id)
-        console.log(date)
         await sql('SELECT * FROM diary WHERE id=$1 and extract(year from diarydate)=$2 and extract(month from diarydate)=$3 and extract(day from diarydate)=$4',[id, yy, mm, dd])
             .then((data) => {     
                     result.diary = data.rows; 
             }, (error) => {
-                console.log("1");
                 result = [];                
             });
     //回傳物件

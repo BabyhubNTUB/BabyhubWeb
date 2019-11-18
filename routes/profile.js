@@ -7,7 +7,6 @@ const noti = require('./utility/notification');
 
 //接收GET請求
 router.get('/', function (req, res, next) {
-    //var id = req.query.id;   //取出參數
     var userid = req.session.userid;
     member.query(userid).then(data => {
         if (data == null) {
