@@ -7,17 +7,17 @@ const sql = require('./asyncDB');
 //執行資料庫動作的函式-傳回所有產品資料
 //------------------------------------------
 var list = async function(id){
-    var result=[];
+    var result={};
     
     await sql('SELECT * FROM diary where id = $1 order by diarydate desc ' ,[id])
         .then((data) => {
-            if(data.rows.length > 0){
+            if(data.rows.length >= 0){
                 result.diary = data.rows;                   
             }else{
                 result = -1;
             }    
         }, (error) => {
-            result = null;
+            result =[];
         });
 		
     return result;
@@ -84,14 +84,20 @@ var update = async function(newData){
 //---------------------------------------------
 // search
 //---------------------------------------------
-var search = async function(id,date){ 
-      
-        var result={};
+var search = async function(id,date){       
+    var d =new Date(date);    
+    var yy = d.getFullYear();
+    var mm = d.getMonth()+1;
+    var dd = d.getDate();     
+    var result={};
 
-        await sql('SELECT * FROM diary WHERE id=$1 And diarydate=$2',[id,date])
-            .then((data) => {            
-                result.diary = data.rows;  
+        console.log(id)
+        console.log(date)
+        await sql('SELECT * FROM diary WHERE id=$1 and extract(year from diarydate)=$2 and extract(month from diarydate)=$3 and extract(day from diarydate)=$4',[id, yy, mm, dd])
+            .then((data) => {     
+                    result.diary = data.rows; 
             }, (error) => {
+                console.log("1");
                 result = [];                
             });
     //回傳物件

@@ -10,6 +10,7 @@ var moment = require('moment');
 router.get('/', function (req, res, next) {
   var id = req.session.userid;
   growingrecord.getDropdownData(id).then(d => {
+    console.log(d);
     if (d != []) {
       for (var i = 0; i < d.record.length; i++) {
         d.record[i].recorddate = moment(d.record[i].recorddate).format("YYYY-MM-DD");

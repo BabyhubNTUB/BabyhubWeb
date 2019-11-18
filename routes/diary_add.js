@@ -7,7 +7,7 @@ const noti = require('./utility/notification');
 
 //接收POST請求
 router.post('/', function (req, res, next) {
-    var id = req.body.id;
+    var id = req.session.id;
     var diary = req.body.diary;
     var diarydate = new Date();
     // 建立一個新資料物件
