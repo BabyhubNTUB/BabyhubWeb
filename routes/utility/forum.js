@@ -119,14 +119,10 @@ var del = async function (forumno) {
 var update = async function (newData) {
     var results;
 
-    console.log(newData)
-    console.log('---------------')
     await sql('UPDATE "forum" SET "forumname"=$1, "typeno"=$2, "content"=$3 WHERE "forumno" = $4', [newData.forumname, newData.typeno, newData.content, newData.forumno])
         .then((data) => {
-            console.log(data.rowCount)
             results = data.rowCount;
         }, (error) => {
-            console.log("-1")
             results = -1;            
         });
 

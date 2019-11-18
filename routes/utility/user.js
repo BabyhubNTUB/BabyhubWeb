@@ -30,14 +30,11 @@ var login = async function(id, password){
 var add = async function(newData){
     var result;
     var photo="profile.png";
-    console.log(newData);
 
     await sql('INSERT INTO "member" (id, username, password,appellation,photo) VALUES ($1, $2, $3, $4, $5)', [newData.id, newData.username, newData.password, newData.appellation,photo])
         .then((data) => {
-            console.log(data);
             result = 0;  
         }, (error) => {
-            console.log("data");
             result = -1;
         });
 		
