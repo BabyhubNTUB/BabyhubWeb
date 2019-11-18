@@ -74,6 +74,7 @@
 							<p>跟媽媽們討論各種知識。</p>
 						</a>
 					</li>
+
 					<li>
 						<a href="/growrecord">
 							<h3>成長紀錄</h3>
@@ -111,7 +112,7 @@
 		</section>
 
 		<!-- Main -->
-		<div id="main">
+		<div class="main">
 			<div class="row">
 				<div class="col-md-6">
 					<h1 style="padding-top:2%;">日記</h1>
@@ -129,45 +130,45 @@
 				</div>
 			</div>
 			<div class="card" style="background: none;">
-				<div class="card-block">
-					<form action="/diary_add" method="post">
-						<div class="form-group">
-							<p class="head"><img src="images/edit.png">　寫日記</p>
-							<input type="text" class="form-control" name="diary" />
-						</div>
-						<button type="submit">
-							撰寫
-						</button>
-					</form>
-				</div>
-			</div>
-			<% for(var i=0; i<item.diary.length; i++) {%>
-			<div class="card" style="background: none;">
-				<div class="card-block">
-					<h5 class="card-title">
-						日記
-					</h5>
-					<p class="card-text">
-						<%= item.diary[i].diarydate %>
-						<br>
-						<br>
-						<div style="font-size: 200%;"><%= item.diary[i].diary %></div>
-						<br>
-					</p>
-					<p>
-						<button style="box-shadow:none; float:left; height: 5%; padding: 5px;"><a
-								href="/updatediary/<%= item.diary[i].serno %>">編輯</a></button>
-						<form action="/diary_del" method="post">
-							<input type="text" class="form-control" name="serno" value="<%= item.diary[i].serno %>"
-								hidden />
-							<button type="submit" style="box-shadow:none; float:left; height: 5%; padding: 5px;">
-								<a>刪除</a>
+					<div class="card-block">
+						<form action="/diary_add" method="post">
+							<div class="form-group">
+								<p class="head"><img src="images/edit.png">　寫日記</p>
+								<input type="text" class="form-control" name="diary" />
+							</div>
+							<button type="submit">
+								撰寫
 							</button>
 						</form>
-					</p>
+					</div>
 				</div>
-			</div>
-			<% } %>
+				<% for(var i=0; i<item.diary.length; i++) {%>
+				<div class="card" style="background: none;">
+					<div class="card-block">
+						<h5 class="card-title">
+							日記
+						</h5>
+						<p class="card-text">
+							<%= item.diary[i].diarydate %>
+							<br>
+							<br>
+							<div style="font-size: 200%;"><%= item.diary[i].diary %></div>
+							<br>
+						</p>
+						<p>
+							<button style="box-shadow:none; float:left; height: 5%; padding: 5px;"><a
+									href="/updatediary/<%= item.diary[i].serno %>">編輯</a></button>
+							<form action="/diary_del" method="post">
+								<input type="text" class="form-control" name="serno" value="<%= item.diary[i].serno %>"
+									hidden />
+								<button type="submit" style="box-shadow:none; float:left; height: 5%; padding: 5px;">
+									<a>刪除</a>
+								</button>
+							</form>
+						</p>
+					</div>
+				</div>
+				<% } %>
 		</div>
 	</div>
 
