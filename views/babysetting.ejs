@@ -169,7 +169,10 @@
 								<input type="date" class="form-control" name="birthday"
 									value="<%= result.baby.birthday %>" style="background: none;" />
 							</div>
-							<input accept="image/*" id="uploadImage" name="photo" type="file">
+							<label class="btn btn-info">
+                            <input accept="image/*" id="uploadImage" name="photo" type="file" style="display:none;" >
+                            <i class="fa fa-photo"></i> 上傳圖片
+                            </label>
 							<script>
 								$("#uploadImage").change(function () {
 									readImage(this);
