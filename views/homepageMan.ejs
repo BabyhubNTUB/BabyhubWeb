@@ -10,7 +10,7 @@
 	<title>Babyhub</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="/assets/css/forum.css" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
 	<link rel="icon" href="/images/bear.png" type="image/ico" />
 	<link href="/assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/assets/css/style.css" rel="stylesheet">
@@ -91,41 +91,39 @@
 				</div>
 				<div class="col-md-8">
 					<div class="list-group">
-						<a href="/forum" class="list-group-item list-group-item-info">討論版 最新文章</a>
+						<a href="/forum3" class="list-group-item list-group-item-info">討論版 最新文章</a>
 						<% for(var i=0; i<result.forum.length; i++) {%>
 						<div class="list-group-item list-group-item-warning">
-							<a href="/aforum/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
+							<a href="/aforum3/<%= result.forum[i].forumno %>"><%= result.forum[i].forumname %></a>
 						</div>
 						<% } %>
-						<a href="/forum" class="list-group-item list-group-item-warning" >
+						<a href="/forum3" class="list-group-item list-group-item-warning" >
 							<p style="width:100%; text-align:right; color: #a8a8a8 !important; margin: 0; padding: 0;">... 更多文章</p>
 						</a>
 					</div>
 					<div class="list-group">
-						<a href="/childEducation" class="list-group-item list-group-item-info">小孩教育 最新文章</a>
+						<a href="/childEducation3" class="list-group-item list-group-item-info">小孩教育 最新文章</a>
 						<% for(var i=0; i<result.education.length; i++) {%>
 						<div class="list-group-item list-group-item-warning">
 							<a
-								href="/achildEducation/<%= result.education[i].serno %>"><%= result.education[i].title %></a>
+								href="/achildEducation3/<%= result.education[i].serno %>"><%= result.education[i].title %></a>
 						</div>
 						<% } %>
-						<a href="/childEducation" class="list-group-item list-group-item-warning" >
+						<a href="/childEducation3" class="list-group-item list-group-item-warning">
 							<p style="width:100%; text-align:right; color: #a8a8a8 !important; margin: 0; padding: 0;">... 更多文章</p>
 						</a>
 					</div>
 					<div class="list-group">
-						<a href="/pregnancyKnowledge" class="list-group-item list-group-item-info">孕期知識 最新文章</a>
+						<a href="/pregnancyKnowledge3" class="list-group-item list-group-item-info">孕期知識 最新文章</a>
 						<% for(var i=0; i<result.pregnancyknowledge.length; i++) {%>
 						<div class="list-group-item list-group-item-warning">
 							<a
-								href="/apregnancyKnowledge/<%= result.pregnancyknowledge[i].serno %>"><%= result.pregnancyknowledge[i].title %></a>
+								href="/apregnancyKnowledge3/<%= result.pregnancyknowledge[i].serno %>"><%= result.pregnancyknowledge[i].title %></a>
 						</div>
 						<% } %>
-						<a href="/pregnancyKnowledge" class="list-group-item list-group-item-warning">
-							<p style="width:100%; text-align:right; color: #a8a8a8 !important; margin: 0; padding: 0;">... 更多文章</p>
-						</a>
+						<a href="/pregnancyKnowledge3" class="list-group-item list-group-item-warning">
+							<p style="width:100%; text-align:right; color: #a8a8a8 !important; margin: 0; padding: 0;">... 更多文章</p></a>
 					</div>
-
 				</div>
 			</div>
 
