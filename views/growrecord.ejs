@@ -130,17 +130,15 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12">
-					<% for(var i=0; i<result.protype.length; i++) {%>
-					<form action="/searchgrecord2" method="get">
-						<input name="babyno" value="<%= result.protype[i].babyno %>" hidden>
-						<button type="submit"
-							style="background: rgba(113, 180, 200, 0.3); padding: 0; text-align: center; width: 70px;height: 70px;line-height: 70px;border-radius: 70px; margin-bottom: 2%;">
-							<a><%= result.protype[i].name %></a>
-						</button>
-					</form>
-					<% } %>
-				</div>
+				<% for(var i=0; i<result.protype.length; i++) {%>
+				<form action="/searchgrecord2" method="get">
+					<input name="babyno" value="<%= result.protype[i].babyno %>" hidden>
+					<button type="submit"
+						style="background: rgba(113, 180, 200, 0.3); padding: 0; text-align: center; width: 70px;height: 70px;line-height: 70px;border-radius: 70px; margin-bottom: 2%;">
+						<a><%= result.protype[i].name %></a>
+					</button>
+				</form>
+				<% } %>
 			</div>
 			<div class="card" style="background: none;">
 				<div class="card-block">
@@ -168,7 +166,7 @@
 							</p>
 						</div>
 						<button type="submit">
-							撰寫
+							<a>撰寫</a>
 						</button>
 					</form>
 				</div>

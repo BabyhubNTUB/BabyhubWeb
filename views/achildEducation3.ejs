@@ -94,11 +94,11 @@
 								<h2><a><%= item.title %></a></h2>
 								<form action="/edu_del" method="post">
 									<input type="text" name="serno" value="<%= item.serno %>" hidden>
-									<button type="submit" style="box-shadow:none; float:right; height: 5%;">刪除</button>
+									<button type="submit" style="box-shadow:none; float:right; height: 30px; padding: 0 20px;"><a>刪除</a></button>
 								</form>
 								<form action="/updateEducation" method="post">
 									<input type="text" name="serno" value="<%= item.serno %>" hidden>
-									<button type="submit" style="box-shadow:none; float:right; height: 5%;">編輯</button>
+									<button type="submit" style="box-shadow:none; float:right; height: 30px; padding: 0 20px;"><a>編輯</a></button>
 								</form>
 							</div>
 						</header>
@@ -119,8 +119,6 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script src="/assets/js/bootstrap.min.js"></script>
-	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-	<script>tinymce.init({ selector: 'textarea' });</script>
 	<script src="/assets/js/scripts.js"></script>
 
 </body>
