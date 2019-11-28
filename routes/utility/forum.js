@@ -32,9 +32,10 @@ var list = async function () {
 var one = async function (forumno) {
     var result = {};
 
-    await sql('SELECT * FROM forum WHERE forumno = $1', [forumno])
+    await sql('SELECT * FROM forum join forumtype on forum.typeno=forumtype.typeno WHERE forumno = $1', [forumno])
         .then((data) => {
             if (data.rows.length > 0) {
+                console.log(data.rows)
                 result.aforum = data.rows[0];
             } else {
                 result.aforum = -1;
